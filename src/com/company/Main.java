@@ -12,7 +12,6 @@ public class Main {
         //playerInterface(p1,s);
         tutorialMap();
 
-        // helo im main();
 
 
 
@@ -59,9 +58,9 @@ public class Main {
         command = s.next();
 
         if (Objects.equals(command, "look")){
-            p1.searchRoom();
+
         }else if(Objects.equals(command, "move")){
-            p1.move(river,tutorial);
+
         }
 
     }
