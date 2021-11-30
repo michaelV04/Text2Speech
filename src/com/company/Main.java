@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100);
-        createCharakter(p1,s);
+        //createCharakter(p1,s);
         //playerInterface(p1,s);
         tutorial(p1,s);
 
@@ -70,17 +70,12 @@ public class Main {
         Room river = new Room("river",0,0,0,1);
         Room field = new Room("field",1,0,1,0);
         Room house = new Room("house",0,1,0,0);
+        Room roof = new Room("roof",0,1,0,0);
 
-
-        tutorial.addRoom(river,4);
-        tutorial.addRoom(field,3);
-        tutorial.addRoom(house,1);
-
-        tutorial.showMap();
-
-
-
-
+        tutorial.addRoom(river,4,1);
+        tutorial.addRoom(field,3,1);
+        tutorial.addRoom(house,1,1);
+        tutorial.addRoom(roof,1,2);
 
 
     }
