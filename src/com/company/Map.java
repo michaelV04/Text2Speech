@@ -1,11 +1,13 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class Map {
-    private String name;
-    private int mapSize;
+    private final String name;
+    private final int mapSize;
+    private int pos;
     ArrayList<Room> roomsS1 = new ArrayList<>();
     ArrayList<Room> roomsS0 = new ArrayList<>();
     ArrayList<Room> roomsS2 = new ArrayList<>();
@@ -27,10 +29,13 @@ public class Map {
     public void addRoom(Room x,int position,int stage){
         if (stage == 1) {
             roomsS1.add(position, x);
+            x.setPos(position);
         }else if(stage == 0){
             roomsS0.add(position, x);
+            x.setPos(position);
         }else if(stage == 2){
             roomsS2.add(position, x);
+            x.setPos(position);
         }
     }
 
@@ -55,53 +60,94 @@ public class Map {
         System.out.println("\n\n\n\n\n");
     }
 
-    public int checkIfExitTrue(Room x,Room y){
+    public int checkIfExitTrue(Room x,Room y,Map z){
         double add = Math.sqrt(mapSize);
         int intAdd = (int) add;
         for (int i = 0; i < mapSize; i++) {
-            if (x == roomsS0.get(i)){
-                if (roomsS0.get(i+1) == y){
-                    return 1;
-                }else if(roomsS0.get(i-1)==y){
-                    return 1;
-                } else if(roomsS0.get(i-intAdd)==y){
-                    return 1;
-                }else if(roomsS0.get(i+intAdd)==y){
-                    return 1;
-                }else if(roomsS0.get(i)==roomsS1.get(i) && roomsS1.get(i) == y){
-                    return 1;
-                }
-            }else if(x == roomsS1.get(i)){
-                if (roomsS1.get(i+1) == y){
-                    return 1;
-                }else if(roomsS1.get(i-1)==y){
-                    return 1;
-                } else if(roomsS1.get(i-intAdd)==y){
-                    return 1;
-                }else if(roomsS1.get(i+intAdd)==y){
-                    return 1;
-                }else if(roomsS1.get(i)==roomsS0.get(i) && roomsS0.get(i) == y){
-                    return 1;
-                }else if(roomsS1.get(i)==roomsS2.get(i) && roomsS2.get(i) == y){
-                    return 1;
-                }
-            }else if(x == roomsS2.get(i)){
-                if (roomsS2.get(i+1) == y){
-                    return 1;
-                }else if(roomsS2.get(i-1)==y){
-                    return 1;
-                } else if(roomsS2.get(i-intAdd)==y){
-                    return 1;
-                }else if(roomsS2.get(i+intAdd)==y){
-                    return 1;
-                }else if(roomsS2.get(i)==roomsS1.get(i) && roomsS1.get(i) == y){
-                    return 1;
+            if (i == 0 && roomsS0.get(i) == x || i == 0 && roomsS1.get(i) == x || i == 0 && roomsS2.get(i) == x) {
+                if (x == roomsS0.get(i)) {
+                    if (roomsS0.get(i + 1) == y) {
+                        return 1;
+                    } else if (roomsS0.get(i + intAdd) == y) {
+                        return 1;
+                       // if (roomsS0.get(i) != null) {
+                            //if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
+
+                            //}
+                       // }
+                    }
+                } else if (x == roomsS1.get(i)) {
+                    if (roomsS1.get(i + 1) == y) {
+                        return 1;
+                    } else if (roomsS1.get(i + intAdd) == y) {
+                        return 1;
+                    } if(roomsS0.get(i) != null){
+                        if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS0.get(i) == y) {
+                            return 1;
+                        }
+                    }else if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), y.getRoomName())) {
+                            return 1;
+                        }
+
+                } else if (x == roomsS2.get(i)) {
+                    if (roomsS2.get(i + 1) == y) {
+                        return 1;
+                    } else if (roomsS2.get(i + intAdd) == y) {
+                        return 1;
+                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
+                        return 1;
+                    }
                 }
             }
-        }
+                if (x == roomsS0.get(i)) {
+                    if (roomsS0.get(i + 1) == y) {
+                        return 1;
+                    } else if (roomsS0.get(i - 1) == y) {
+                        return 1;
+                    } else if (roomsS0.get(i - intAdd) == y) {
+                        return 1;
+                    } else if (roomsS0.get(i + intAdd) == y) {
+                        return 1;
+                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
+                        return 1;
+                    }
+                } else if (x == roomsS1.get(i)) {
+                    if (roomsS1.get(i + 1) == y) {
+                        return 1;
+                    } else if (roomsS1.get(i - 1) == y) {
+                        return 1;
+                    } else if (roomsS1.get(i - intAdd) == y) {
+                        return 1;
+                    } else if (roomsS1.get(i + intAdd) == y) {
+                        return 1;
+                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS0.get(i) == y) {
+                        return 1;
+                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS2.get(i) == y) {
+                        return 1;
+                    }
+                } else if (x == roomsS2.get(i)) {
+                    if (roomsS2.get(i + 1) == y) {
+                        return 1;
+                    } else if (roomsS2.get(i - 1) == y) {
+                        return 1;
+                    } else if (roomsS2.get(i - intAdd) == y) {
+                        return 1;
+                    } else if (roomsS2.get(i + intAdd) == y) {
+                        return 1;
+                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
+                        return 1;
+                    }
+                }
+            }
 
-        return 0;
+            return 0;
+
     }
+    public int getPos(){
+        return pos;
+    }
+
+
 
 
 

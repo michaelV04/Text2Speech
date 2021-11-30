@@ -11,7 +11,7 @@ public class Player extends Entities{
 
     public void move(Room x,Room y,Map z) {
         Scanner s = new Scanner(System.in);
-        int i = z.checkIfExitTrue(x, y);
+        int i = z.checkIfExitTrue(x, y,z);
         if (i == 1) {
             System.out.println("You are in " + location.get(0).getRoomName() + " The Exits are:");
             if (location.get(0).getNorthExitType() == 1) {

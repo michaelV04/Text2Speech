@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Room {
     // ArrayList<Exit> exits = new ArrayList<>();
     ArrayList<Item> itemsInRoom = new ArrayList<>();
-
+    private int pos;
     public String description;
     private int northExitType = 0;
     private int southExitType = 0;
@@ -39,7 +39,15 @@ public class Room {
         return eastExitType;
     }
 
-
+    public void setPos(int pos){
+        this.pos = pos;
+    }
+    public int getPos(){
+        if (pos == 0){
+            return 1000;
+        }
+        return pos;
+    }
 
     /*
     public void addExit(Exit exitType) {
