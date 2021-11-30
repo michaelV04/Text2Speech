@@ -82,10 +82,14 @@ public class Main {
 
         p1.move(river,field,tutorial);
         p1.getLocation();
+        //fiel pickup stone where sword inside
         p1.move(field,house,tutorial);
+        //put sword in cabinet
         p1.getLocation();
         p1.move(house,roof,tutorial);
         p1.getLocation();
+        //finish
+
 
     }
 }
