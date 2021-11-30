@@ -78,7 +78,6 @@ public class Main {
         tutorial.showMap();
 
         p1.setRoom(river);
-        p1.getLocation();
         createCharakter(p1,s);
 
         p1.move(river,field);

@@ -50,6 +50,7 @@ public class Map {
             System.out.println(roomsS0.get(i+1));
 
         }
+        System.out.println("\n\n\n\n\n");
     }
 
 

@@ -75,11 +75,10 @@ public abstract class Entities {
 
     public void setRoom(Room x){
         location.add(x);
-        System.out.println("You are in room"+x.getRoomName());
     }
 
     public void getLocation(){
         Room x = location.get(0);
-        System.out.println(x.getRoomName());
+        System.out.println("You are in Room "+x.getRoomName());
     }
 }
