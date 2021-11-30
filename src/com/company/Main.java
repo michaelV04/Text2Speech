@@ -72,10 +72,12 @@ public class Main {
         Room house = new Room("house","x",0,1,0,0);
         Room roof = new Room("roof","x",0,1,0,0);
 
-        tutorial.addRoom(river,3,1);
-        tutorial.addRoom(field,2,1);
         tutorial.addRoom(house,0,1);
         tutorial.addRoom(roof,0,2);
+        tutorial.addRoom(field,2,1);
+        tutorial.addRoom(river,3,1);
+
+
 
         tutorial.showMap();
 
