@@ -13,14 +13,14 @@ public class Player extends Entities{
         Scanner s = new Scanner(System.in);
         int i = z.checkIfExitTrue(x, y);
         if (i == 1) {
-            System.out.println("You are in " + x.getRoomName() + " The Exits are:");
-            if (x.getNorthExitType() == 1) {
+            System.out.println("You are in " + location.get(0).getRoomName() + " The Exits are:");
+            if (location.get(0).getNorthExitType() == 1) {
                 System.out.println("-  North");
-            } else if (x.getWestExitType() == 1) {
+            } else if (location.get(0).getWestExitType() == 1) {
                 System.out.println("-  West");
-            } else if (x.getEastExitType() == 1) {
+            } else if (location.get(0).getEastExitType() == 1) {
                 System.out.println("-  East");
-            } else if (x.getSouthExitType() == 1) {
+            } else if (location.get(0).getSouthExitType() == 1) {
                 System.out.println("-  South");
             }
 

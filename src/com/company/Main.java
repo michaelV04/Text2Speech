@@ -82,6 +82,10 @@ public class Main {
 
         p1.move(river,field,tutorial);
         p1.getLocation();
+        p1.move(field,house,tutorial);
+        p1.getLocation();
+        p1.move(house,roof,tutorial);
+        p1.getLocation();
 
     }
 }

@@ -68,6 +68,8 @@ public class Map {
                     return 1;
                 }else if(roomsS0.get(i+intAdd)==y){
                     return 1;
+                }else if(roomsS0.get(i)==roomsS1.get(i) && roomsS1.get(i) == y){
+                    return 1;
                 }
             }else if(x == roomsS1.get(i)){
                 if (roomsS1.get(i+1) == y){
@@ -78,6 +80,10 @@ public class Map {
                     return 1;
                 }else if(roomsS1.get(i+intAdd)==y){
                     return 1;
+                }else if(roomsS1.get(i)==roomsS0.get(i) && roomsS0.get(i) == y){
+                    return 1;
+                }else if(roomsS1.get(i)==roomsS2.get(i) && roomsS2.get(i) == y){
+                    return 1;
                 }
             }else if(x == roomsS2.get(i)){
                 if (roomsS2.get(i+1) == y){
@@ -87,6 +93,8 @@ public class Map {
                 } else if(roomsS2.get(i-intAdd)==y){
                     return 1;
                 }else if(roomsS2.get(i+intAdd)==y){
+                    return 1;
+                }else if(roomsS2.get(i)==roomsS1.get(i) && roomsS1.get(i) == y){
                     return 1;
                 }
             }
