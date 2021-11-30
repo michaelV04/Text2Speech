@@ -9,34 +9,41 @@ public class Player extends Entities{
         super(name,hp, ad, armor, crit, lvl, speed);
     }
 
-    public void move(Room x,Room y){
+    public void move(Room x,Room y,Map z) {
         Scanner s = new Scanner(System.in);
+        int i = z.checkIfExitTrue(x, y);
+        if (i == 1) {
+            System.out.println("You are in " + x.getRoomName() + " The Exits are:");
+            if (x.getNorthExitType() == 1) {
+                System.out.println("-  North");
+            } else if (x.getWestExitType() == 1) {
+                System.out.println("-  West");
+            } else if (x.getEastExitType() == 1) {
+                System.out.println("-  East");
+            } else if (x.getSouthExitType() == 1) {
+                System.out.println("-  South");
+            }
 
-        System.out.println("You are in "+x.getRoomName()+" The Exits are:");
-        if(x.getNorthExitType() == 1){
-            System.out.println("-  North");
-        }else if(x.getWestExitType() == 1){
-            System.out.println("-  West");
-        }else if(x.getEastExitType() == 1){
-            System.out.println("-  East");
-        }else if(x.getSouthExitType() == 1){
-            System.out.println("-  South");
-        }
+            System.out.println("Which one would you like to use?");
+            String exit;
+            exit = s.next();
 
-        System.out.println("Which one would you like to use?");
-        String exit;
-        exit = s.next();
-
-        if(Objects.equals(exit, "North")){
-            takeExit(y);
-        }else if(Objects.equals(exit, "South")){
-            takeExit(y);
-        }else if(Objects.equals(exit, "East")){
-            takeExit(y);
-        }else if(Objects.equals(exit, "West")){
-            takeExit(y);
+            if (Objects.equals(exit, "North")) {
+                takeExit(y);
+            } else if (Objects.equals(exit, "South")) {
+                takeExit(y);
+            } else if (Objects.equals(exit, "East")) {
+                takeExit(y);
+            } else if (Objects.equals(exit, "West")) {
+                takeExit(y);
+            }
+        }else{
+            System.out.println("These rooms are not connected");
         }
     }
+
+
+
 
     public void searchRoom(Room x){
 

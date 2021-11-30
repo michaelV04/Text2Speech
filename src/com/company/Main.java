@@ -64,7 +64,7 @@ public class Main {
     }
 
     public static void tutorial(Player p1, Scanner s){
-        Map tutorial = new Map("tutorial");
+        Map tutorial = new Map("tutorial",4);
         Room river = new Room("river","x",0,0,0,1);
         Room field = new Room("field","x",1,0,1,0);
         Room house = new Room("house","x",0,1,0,0);
@@ -80,7 +80,7 @@ public class Main {
         p1.setRoom(river);
         createCharakter(p1,s);
 
-        p1.move(river,field);
+        p1.move(river,field,tutorial);
         p1.getLocation();
 
     }
