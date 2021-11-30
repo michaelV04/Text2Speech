@@ -13,7 +13,8 @@ public class Room {
     private int eastExitType = 0;
     private String roomName;
 
-    public Room(String roomname, int nExitType, int sExitType, int eExitType, int wExitType){
+    public Room(String roomname,String description, int nExitType, int sExitType, int eExitType, int wExitType){
+        this.description = description;
         this.roomName = roomname;
         this.northExitType = nExitType;
         this.southExitType = sExitType;

@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class Map {
     private String name;
@@ -12,6 +12,11 @@ public class Map {
 
     public Map(String mapname){
         this.name = mapname;
+        for (int i = 0; i < 64; i++) {
+            roomsS0.add(null);
+            roomsS1.add(null);
+            roomsS2.add(null);
+        }
     }
     public String getName(){
         return name;
