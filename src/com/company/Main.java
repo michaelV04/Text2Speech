@@ -8,11 +8,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100);
-        //createCharakter(p1,s);
-        //playerInterface(p1,s);
-        tutorialMap();
+        tutorial(p1,s);
 
-        //-1 south   +1 north  +2west  -2south  +3up -3 down
+
 
 
     }
@@ -65,7 +63,7 @@ public class Main {
 
     }
 
-    public static void tutorialMap(){
+    public static void tutorial(Player p1, Scanner s){
         Map tutorial = new Map("tutorial");
         Room river = new Room("river","x",0,0,0,1);
         Room field = new Room("field","x",1,0,1,0);
@@ -77,10 +75,14 @@ public class Main {
         tutorial.addRoom(field,2,1);
         tutorial.addRoom(river,3,1);
 
-
-
         tutorial.showMap();
 
+        p1.setRoom(river);
+        p1.getLocation();
+        createCharakter(p1,s);
+
+        p1.move(river,field);
+        p1.getLocation();
 
     }
 }

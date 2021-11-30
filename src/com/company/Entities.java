@@ -1,7 +1,10 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public abstract class Entities {
     private String name;
+    ArrayList<Room> location = new ArrayList<>();
     private int hp;
     private int ad;
     private int armor;
@@ -68,5 +71,15 @@ public abstract class Entities {
 
     public void combat(){
 
+    }
+
+    public void setRoom(Room x){
+        location.add(x);
+        System.out.println("You are in room"+x.getRoomName());
+    }
+
+    public void getLocation(){
+        Room x = location.get(0);
+        System.out.println(x.getRoomName());
     }
 }
