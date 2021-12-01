@@ -65,10 +65,10 @@ public class Main {
 
     public static void tutorial(Player p1, Scanner s){
         Map tutorial = new Map("tutorial",4);
-        Room river = new Room("river","x",0,0,0,1);
-        Room field = new Room("field","x",1,0,1,0);
-        Room house = new Room("house","x",0,1,0,0);
-        Room roof = new Room("roof","x",0,1,0,0);
+        Room river = new Room("river","x",0,0,0,1,0,0);
+        Room field = new Room("field","x",1,0,1,0,0,0);
+        Room house = new Room("house","x",0,1,0,0,1,0);
+        Room roof = new Room("roof","x",0,0,0,0,0,1);
 
         tutorial.addRoom(house,0,1);
         tutorial.addRoom(roof,0,2);

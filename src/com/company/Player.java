@@ -16,12 +16,16 @@ public class Player extends Entities{
             System.out.println("You are in " + location.get(0).getRoomName() + " The Exits are:");
             if (location.get(0).getNorthExitType() == 1) {
                 System.out.println("-  North");
-            } else if (location.get(0).getWestExitType() == 1) {
+            }if (location.get(0).getWestExitType() == 1) {
                 System.out.println("-  West");
-            } else if (location.get(0).getEastExitType() == 1) {
+            }if (location.get(0).getEastExitType() == 1) {
                 System.out.println("-  East");
-            } else if (location.get(0).getSouthExitType() == 1) {
+            }if (location.get(0).getSouthExitType() == 1) {
                 System.out.println("-  South");
+            }if (location.get(0).getDownExitType() == 1) {
+                System.out.println("-  Down");
+            }if (location.get(0).getUpExitType() == 1) {
+                System.out.println("-  Up");
             }
 
             System.out.println("Which one would you like to use?");
@@ -35,6 +39,10 @@ public class Player extends Entities{
             } else if (Objects.equals(exit, "East")) {
                 takeExit(y);
             } else if (Objects.equals(exit, "West")) {
+                takeExit(y);
+            }else if (Objects.equals(exit, "Up")) {
+                takeExit(y);
+            }else if (Objects.equals(exit, "Down")) {
                 takeExit(y);
             }
         }else{

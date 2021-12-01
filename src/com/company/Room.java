@@ -11,15 +11,19 @@ public class Room {
     private int southExitType = 0;
     private int westExitType = 0;
     private int eastExitType = 0;
+    private int upExitType = 0;
+    private int downExitType = 0;
     private String roomName;
 
-    public Room(String roomname,String description, int nExitType, int sExitType, int eExitType, int wExitType){
+    public Room(String roomname,String description, int nExitType, int sExitType, int eExitType, int wExitType,int upExitType, int downExitType){
         this.description = description;
         this.roomName = roomname;
         this.northExitType = nExitType;
         this.southExitType = sExitType;
         this.eastExitType = eExitType;
         this.westExitType = wExitType;
+        this.upExitType = upExitType;
+        this.downExitType = downExitType;
 
     }
     public String getRoomName(){
@@ -37,6 +41,12 @@ public class Room {
     }
     public int getEastExitType() {
         return eastExitType;
+    }
+    public int getUpExitType() {
+        return upExitType;
+    }
+    public int getDownExitType() {
+        return downExitType;
     }
 
     public void setPos(int pos){

@@ -70,11 +70,10 @@ public class Map {
                         return 1;
                     } else if (roomsS0.get(i + intAdd) == y) {
                         return 1;
-                       // if (roomsS0.get(i) != null) {
-                            //if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
-
-                            //}
-                       // }
+                    }if(roomsS1.get(i) != null){
+                        if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
+                            return 1;
+                        }
                     }
                 } else if (x == roomsS1.get(i)) {
                     if (roomsS1.get(i + 1) == y) {
@@ -85,17 +84,21 @@ public class Map {
                         if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS0.get(i) == y) {
                             return 1;
                         }
-                    }else if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), y.getRoomName())) {
+                    }if (roomsS2.get(i) != null){
+                        if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), y.getRoomName())) {
                             return 1;
                         }
+                    }
 
                 } else if (x == roomsS2.get(i)) {
                     if (roomsS2.get(i + 1) == y) {
                         return 1;
                     } else if (roomsS2.get(i + intAdd) == y) {
                         return 1;
-                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
-                        return 1;
+                    } if(roomsS1.get(i) != null){
+                        if (roomsS1.get(i).getPos() == roomsS2.get(i).getPos() && roomsS1.get(i) == y) {
+                            return 1;
+                        }
                     }
                 }
             }
@@ -108,8 +111,10 @@ public class Map {
                         return 1;
                     } else if (roomsS0.get(i + intAdd) == y) {
                         return 1;
-                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
-                        return 1;
+                    } if(roomsS1.get(i) != null){
+                        if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
+                            return 1;
+                        }
                     }
                 } else if (x == roomsS1.get(i)) {
                     if (roomsS1.get(i + 1) == y) {
@@ -120,10 +125,14 @@ public class Map {
                         return 1;
                     } else if (roomsS1.get(i + intAdd) == y) {
                         return 1;
-                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS0.get(i) == y) {
-                        return 1;
-                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS2.get(i) == y) {
-                        return 1;
+                    } if(roomsS0.get(i) != null){
+                        if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS0.get(i) == y) {
+                            return 1;
+                        }
+                    }if (roomsS2.get(i) != null){
+                        if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), y.getRoomName())) {
+                            return 1;
+                        }
                     }
                 } else if (x == roomsS2.get(i)) {
                     if (roomsS2.get(i + 1) == y) {
@@ -134,8 +143,10 @@ public class Map {
                         return 1;
                     } else if (roomsS2.get(i + intAdd) == y) {
                         return 1;
-                    } else if (roomsS0.get(0).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
-                        return 1;
+                    } if(roomsS1.get(i) != null){
+                        if (roomsS1.get(i).getPos() == roomsS2.get(i).getPos() && roomsS1.get(i) == y) {
+                            return 1;
+                        }
                     }
                 }
             }
@@ -143,6 +154,7 @@ public class Map {
             return 0;
 
     }
+
     public int getPos(){
         return pos;
     }
