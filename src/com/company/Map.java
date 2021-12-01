@@ -159,6 +159,18 @@ public class Map {
         return pos;
     }
 
+    public Room getRoom(int stage, int id){
+        if (stage == 1){
+            return roomsS1.get(id);
+        }else if (stage == 2){
+            return roomsS1.get(id);
+        }else if (stage == 3){
+            return roomsS1.get(id);
+        }else{
+            return null;
+        }
+    }
+
 
 
 
