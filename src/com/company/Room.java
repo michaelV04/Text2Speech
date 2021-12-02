@@ -31,6 +31,9 @@ public class Room {
     public String getRoomName(){
         return roomName;
     }
+    public String getDescription() {
+        return description;
+    }
     public int getNorthExitType(){
         return northExitType;
     }
@@ -50,6 +53,7 @@ public class Room {
     public int getDownExitType() {
         return downExitType;
     }
+
 
     public void setPos(int pos){
         this.pos = pos;
@@ -74,13 +78,14 @@ public class Room {
         itemsInRoom.add(item);
     }
 
+    public void removeItem(Item item) {
+        itemsInRoom.remove(item);
+    }
+
     public void addContainer(Container container) {
         containerInRoom.add(container);
     }
 
-    public void removeItem(Item item) {
-        itemsInRoom.remove(item);
-    }
 
 
 /*
