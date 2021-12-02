@@ -2,21 +2,18 @@ package com.company;
 
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner s = new Scanner(System.in);
         Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100);
         tutorial(p1,s);
 
-
-
-
     }
+
     public static void createCharakter(Player p1,Scanner s){
-        System.out.println("Wake up!");
-        System.out.println("*You are standing between a river*");
         int x = -1;
         while(x < 1 || x > 3) {
             System.out.println("Choose your charakter:\n Tank = 1\n Warrior = 2\n Assasin = 3\n: ");
@@ -63,31 +60,50 @@ public class Main {
 
     }
 
-    public static void tutorial(Player p1, Scanner s){
+    public static void tutorial(Player p1, Scanner s) throws InterruptedException {
         Map tutorial = new Map("tutorial",4);
         Room river = new Room("river","x",0,0,0,1,0,0);
         Room field = new Room("field","x",1,0,1,0,0,0);
         Room house = new Room("house","x",0,1,0,0,1,0);
         Room roof = new Room("roof","x",0,0,0,0,0,1);
+        Container stone = new Container();
+        Item sword = new Item();
+
+        stone.addThing(sword);
 
         tutorial.addRoom(house,0,1);
         tutorial.addRoom(roof,0,2);
         tutorial.addRoom(field,2,1);
         tutorial.addRoom(river,3,1);
 
+
         tutorial.showMap();
+
+        System.out.println("Wake up!");
+        System.out.println("*You are standing between a river*");
 
         p1.setRoom(river);
         createCharakter(p1,s);
 
+        TimeUnit.SECONDS.sleep(1);
         p1.move(river,field,tutorial);
+        field.addContainer(stone);
+
+
+
         p1.getLocation();
         //fiel pickup stone where sword inside
+
+
+        TimeUnit.SECONDS.sleep(1);
         p1.move(field,house,tutorial);
         //put sword in cabinet
         p1.getLocation();
+        TimeUnit.SECONDS.sleep(1);
         p1.move(house,roof,tutorial);
         p1.getLocation();
+        TimeUnit.SECONDS.sleep(1);
+
         //finish
 
 

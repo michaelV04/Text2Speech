@@ -54,9 +54,7 @@ public abstract class Entities {
     public void addCrit(int x){
         this.crit = this.crit + x;
     }
-    public void addArmor(int x){
-        this.armor = this.armor + x;
-    }
+    public void addArmor(int x) { this.armor = this.armor + x; }
     public void addAd(int x){
         this.ad = this.ad + x;
     }

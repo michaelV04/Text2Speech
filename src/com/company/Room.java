@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Room {
     // ArrayList<Exit> exits = new ArrayList<>();
     ArrayList<Item> itemsInRoom = new ArrayList<>();
+    ArrayList<Container> containerInRoom = new ArrayList<>();
+
     private int pos;
     public String description;
     private int northExitType = 0;
@@ -72,9 +74,15 @@ public class Room {
         itemsInRoom.add(item);
     }
 
+    public void addContainer(Container container) {
+        containerInRoom.add(container);
+    }
+
     public void removeItem(Item item) {
         itemsInRoom.remove(item);
     }
+
+
 /*
     public void addRoom(String roomName) {
         this.roomName = roomName;

@@ -1,9 +1,12 @@
 package com.company;
 
+import java.text.CompactNumberFormat;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Player extends Entities{
+    ArrayList<Object> inventory = new ArrayList<>();
 
     public Player(String name,int hp, int ad, int armor, int crit, int lvl, int speed) {
         super(name,hp, ad, armor, crit, lvl, speed);
@@ -34,6 +37,10 @@ public class Player extends Entities{
     public void takeExit(Room y){
         location.remove(0);
         location.add(y);
+    }
+
+    public void pickupContainer(Container) {
+
     }
 
 }

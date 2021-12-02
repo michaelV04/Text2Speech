@@ -2,9 +2,13 @@ package com.company;
 
 import java.util.ArrayList;
 
-public interface Container {
+public class Container {
     ArrayList<Object> dingeInside = new ArrayList<>();
 
-    public void addThing();
-    public void removeThing();
+    public void addThing(Item item) {
+        dingeInside.add(item);
+    }
+    public void removeThing(Item item) {
+        dingeInside.remove(item);
+    }
 }
