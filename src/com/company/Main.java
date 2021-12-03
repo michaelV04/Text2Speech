@@ -55,7 +55,10 @@ public class Main {
         if (Objects.equals(command, "look")){
             p1.searchRoom(x);
         }else if(Objects.equals(command, "move")){
-
+            System.out.println("In which Room would you like to move?");
+            String e;
+            e = s.next();
+            p1.move(command);
         }
 
     }
@@ -69,7 +72,7 @@ public class Main {
         Container stone = new Container("stone");
         Container cabinet = new Container("cabinet");
         Item sword = new Item("sword");
-        Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100, river);
+        Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100, river,tutorial);
 
         stone.addThing(sword);
 
@@ -92,7 +95,7 @@ public class Main {
         //playerInterface(p1,s,p1.getActualRoom());
 
         p1.showOptions();
-        p1.move("field",tutorial);
+        p1.move("field");
         field.addContainer(stone);
 
         p1.getLocation();
@@ -102,7 +105,7 @@ public class Main {
 
         TimeUnit.SECONDS.sleep(1);
         p1.showOptions();
-        p1.move("house",tutorial);
+        p1.move("house");
         p1.getLocation();
         p1.putIntoContainer(cabinet, sword);
         cabinet.getContainerItems();
@@ -110,7 +113,7 @@ public class Main {
 
         TimeUnit.SECONDS.sleep(1);
         p1.showOptions();
-        p1.move("roof",tutorial);
+        p1.move("roof");
         p1.getLocation();
         TimeUnit.SECONDS.sleep(1);
 

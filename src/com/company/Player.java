@@ -6,16 +6,24 @@ import java.util.Scanner;
 
 public class Player extends Entities{
     Room actualRoom = new Room("x","x",0,0,0,0,0,0);
+    Map actualMap = new Map("x",4);
     ArrayList<Item> inventory = new ArrayList<>();
 
 
-    public Player(String name,int hp, int ad, int armor, int crit, int lvl, int speed,Room destinationRoom) {
+    public Player(String name,int hp, int ad, int armor, int crit, int lvl, int speed,Room destinationRoom,Map currentMap) {
         super(name,hp, ad, armor, crit, lvl, speed);
+        actualMap.setMapSize(currentMap.getMapSize());
+        actualMap.setName(currentMap.getName());
+        actualMap.setS1(currentMap.getS1());
+        actualMap.setS0(currentMap.getS0());
+        actualMap.setS2(currentMap.getS2());
+
         actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType());
     }
 
-    public void move(String destination, Map z) {
+    public void move(String destination) {
         Room destinationRoom = new Room("x","x",0,0,0,0,0,0);
+        Map z = actualMap;
         for (int i = 0; i < z.roomsS0.size(); i++) {
             if (z.roomsS0.get(i) != null) {
                 if (Objects.equals(z.roomsS0.get(i).getRoomName(), destination)) {

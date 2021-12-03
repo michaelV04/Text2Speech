@@ -5,8 +5,8 @@ import java.util.Objects;
 
 
 public class Map {
-    private final String name;
-    private final int mapSize;
+    private String name;
+    private int mapSize;
     private int pos;
     ArrayList<Room> roomsS1 = new ArrayList<>();
     ArrayList<Room> roomsS0 = new ArrayList<>();
@@ -169,6 +169,34 @@ public class Map {
         }else{
             return null;
         }
+    }
+
+    public int getMapSize(){
+        return mapSize;
+    }
+    public void setMapSize(int mapSize){
+        this.mapSize = mapSize;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setS2(ArrayList<Room> x){
+        this.roomsS2 = x;
+    }
+    public ArrayList<Room> getS2(){
+        return roomsS2;
+    }
+    public void setS0(ArrayList<Room> x){
+        this.roomsS0 = x;
+    }
+    public ArrayList<Room> getS0(){
+        return roomsS0;
+    }
+    public void setS1(ArrayList<Room> x){
+        this.roomsS1 = x;
+    }
+    public ArrayList<Room> getS1(){
+        return roomsS1;
     }
 
 
