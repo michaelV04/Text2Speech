@@ -15,6 +15,7 @@ public class Player extends Entities{
     }
 
     public void move(String destination, Map z) {
+        int hfhfhffh = 0;
         Room destinationRoom = new Room("x","x",0,0,0,0,0,0);
         for (int i = 0; i < z.roomsS0.size(); i++) {
             if(Objects.equals(z.roomsS0.get(i).getRoomName(), destination)){
