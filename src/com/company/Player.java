@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Player extends Entities{
     Room actualRoom = new Room("x","x",0,0,0,0,0,0);
-    ArrayList<Object> inventory = new ArrayList<>();
+    ArrayList<Item> inventory = new ArrayList<>();
 
 
     public Player(String name,int hp, int ad, int armor, int crit, int lvl, int speed) {

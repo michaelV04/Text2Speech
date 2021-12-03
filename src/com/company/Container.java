@@ -8,7 +8,11 @@ public class Container {
     public void addThing(Item item) {
         dingeInside.add(item);
     }
-    public void removeThing(Item item) {
-        dingeInside.remove(item);
+    public boolean removeThing(Item item) {
+        if(dingeInside.remove(item)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -8,8 +8,8 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         Scanner s = new Scanner(System.in);
-        Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100);
-        tutorial(p1,s);
+
+        tutorial(s);
 
     }
 
@@ -66,8 +66,10 @@ public class Main {
         Room field = new Room("field","x",1,0,1,0,0,0);
         Room house = new Room("house","x",0,1,0,0,1,0);
         Room roof = new Room("roof","x",0,0,0,0,0,1);
-        Container stone = new Container();
-        Item sword = new Item();
+        Container stone = new Container("stone");
+        Container cabinet = new Container("cabinet");
+        Item sword = new Item("sword");
+        Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100, river);
 
         stone.addThing(sword);
 
@@ -92,13 +94,18 @@ public class Main {
 
 
         p1.getLocation();
-        //fiel pickup stone where sword inside
+        p1.pickupFromContainer(stone);
+
+        p1.showInventory();
 
 
         TimeUnit.SECONDS.sleep(1);
         p1.move(field,house,tutorial);
-        //put sword in cabinet
         p1.getLocation();
+        p1.putIntoContainer(cabinet, sword);
+        cabinet.getContainerItems();
+
+
         TimeUnit.SECONDS.sleep(1);
         p1.move(house,roof,tutorial);
         p1.getLocation();
