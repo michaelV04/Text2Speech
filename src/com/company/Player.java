@@ -15,11 +15,12 @@ public class Player extends Entities{
     }
 
     public void move(String destination, Map z) {
-        int hfhfhffh = 0;
         Room destinationRoom = new Room("x","x",0,0,0,0,0,0);
         for (int i = 0; i < z.roomsS0.size(); i++) {
-            if(Objects.equals(z.roomsS0.get(i).getRoomName(), destination)){
-                destinationRoom.setRoom(z.roomsS0.get(i).getRoomName(),z.roomsS0.get(i).getDescription(),z.roomsS0.get(i).getNorthExitType(),z.roomsS0.get(i).getSouthExitType(),z.roomsS0.get(i).getEastExitType(),z.roomsS0.get(i).getWestExitType(),z.roomsS0.get(i).getUpExitType(),z.roomsS0.get(i).getDownExitType());
+            if (z.roomsS0.get(i) != null) {
+                if (Objects.equals(z.roomsS0.get(i).getRoomName(), destination)) {
+                    destinationRoom.setRoom(z.roomsS0.get(i).getRoomName(), z.roomsS0.get(i).getDescription(), z.roomsS0.get(i).getNorthExitType(), z.roomsS0.get(i).getSouthExitType(), z.roomsS0.get(i).getEastExitType(), z.roomsS0.get(i).getWestExitType(), z.roomsS0.get(i).getUpExitType(), z.roomsS0.get(i).getDownExitType());
+                }
             }
             if(Objects.equals(z.roomsS1.get(i).getRoomName(), destination)){
                 destinationRoom.setRoom(z.roomsS1.get(i).getRoomName(),z.roomsS1.get(i).getDescription(),z.roomsS1.get(i).getNorthExitType(),z.roomsS1.get(i).getSouthExitType(),z.roomsS1.get(i).getEastExitType(),z.roomsS1.get(i).getWestExitType(),z.roomsS1.get(i).getUpExitType(),z.roomsS1.get(i).getDownExitType());
