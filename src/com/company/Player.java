@@ -22,11 +22,15 @@ public class Player extends Entities{
                     destinationRoom.setRoom(z.roomsS0.get(i).getRoomName(), z.roomsS0.get(i).getDescription(), z.roomsS0.get(i).getNorthExitType(), z.roomsS0.get(i).getSouthExitType(), z.roomsS0.get(i).getEastExitType(), z.roomsS0.get(i).getWestExitType(), z.roomsS0.get(i).getUpExitType(), z.roomsS0.get(i).getDownExitType());
                 }
             }
-            if(Objects.equals(z.roomsS1.get(i).getRoomName(), destination)){
-                destinationRoom.setRoom(z.roomsS1.get(i).getRoomName(),z.roomsS1.get(i).getDescription(),z.roomsS1.get(i).getNorthExitType(),z.roomsS1.get(i).getSouthExitType(),z.roomsS1.get(i).getEastExitType(),z.roomsS1.get(i).getWestExitType(),z.roomsS1.get(i).getUpExitType(),z.roomsS1.get(i).getDownExitType());
+            if (z.roomsS1.get(i) != null) {
+                if (Objects.equals(z.roomsS1.get(i).getRoomName(), destination)) {
+                    destinationRoom.setRoom(z.roomsS1.get(i).getRoomName(), z.roomsS1.get(i).getDescription(), z.roomsS1.get(i).getNorthExitType(), z.roomsS1.get(i).getSouthExitType(), z.roomsS1.get(i).getEastExitType(), z.roomsS1.get(i).getWestExitType(), z.roomsS1.get(i).getUpExitType(), z.roomsS1.get(i).getDownExitType());
+                }
             }
-            if(Objects.equals(z.roomsS2.get(i).getRoomName(), destination)){
-                destinationRoom.setRoom(z.roomsS2.get(i).getRoomName(),z.roomsS2.get(i).getDescription(),z.roomsS2.get(i).getNorthExitType(),z.roomsS2.get(i).getSouthExitType(),z.roomsS2.get(i).getEastExitType(),z.roomsS2.get(i).getWestExitType(),z.roomsS2.get(i).getUpExitType(),z.roomsS2.get(i).getDownExitType());
+            if (z.roomsS2.get(i) != null) {
+                if (Objects.equals(z.roomsS2.get(i).getRoomName(), destination)) {
+                    destinationRoom.setRoom(z.roomsS2.get(i).getRoomName(), z.roomsS2.get(i).getDescription(), z.roomsS2.get(i).getNorthExitType(), z.roomsS2.get(i).getSouthExitType(), z.roomsS2.get(i).getEastExitType(), z.roomsS2.get(i).getWestExitType(), z.roomsS2.get(i).getUpExitType(), z.roomsS2.get(i).getDownExitType());
+                }
             }
         }
         Room x = actualRoom;
