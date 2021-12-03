@@ -43,7 +43,7 @@ public class Main {
         p1.showStats();
     }
 
-    public static void playerInterface(Player p1,Scanner s){
+    public static void playerInterface(Player p1,Scanner s,Room x){
         System.out.println("Welcome to the Player Interface.");
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*");
@@ -53,14 +53,14 @@ public class Main {
         command = s.next();
 
         if (Objects.equals(command, "look")){
-
+            p1.searchRoom(x);
         }else if(Objects.equals(command, "move")){
 
         }
 
     }
 
-    public static void tutorial(Player p1, Scanner s) throws InterruptedException {
+    public static void tutorial(Scanner s) throws InterruptedException {
         Map tutorial = new Map("tutorial",4);
         Room river = new Room("river","x",0,0,0,1,0,0);
         Room field = new Room("field","x",1,0,1,0,0,0);
@@ -87,33 +87,36 @@ public class Main {
         p1.setRoom(river);
         createCharakter(p1,s);
 
+
         TimeUnit.SECONDS.sleep(1);
-        p1.move(river,field,tutorial);
+        //playerInterface(p1,s,p1.getActualRoom());
+
+        p1.showOptions();
+        p1.move("field",tutorial);
         field.addContainer(stone);
-
-
 
         p1.getLocation();
         p1.pickupFromContainer(stone);
 
         p1.showInventory();
 
-
         TimeUnit.SECONDS.sleep(1);
-        p1.move(field,house,tutorial);
+        p1.showOptions();
+        p1.move("house",tutorial);
         p1.getLocation();
         p1.putIntoContainer(cabinet, sword);
         cabinet.getContainerItems();
 
 
         TimeUnit.SECONDS.sleep(1);
-        p1.move(house,roof,tutorial);
+        p1.showOptions();
+        p1.move("roof",tutorial);
         p1.getLocation();
         TimeUnit.SECONDS.sleep(1);
 
-        //finish
 
 
+        System.out.println("You have finished the tutorial");
     }
 }
 

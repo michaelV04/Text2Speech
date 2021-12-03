@@ -98,5 +98,17 @@ public class Room {
     }
 
  */
+    public void setRoom(String roomname, String description, int northExit, int southExit, int westExit, int eastExit, int upExit, int downExit){
+        this.roomName = roomname;
+        this.description = description;
+        this.northExitType = northExit;
+        this.southExitType = southExit;
+        this.westExitType = westExit;
+        this.eastExitType = eastExit;
+        this.upExitType = upExit;
+        this.downExitType = downExit;
+    }
+
+
 
 }
