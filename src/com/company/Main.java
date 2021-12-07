@@ -87,7 +87,8 @@ public class Main {
         tutorial.addRoom(field,2,1);
         tutorial.addRoom(river,3,1);
 
-
+        Mob m1 = new Mob("zombie", 1, 1,1, 1,1,1);
+        m1.setRoom(house);
         tutorial.showMap();
 
         System.out.println("Wake up!");

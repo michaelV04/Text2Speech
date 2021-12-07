@@ -68,7 +68,7 @@ public abstract class Entities {
     }
 
     public void combat(){
-
+        while()
     }
 
     public void setRoom(Room x){

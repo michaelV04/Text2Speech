@@ -181,4 +181,7 @@ public class Player extends Entities{
         return actualRoom;
     }
 
+    public void fight(){
+
+    }
 }
