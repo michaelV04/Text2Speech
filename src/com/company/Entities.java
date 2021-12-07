@@ -63,12 +63,19 @@ public abstract class Entities {
         mutationX = true;
     }
 
+
     public void useMutationX(){
 
     }
 
-    public void combat(){
-        while()
+    public void combat(Player a, Mob b){
+        while(a.getHp() > 0 && b.getHp() > 0){
+            if (a.getSpeed() > b.getSpeed()){
+
+            }else{
+
+            }
+        }
     }
 
     public void setRoom(Room x){
