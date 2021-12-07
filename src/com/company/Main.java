@@ -51,7 +51,7 @@ public class Main {
         int xy = 0;
         while (xy == 0) {
             String command;
-            System.out.println("What do you want to do? You can Exit the game with exit");
+            System.out.println("What do you want to do? You can Exit the game with exit and with inv you can open your Inventory");
             command = s.next();
 
             if (Objects.equals(command, "look")) {
@@ -65,6 +65,8 @@ public class Main {
                 p1.move(e);
             }else if(Objects.equals(command, "exit")){
                 xy++;
+            }else if (Objects.equals(command, "inv")){
+                p1.showInventory();
             }
         }
 
@@ -82,6 +84,10 @@ public class Main {
         Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100, river,tutorial);
 
         stone.addThing(sword);
+        field.addContainer(stone);
+        house.addContainer(cabinet);
+
+
 
         tutorial.addRoom(house,0,1);
         tutorial.addRoom(roof,0,2);
@@ -101,31 +107,6 @@ public class Main {
 
         TimeUnit.SECONDS.sleep(1);
         playerInterface(p1,s,p1.getActualRoom());
-
-        p1.showOptions();
-        p1.move("field");
-        field.addContainer(stone);
-
-        p1.getLocation();
-        p1.pickupFromContainer(stone);
-
-        p1.showInventory();
-
-        TimeUnit.SECONDS.sleep(1);
-        p1.showOptions();
-        p1.move("house");
-        p1.getLocation();
-        p1.putIntoContainer(cabinet, sword);
-        cabinet.getContainerItems();
-
-
-        TimeUnit.SECONDS.sleep(1);
-        p1.showOptions();
-        p1.move("roof");
-        p1.getLocation();
-        TimeUnit.SECONDS.sleep(1);
-
-
 
         System.out.println("You have finished the tutorial");
 

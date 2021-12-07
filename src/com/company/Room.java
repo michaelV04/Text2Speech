@@ -120,6 +120,9 @@ public class Room {
     public ArrayList<Container> getContainerInRoom(){
         return containerInRoom;
     }
+    public ArrayList<Mob> getMobsInRoom(){
+        return mobsInRoom;
+    }
 
 
 

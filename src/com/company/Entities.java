@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Entities {
     private String name;
@@ -68,12 +69,18 @@ public abstract class Entities {
 
     }
 
-    public void combat(Player a, Mob b){
-        while(a.getHp() > 0 && b.getHp() > 0){
-            if (a.getSpeed() > b.getSpeed()){
+    public void combat(Player p1, String mob) {
+        for (int i = 0; i < p1.actualRoom.mobsInRoom.size(); i++) {
+            if (Objects.equals(mob, p1.actualRoom.mobsInRoom.get(i).getName())) {
+                Mob m1 = p1.actualRoom.mobsInRoom.get(i);
 
-            }else{
+                while(p1.getHp() > 0 && m1.getHp() > 0){
+                 if (p1.getSpeed() > m1.getSpeed()){
 
+                 }else{
+
+                 }
+                 }
             }
         }
     }
@@ -82,8 +89,13 @@ public abstract class Entities {
         location.add(x);
     }
 
-    public void getLocation(){
-        Room x = location.get(0);
-        System.out.println("You are in Room "+x.getRoomName());
+        public void getLocation () {
+            Room x = location.get(0);
+            System.out.println("You are in Room " + x.getRoomName());
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 }
