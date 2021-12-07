@@ -47,18 +47,24 @@ public class Main {
         System.out.println("Welcome to the Player Interface.");
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*");
+        int xy = 0;
+        while (xy == 0) {
+            String command;
+            System.out.println("What do you want to do? You can Exit the game with exit");
+            command = s.next();
 
-        String command;
-        System.out.println("What do you want to do?");
-        command = s.next();
-
-        if (Objects.equals(command, "look")){
-            p1.searchRoom(x);
-        }else if(Objects.equals(command, "move")){
-            System.out.println("In which Room would you like to move?");
-            String e;
-            e = s.next();
-            p1.move(command);
+            if (Objects.equals(command, "look")) {
+                p1.searchRoom(x);
+            } else if (Objects.equals(command, "move")) {
+                p1.actualMap.showMap();
+                System.out.println("In which Room would you like to move?");
+                System.out.println("You are in Room " + p1.actualRoom.getRoomName());
+                String e;
+                e = s.next();
+                p1.move(command);
+            }else if(Objects.equals(command, "exit")){
+                xy++;
+            }
         }
 
     }
@@ -92,7 +98,7 @@ public class Main {
 
 
         TimeUnit.SECONDS.sleep(1);
-        //playerInterface(p1,s,p1.getActualRoom());
+        playerInterface(p1,s,p1.getActualRoom());
 
         p1.showOptions();
         p1.move("field");

@@ -29,7 +29,11 @@ public class Room {
 
     }
     public String getRoomName(){
-        return roomName;
+        if (roomName != null) {
+            return roomName;
+        }else{
+            return "No room";
+        }
     }
     public String getDescription() {
         return description;
