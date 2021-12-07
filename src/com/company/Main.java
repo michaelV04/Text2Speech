@@ -61,7 +61,7 @@ public class Main {
                 System.out.println("You are in Room " + p1.actualRoom.getRoomName());
                 String e;
                 e = s.next();
-                p1.move(command);
+                p1.move(e);
             }else if(Objects.equals(command, "exit")){
                 xy++;
             }
