@@ -44,6 +44,7 @@ public class Main {
     }
 
     public static void playerInterface(Player p1,Scanner s,Room x){
+        Map y = p1.actualMap;
         System.out.println("Welcome to the Player Interface.");
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*");
