@@ -96,6 +96,8 @@ public class Main {
 
         Mob m1 = new Mob("zombie", 1, 1,1, 1,1,1);
         m1.setRoom(house);
+        house.mobsInRoom.add(m1);
+
         tutorial.showMap();
 
         System.out.println("Wake up!");

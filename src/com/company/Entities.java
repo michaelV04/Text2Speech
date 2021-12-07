@@ -14,7 +14,7 @@ public abstract class Entities {
     private int speed;
     private boolean mutationX = false;
 
-    public Entities(String name, int hp,int ad, int armor, int crit, int lvl, int speed){
+    public Entities(String name, int hp, int ad, int armor, int crit, int lvl, int speed) {
         this.name = name;
         this.hp = hp;
         this.ad = ad;
@@ -23,49 +23,61 @@ public abstract class Entities {
         this.lvl = lvl;
         this.speed = speed;
     }
-    public int getHp(){
+
+    public int getHp() {
         return hp;
     }
-    public int getAd(){
+
+    public int getAd() {
         return ad;
     }
-    public int getArmor(){
+
+    public int getArmor() {
         return armor;
     }
-    public int getCrit(){
+
+    public int getCrit() {
         return crit;
     }
-    public int getLvl(){
+
+    public int getLvl() {
         return lvl;
     }
-    public int getSpeed(){
+
+    public int getSpeed() {
         return speed;
     }
 
-    public void addHp(int x){
+    public void addHp(int x) {
         this.hp = this.hp + x;
     }
 
-    public void addSpeed(int x){
+    public void addSpeed(int x) {
         this.speed = this.speed + x;
     }
-    public void addLvl(int x){
+
+    public void addLvl(int x) {
         this.lvl = this.lvl + x;
     }
-    public void addCrit(int x){
+
+    public void addCrit(int x) {
         this.crit = this.crit + x;
     }
-    public void addArmor(int x) { this.armor = this.armor + x; }
-    public void addAd(int x){
+
+    public void addArmor(int x) {
+        this.armor = this.armor + x;
+    }
+
+    public void addAd(int x) {
         this.ad = this.ad + x;
     }
 
-    public void addMutationX(){
+    public void addMutationX() {
         mutationX = true;
     }
 
 
-    public void useMutationX(){
+    public void useMutationX() {
 
     }
 
@@ -85,9 +97,9 @@ public abstract class Entities {
         }
     }
 
-    public void setRoom(Room x){
-        location.add(x);
-    }
+        public void setRoom (Room x){
+            location.add(x);
+        }
 
         public void getLocation () {
             Room x = location.get(0);
@@ -98,4 +110,3 @@ public abstract class Entities {
             return name;
         }
     }
-}
