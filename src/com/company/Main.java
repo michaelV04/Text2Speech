@@ -13,10 +13,10 @@ public class Main {
 
     }
 
-    public static void createCharakter(Player p1,Scanner s){
+    public static void createCharacter(Player p1, Scanner s){
         int x = -1;
         while(x < 1 || x > 3) {
-            System.out.println("Choose your charakter:\n Tank = 1\n Warrior = 2\n Assasin = 3\n: ");
+            System.out.println("Choose your Character:\n Tank = 1\n Warrior = 2\n Assassin = 3\n: ");
             x = s.nextInt();
             System.out.println(x);
 
@@ -55,7 +55,7 @@ public class Main {
             command = s.next();
 
             if (Objects.equals(command, "look")) {
-                p1.searchRoom(x);
+                p1.searchRoom(p1.actualRoom);
             } else if (Objects.equals(command, "move")) {
                 p1.actualMap.showMap();
                 System.out.println("In which Room would you like to move?");
@@ -104,7 +104,7 @@ public class Main {
         System.out.println("*You are standing between a river*");
 
         p1.setRoom(river);
-        createCharakter(p1,s);
+        createCharacter(p1,s);
 
 
         TimeUnit.SECONDS.sleep(1);

@@ -55,6 +55,7 @@ public class Player extends Entities{
     public void searchRoom(Room x){
         Scanner s = new Scanner(System.in);
         String eingabe;
+        int y = x.containerInRoom.size();
         if (x.itemsInRoom != null){
             //list items
             System.out.println("The Items in the Room are:");
@@ -67,7 +68,6 @@ public class Player extends Entities{
             if (x.containerInRoom != null) {
                 //list container
                 System.out.println("The Container in the Room are");
-                int y = x.containerInRoom.size();
                 z = 0;
                 while (z < y) {
                     System.out.println(x.containerInRoom.get(z).getContainerName());
@@ -82,7 +82,11 @@ public class Player extends Entities{
             while(z < i){
                 if (Objects.equals(eingabe, x.itemsInRoom.get(z).getItemName())){
                     pickupItem(x.itemsInRoom.get(z));
-                } else if (Objects.equals(eingabe, x.containerInRoom.get(z).getContainerName())){
+                }
+                z++;
+            }
+            while (z < y){
+                if (Objects.equals(eingabe, x.containerInRoom.get(z).getContainerName())){
                     pickupFromContainer(x.containerInRoom.get(z));
                 }
                 z++;
@@ -167,8 +171,12 @@ public class Player extends Entities{
 
     public void showInventory() {
         System.out.println("You have following items in your inventory:");
-        for (int i = 0; i < inventory.size(); i++) {
-            System.out.println(inventory.get(i).getItemName());
+        if (inventory.size() != 0) {
+            for (int i = 0; i < inventory.size(); i++) {
+                System.out.println(inventory.get(i).getItemName());
+            }
+        }else{
+            System.out.println("You have no Items in your Inventory");
         }
     }
 
