@@ -43,9 +43,16 @@ public class Player extends Entities{
         }
         Room x = actualRoom;
         Scanner s = new Scanner(System.in);
-        z.checkIfExitTrue(x, destinationRoom,z);
-        takeExit(destinationRoom);
-        actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom());
+        int check = 0;
+        check = z.checkIfExitTrue(x, destinationRoom,z);
+
+        if (check == 1) {
+            takeExit(destinationRoom);
+            actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom());
+        }else{
+            System.out.println("You cant move there");
+        }
+
     }
 
     public Room getRoom(){

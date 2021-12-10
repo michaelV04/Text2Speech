@@ -83,96 +83,167 @@ public class Map {
     public int checkIfExitTrue(Room x,Room y,Map z){
         double add = Math.sqrt(mapSize);
         int intAdd = (int) add;
-        for (int i = 0; i < mapSize; i++) {
-            if (i == 0 && roomsS0.get(i) == x || i == 0 && roomsS1.get(i) == x || i == 0 && roomsS2.get(i) == x) {
-                if (x == roomsS0.get(i)) {
-                    if (roomsS0.get(i + 1) == y) {
-                        return 1;
-                    } else if (roomsS0.get(i + intAdd) == y) {
-                        return 1;
-                    }if(roomsS1.get(i) != null){
-                        if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
-                            return 1;
-                        }
+        for (int i = 0; i <= mapSize; i++) {
+            if (roomsS1.get(i) != null || roomsS0.get(i) != null || roomsS2.get(i) != null) {
+                if (roomsS0.get(i) != null) {
+                    if (i == 0 && Objects.equals(roomsS0.get(i).getRoomName(), x.getRoomName())) {
+                            if (roomsS0.get(i+1) != null) {
+                                if (Objects.equals(roomsS0.get(i + 1).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
+                            if (roomsS0.get(i+intAdd) != null) {
+                                if (Objects.equals(roomsS0.get(i + intAdd).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
+                            if (roomsS1.get(i) != null) {
+                                if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS1.get(i).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
                     }
-                } else if (x == roomsS1.get(i)) {
-                    if (roomsS1.get(i + 1) == y) {
-                        return 1;
-                    } else if (roomsS1.get(i + intAdd) == y) {
-                        return 1;
-                    } if(roomsS0.get(i) != null){
-                        if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS0.get(i) == y) {
-                            return 1;
-                        }
-                    }if (roomsS2.get(i) != null){
-                        if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), y.getRoomName())) {
-                            return 1;
-                        }
-                    }
+                } else if (roomsS1.get(i) != null) {
+                    if (i == 0 && Objects.equals(roomsS1.get(i).getRoomName(), x.getRoomName())) {
+                            if (roomsS1.get(i + 1) != null) {
+                                if (Objects.equals(roomsS1.get(i + 1).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
+                            if (roomsS1.get(i + intAdd) != null) {
+                                if (Objects.equals(roomsS1.get(i + intAdd).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
+                            if (roomsS0.get(i) != null) {
+                                if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS0.get(i).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
+                            if (roomsS2.get(i) != null) {
+                                if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
 
-                } else if (x == roomsS2.get(i)) {
-                    if (roomsS2.get(i + 1) == y) {
-                        return 1;
-                    } else if (roomsS2.get(i + intAdd) == y) {
-                        return 1;
-                    } if(roomsS1.get(i) != null){
-                        if (roomsS1.get(i).getPos() == roomsS2.get(i).getPos() && roomsS1.get(i) == y) {
+                    }
+                } else if (roomsS2.get(i) != null) {
+                    if (i == 0 && Objects.equals(roomsS2.get(i).getRoomName(), x.getRoomName())) {
+                            if (roomsS2.get(i + 1) != null) {
+                                if (Objects.equals(roomsS2.get(i + 1).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
+                            if (roomsS2.get(i + intAdd) != null) {
+                                if (Objects.equals(roomsS2.get(i + intAdd).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
+                            if (roomsS1.get(i) != null) {
+                                if (roomsS1.get(i).getPos() == roomsS2.get(i).getPos() && Objects.equals(roomsS1.get(i).getRoomName(), y.getRoomName())) {
+                                    return 1;
+                                }
+                            }
+
+                    }
+                }
+
+                if (roomsS0.get(i) != null) {
+                    if (Objects.equals(x.getRoomName(), roomsS0.get(i).getRoomName())) {
+                        if (roomsS0.get(i+1) != null) {
+                            if (Objects.equals(roomsS0.get(i + 1).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if (roomsS0.get(i-1) != null) {
+                            if (Objects.equals(roomsS0.get(i - 1).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if (roomsS0.get(i-intAdd) != null) {
+                            if (Objects.equals(roomsS0.get(i - intAdd).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if (roomsS0.get(i+intAdd) != null) {
+                            if (Objects.equals(roomsS0.get(i + intAdd).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if (roomsS1.get(i) != null) {
+                            if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS1.get(i).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                    }
+                }
+
+                if (roomsS1.get(i) != null){
+                    if (Objects.equals(x.getRoomName(), roomsS1.get(i).getRoomName())) {
+                        if (roomsS1.get(i+1) != null){
+                        if (Objects.equals(roomsS1.get(i + 1).getRoomName(), y.getRoomName())) {
                             return 1;
+                        }
+                        }
+                        if (roomsS1.get(i-1) != null) {
+                            if (Objects.equals(roomsS1.get(i - 1).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if (roomsS1.get(i-intAdd) != null) {
+                            if (Objects.equals(roomsS1.get(i - intAdd).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if (roomsS1.get(i+intAdd) != null) {
+                            if (Objects.equals(roomsS1.get(i + intAdd).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if(roomsS0.get(i) != null){
+                            if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS0.get(i).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }if (roomsS2.get(i) != null){
+                            if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                    }
+                }
+
+                if (roomsS2.get(i) != null){
+                    if (Objects.equals(x.getRoomName(), roomsS2.get(i).getRoomName())) {
+                        if (roomsS2.get(i+1) != null) {
+                            if (Objects.equals(roomsS2.get(i + 1).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if (roomsS2.get(i-1) != null) {
+                            if (Objects.equals(roomsS2.get(i - 1).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if (roomsS2.get(i-intAdd) != null) {
+                            if (Objects.equals(roomsS2.get(i - intAdd).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if (roomsS2.get(i+intAdd) != null) {
+                            if (Objects.equals(roomsS2.get(i + intAdd).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
+                        }
+                        if(roomsS1.get(i) != null){
+                            if (roomsS1.get(i).getPos() == roomsS2.get(i).getPos() && Objects.equals(roomsS1.get(i).getRoomName(), y.getRoomName())) {
+                                return 1;
+                            }
                         }
                     }
                 }
             }
-                if (x == roomsS0.get(i)) {
-                    if (roomsS0.get(i + 1) == y) {
-                        return 1;
-                    } else if (roomsS0.get(i - 1) == y) {
-                        return 1;
-                    } else if (roomsS0.get(i - intAdd) == y) {
-                        return 1;
-                    } else if (roomsS0.get(i + intAdd) == y) {
-                        return 1;
-                    } if(roomsS1.get(i) != null){
-                        if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS1.get(i) == y) {
-                            return 1;
-                        }
-                    }
-                } else if (x == roomsS1.get(i)) {
-                    if (roomsS1.get(i + 1) == y) {
-                        return 1;
-                    } else if (roomsS1.get(i - 1) == y) {
-                        return 1;
-                    } else if (roomsS1.get(i - intAdd) == y) {
-                        return 1;
-                    } else if (roomsS1.get(i + intAdd) == y) {
-                        return 1;
-                    } if(roomsS0.get(i) != null){
-                        if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && roomsS0.get(i) == y) {
-                            return 1;
-                        }
-                    }if (roomsS2.get(i) != null){
-                        if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), y.getRoomName())) {
-                            return 1;
-                        }
-                    }
-                } else if (x == roomsS2.get(i)) {
-                    if (roomsS2.get(i + 1) == y) {
-                        return 1;
-                    } else if (roomsS2.get(i - 1) == y) {
-                        return 1;
-                    } else if (roomsS2.get(i - intAdd) == y) {
-                        return 1;
-                    } else if (roomsS2.get(i + intAdd) == y) {
-                        return 1;
-                    } if(roomsS1.get(i) != null){
-                        if (roomsS1.get(i).getPos() == roomsS2.get(i).getPos() && roomsS1.get(i) == y) {
-                            return 1;
-                        }
-                    }
-                }
             }
-
             return 0;
-
     }
 
     public int getPos(){
