@@ -16,7 +16,7 @@ public class Map {
     public Map(String mapname, int mapSize) {
         this.name = mapname;
         this.mapSize = mapSize;
-        for (int i = 0; i < mapSize; i++) {
+        for (int i = 0; i < mapSize+1; i++) {
             roomsS0.add(null);
             roomsS1.add(null);
             roomsS2.add(null);
