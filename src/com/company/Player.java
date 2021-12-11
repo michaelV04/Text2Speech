@@ -5,21 +5,12 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Player extends Entities{
-    Room actualRoom = new Room("x","x",0,0,0,0,0,0);
-    Map actualMap = new Map("x",4);
     ArrayList<Item> inventory = new ArrayList<>();
 
 
     public Player(String name,int hp, int ad, int armor, int crit, int lvl, int speed,Room destinationRoom,Map currentMap) {
-        super(name,hp, ad, armor, crit, lvl, speed);
-        actualMap.setMapSize(currentMap.getMapSize());
-        actualMap.setName(currentMap.getName());
-        actualMap.setS1(currentMap.getS1());
-        actualMap.setS0(currentMap.getS0());
-        actualMap.setS2(currentMap.getS2());
-
-        actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom());
-    }
+        super(name,hp, ad, armor, crit, lvl, speed,currentMap,destinationRoom);
+          }
 
     public void move(String destination) {
         Room destinationRoom = new Room("x","x",0,0,0,0,0,0);
@@ -110,7 +101,6 @@ public class Player extends Entities{
             }
 
 
-            //pick up container or Item
             z = 0;
             if (x.itemsInRoom.size() != 0) {
                 System.out.println("What Item would you like to pick up");

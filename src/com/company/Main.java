@@ -13,10 +13,56 @@ public class Main {
 
     }
 
-    private static void mainLobby(Scanner s) throws InterruptedException {
+    public static void mainLobby(Scanner s) throws InterruptedException {
+        combatTest(s);
         tutorial(s);
+        int x = 0;
+        while (x == 0) {
+            int eingabe;
+            System.out.println("\t\t\t Bug Break");
+            System.out.println("Tutorial = 1\nMain Story 2\nCommands and Shortcuts = 3\nClose the Game = 4");
+            eingabe = s.nextInt();
+            if (eingabe == 1) {
+                tutorial(s);
+            } else if (eingabe == 2) {
+                bugBreak(s);
+            } else if (eingabe == 3) {
+                commands();
+            }else if(eingabe == 4){
+                x++;
+            } else {
+                System.out.println("Invalid input");
+            }
+        }
+    }
+
+    public static void combatTest(Scanner s) {
+        Map testM1 = new Map("testM1",9);
+        Room testR1 = new Room("testR1","x",0,0,0,0,0,0);
+        Mob zombie = new Mob("Zombie1",50,5,0,0,1,50,testR1,testM1);
+        Player p1 = new Player("Hans",100,100,100,100,100,100,testR1,testM1);
+        testR1.mobsInRoom.add(zombie);
+        p1.combat(p1,"zombie");
+    }
+
+    public static void commands() {
+    }
+
+    public static void bugBreak(Scanner s) {
+        startVillage(s);
+
 
     }
+
+    public static void startVillage(Scanner s) {
+        Map woodsStartVillage = new Map("Start_Vilagge",256);
+        Room woods1 = new Room("woods1","A dark place with trees nothing else to see",0,0,1,0,0,0);
+        Room woods2 = new Room("woods2","A dark place with trees nothing else to see",0,0,1,0,0,0);
+        Room woods3 = new Room("woods3","A dark place with trees but something is glowing nearby",0,0,1,0,0,0);
+        Container chest1 = new Container("Chest1");
+        woods3.addContainer(chest1);
+    }
+
 
     public static void createCharacter(Player p1, Scanner s){
         int x = -1;
@@ -58,7 +104,7 @@ public class Main {
             String command;
             System.out.println("You can move your Character by typing *move* then you will get a List of options");
             System.out.println("You can also look around the area your standing in with *look*");
-            System.out.println("You can Exit the game with exit and with inv you can open your Inventory\n With finish you can check if you have finished the tutorial");
+            System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the tutorial");
             command = s.next();
 
             if (Objects.equals(command, "look")) {
@@ -90,7 +136,7 @@ public class Main {
         Room roof = new Room("roof","x",0,0,0,0,0,1);
         Container stone = new Container("stone");
         Container cabinet = new Container("cabinet");
-        Item sword = new Item("sword");
+        Item sword = new Item("sword",0,10,0,0,2);
         Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100, river,tutorial);
 
         stone.addThing(sword);
@@ -104,7 +150,7 @@ public class Main {
         tutorial.addRoom(field,2,1);
         tutorial.addRoom(river,3,1);
 
-        Mob m1 = new Mob("zombie", 1, 1,1, 1,1,1);
+        Mob m1 = new Mob("zombie", 1, 1,1, 1,1,1,house,tutorial);
         m1.setRoom(house);
         house.mobsInRoom.add(m1);
 

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class Entities {
+    Room actualRoom = new Room("x","x",0,0,0,0,0,0);
+    Map actualMap = new Map("x",4);
+
+
     private String name;
     ArrayList<Room> location = new ArrayList<>();
     private int hp;
@@ -14,7 +18,7 @@ public abstract class Entities {
     private int speed;
     private boolean mutationX = false;
 
-    public Entities(String name, int hp, int ad, int armor, int crit, int lvl, int speed) {
+    public Entities(String name, int hp, int ad, int armor, int crit, int lvl, int speed,Map currentMap,Room destinationRoom) {
         this.name = name;
         this.hp = hp;
         this.ad = ad;
@@ -22,6 +26,15 @@ public abstract class Entities {
         this.crit = crit;
         this.lvl = lvl;
         this.speed = speed;
+
+        actualMap.setMapSize(currentMap.getMapSize());
+        actualMap.setName(currentMap.getName());
+        actualMap.setS1(currentMap.getS1());
+        actualMap.setS0(currentMap.getS0());
+        actualMap.setS2(currentMap.getS2());
+
+        actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom());
+
     }
 
     public int getHp() {

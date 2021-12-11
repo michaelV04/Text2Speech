@@ -59,10 +59,10 @@ public class Room {
         return downExitType;
     }
 
-
     public void setPos(int pos){
         this.pos = pos;
     }
+
     public int getPos(){
         if (pos == 0){
             return 1000;
@@ -70,15 +70,6 @@ public class Room {
         return pos;
     }
 
-    /*
-    public void addExit(Exit exitType) {
-        exits.add(exitType);
-    }
-
-    public void removeExit(Exit exitType) {
-        exits.remove(exitType);
-    }
-*/
     public void addItem(Item item) {
         itemsInRoom.add(item);
     }
@@ -91,18 +82,6 @@ public class Room {
         containerInRoom.add(container);
     }
 
-
-
-/*
-    public void addRoom(String roomName) {
-        this.roomName = roomName;
-    }
-
-    public void addWall(String wallType) {
-        this.wallType = wallType;
-    }
-
- */
     public void setRoom(String roomname, String description, int northExit, int southExit, int westExit, int eastExit, int upExit, int downExit,ArrayList<Item> items,ArrayList<Container> container){
         this.roomName = roomname;
         this.description = description;
