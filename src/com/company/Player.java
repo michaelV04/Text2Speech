@@ -3,6 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Player extends Entities{
     ArrayList<Item> inventory = new ArrayList<>();
@@ -205,14 +206,9 @@ public class Player extends Entities{
         System.out.println("You picked up " + item.getItemName());
     }
 
-
-
-
-    public void fight(){
-
-    }
-
     public int combat(String mob) {
+        Random random = new Random();
+        Random mobRandom = new Random();
         Scanner s = new Scanner(System.in);
         String eingabe;
         Mob m = new Mob("null",0,0,0,0,0,0,getActualRoom(),getActualMap());
@@ -241,37 +237,88 @@ public class Player extends Entities{
             while (getHp() > 0 && m.getHp() > 0) {
                 if (getSpeed() >= m.getSpeed()) {
                     System.out.println("You attack");
-                    m.addHp(-getAd());
+                    int crit = getCrit();
+                    int mobDmg = m.getArmor() - getAd();
+                    int rand = random.nextInt(crit);
+                    if (rand == crit) {
+                        mobDmg *= 2;
+                        System.out.println("You have landed a critical hit");
+                    }
+                    if (mobDmg < 0) {
+                        m.addHp(mobDmg);
+                        System.out.println("The " + mob + " got " + mobDmg + " damage");
+                    } else {
+                        System.out.println("The " + mob + " blocked the attack");
+                    }
                     if (m.getHp() > 0) {
                         System.out.println("The " + mob + " attacks");
-                        addHp(-m.getAd());
+                        int mobCrit = m.getCrit();
+                        int dmg = getArmor() - m.getAd();
+                        if (mobCrit != 0) {
+                            int mobRand = mobRandom.nextInt(mobCrit);
+                        }
+                        if (rand == mobCrit) {
+                            dmg *= 2;
+                            System.out.println("The " + mob + " landed a critical hit");
+                        }
+                        if (dmg < 0) {
+                            addHp(dmg);
+                            System.out.println("You got " + dmg + " damage");
+                        } else {
+                            System.out.println("You've blocked the attack");
+                        }
+                        System.out.println("Your stats:");
+                        showStats();
+                        System.out.println("\n Enemies stats");
+                        m.showStats();
+                    } else {
+                        System.out.println("The " + mob + " attacks");
+                        int mobCrit = m.getCrit();
+                        int dmg = getArmor() - m.getAd();
+                        int mobRand = mobRandom.nextInt(mobCrit);
+                        if (rand == mobCrit) {
+                            dmg *= 2;
+                            System.out.println("The " + mob + " landed a critical hit");
+                        }
+                        if (dmg < 0) {
+                            addHp(dmg);
+                            System.out.println("You got " + dmg + " damage");
+                        } else {
+                            System.out.println("You've blocked the attack");
+                        }
+                        if (getHp() < 0) {
+                            System.out.println("You attack");
+                            crit = getCrit();
+                            mobDmg = m.getArmor() - getAd();
+                            rand = random.nextInt(crit);
+                            if (rand == crit) {
+                                mobDmg *= 2;
+                                System.out.println("You have landed a critical hit");
+                            }
+                            if (mobDmg < 0) {
+                                m.addHp(mobDmg);
+                                System.out.println("The " + mob + " got " + mobDmg + " damage");
+                            } else {
+                                System.out.println("The " + mob + " blocked the attack");
+                            }
+                        }
+                        System.out.println("Your stats:");
+                        showStats();
+                        System.out.println("\n Enemies stats");
+                        m.showStats();
                     }
-                    System.out.println("Your stats:");
-                    showStats();
-                    System.out.println("\n Enemies stats");
-                    m.showStats();
-                }else{
-                    System.out.println("The "+mob+" attacks");
-                    addHp(-m.getAd());
-                    if (getHp() <0) {
-                        System.out.println("You attack");
-                        m.addHp(-getAd());
-                    }
-                    System.out.println("Your stats:");
-                    showStats();
-                    System.out.println("\n Enemies stats");
-                    m.showStats();
                 }
             } if (getHp() <= 0){
-                System.out.println("You have died");
+                System.out.println("You died");
                 return 0;
             }else{
-                System.out.println("You killed "+ m.getName());
+                System.out.println("You have killed "+ m.getName());
                 return 1;
             }
         }else if (Objects.equals(eingabe, "2")){
-            //flee
             System.out.println("You ran away");
+            return 1;
+            // TODO: Look if mob is alive or if he's disappeared
         }else {
             System.out.println("Invalid Input");
         }
