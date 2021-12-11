@@ -70,7 +70,7 @@ public class Player extends Entities{
             int i = x.itemsInRoom.size();
             int z = 0;
             while (z < i) {
-                System.out.println(x.itemsInRoom.get(0).getItemName());
+                System.out.println(x.itemsInRoom.get(z).getItemName());
                 z++;
             }
             if (x.containerInRoom != null) {
@@ -81,28 +81,52 @@ public class Player extends Entities{
                     System.out.println(x.containerInRoom.get(z).getContainerName());
                     z++;
                 }
+                    z = 0;
+                    System.out.println("You have found a Container!\nWould you like to put something in the Container or grab it? Or leave it and look further?");
+                    String abcdefg;
+                    abcdefg = s.next();
+                    if(Objects.equals(abcdefg, "put")){
+                        System.out.println("Which Item would you like to put into the Container?");
+                        for (int j = 0; j < x.containerInRoom.size(); j++) {
+                            System.out.println("-"+inventory.get(j).getItemName());
+                        }
+                        String ci;
+                        ci = s.next();
+                        while (z<inventory.size()) {
+                            if (Objects.equals(ci, inventory.get(z).getItemName())) {
+                                putIntoContainer(x.containerInRoom.get(z), inventory.get(z));
+                            }
+                            z++;
+                        }
+                    }else if (Objects.equals(abcdefg, "grab")){
+                        while (z < x.containerInRoom.size()) {
+                            pickupFromContainer(x.containerInRoom.get(z));
+                            z++;
+                        }
+                    }else if (Objects.equals(abcdefg, "leave")){
+
+                    }
+
             }
+
+
             //pick up container or Item
             z = 0;
-            System.out.println("What would you like to pick up");
-            eingabe = s.next();
+            if (x.itemsInRoom.size() != 0) {
+                System.out.println("What Item would you like to pick up");
+                eingabe = s.next();
 
-            while(z < i){
-                if (Objects.equals(eingabe, x.itemsInRoom.get(z).getItemName())){
-                    pickupItem(x.itemsInRoom.get(z));
+                while (z < i) {
+                    if (Objects.equals(eingabe, x.itemsInRoom.get(z).getItemName())) {
+                        pickupItem(x.itemsInRoom.get(z));
+                    }
+                    z++;
                 }
-                z++;
             }
-            while (z < y){
-                if (Objects.equals(eingabe, x.containerInRoom.get(z).getContainerName())){
-                    pickupFromContainer(x.containerInRoom.get(z));
-                }
-                z++;
-            }
-
         }else{
             System.out.println("There are no items in this room");
         }
+
 
     }
 
