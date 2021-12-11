@@ -65,7 +65,6 @@ public class Player extends Entities{
         Scanner s = new Scanner(System.in);
         String eingabe;
         int y = x.containerInRoom.size();
-        if (x.containerInRoom.size() != 0 && x.itemsInRoom.size() != 0) {
             if (x.itemsInRoom != null) {
                 //list items
                 System.out.println("The Items in the Room are:");
@@ -131,9 +130,7 @@ public class Player extends Entities{
                 System.out.println("There are no items in this Room");
             }
 
-        }else {
-            System.out.println("There are no items and Container in this Room");
-        }
+
     }
 
 
