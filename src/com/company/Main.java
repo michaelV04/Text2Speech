@@ -198,6 +198,7 @@ public class Main {
 
         p1.setRoom(river);
         createCharacter(p1,s);
+        //a
 
 
         TimeUnit.SECONDS.sleep(1);
