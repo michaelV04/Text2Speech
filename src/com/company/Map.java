@@ -16,7 +16,7 @@ public class Map {
     public Map(String mapname, int mapSize) {
         this.name = mapname;
         this.mapSize = mapSize;
-        for (int i = 0; i < 64; i++) {
+        for (int i = 0; i < mapSize; i++) {
             roomsS0.add(null);
             roomsS1.add(null);
             roomsS2.add(null);
@@ -42,37 +42,36 @@ public class Map {
 
     public void showMap() {
         System.out.println("Stage 2:");
-        for (int i = 0; i < mapSize; i = i + 2) {
+        double divide = mapSize;
+        divide = Math.sqrt(divide)-1;
+        for (int i = 0; i < mapSize; i++) {
             if (roomsS2.get(i) != null) {
                 System.out.print(i+roomsS2.get(i).getRoomName() + "\t");
             }
-            if (roomsS2.get(i + 1) != null) {
-                System.out.println(i+1+roomsS2.get(i + 1).getRoomName());
+            if (i == divide) {
+                System.out.println("\n");
             }
-
-            System.out.println("\n");
         }
         System.out.println("Stage 1:");
-        for (int i = 0; i < mapSize; i = i + 2) {
+        for (int i = 0; i < mapSize; i++) {
             if (roomsS1.get(i) != null) {
                 System.out.print(i+roomsS1.get(i).getRoomName() + "\t");
             }
-            if (roomsS1.get(i + 1) != null) {
-                System.out.println(i+1+roomsS1.get(i + 1).getRoomName());
-            }
-            System.out.println("\n");
-        }
 
+            if (i == divide) {
+                System.out.println("\n");
+            }
+        }
+        System.out.println("\n");
 
         System.out.println("Stage 0:");
-        for (int i = 0; i < mapSize; i = i + 2) {
+        for (int i = 0; i < mapSize; i++) {
             if (roomsS0.get(i) != null) {
                 System.out.print(i+roomsS0.get(i).getRoomName() + "\t");
             }
-            if (roomsS0.get(i + 1) != null) {
-                System.out.println(i+roomsS0.get(i + 1).getRoomName());
+            if (i == divide) {
+                System.out.println("\n");
             }
-            System.out.println("\n");
         }
     }
 

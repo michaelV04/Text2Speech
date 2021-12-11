@@ -15,12 +15,12 @@ public class Main {
     }
 
     public static void mainLobby(Scanner s) throws InterruptedException {
-        tutorial(s);
+        //tutorial(s);
         int x = 0;
         while (x == 0) {
             int eingabe;
             System.out.println("\t\t\t Bug Break");
-            System.out.println("Tutorial = 1\nMain Story 2\nCommands and Shortcuts you can also open it in game by typing commands = 3\nClose the Game = 4");
+            System.out.println("Tutorial = 1\nMain Story = 2\nCommands and Shortcuts you can also open it in game by typing commands = 3\nClose the Game = 4");
             eingabe = s.nextInt();
             if (eingabe == 1) {
                 tutorial(s);
@@ -69,6 +69,12 @@ public class Main {
         Room woods2 = new Room("woods2","A dark place with trees nothing else to see",0,0,1,0,0,0);
         Room woods3 = new Room("woods3","A dark place with trees but something is glowing nearby",0,0,1,0,0,0);
         Container chest1 = new Container("Chest1");
+        Player p1 = new Player("Hans",100,100,100,100,110,100,woods1,woodsStartVillage);
+        woodsStartVillage.addRoom(woods1,48,1);
+        woodsStartVillage.addRoom(woods2,49,1);
+        woodsStartVillage.addRoom(woods3,50,1);
+        woodsStartVillage.showMap();
+        p1.move("woods2");
         woods3.addContainer(chest1);
     }
 
@@ -174,8 +180,6 @@ public class Main {
         stone.addThing(sword);
         field.addContainer(stone);
         house.addContainer(cabinet);
-
-
 
         tutorial.addRoom(house,0,1);
         tutorial.addRoom(roof,0,2);
