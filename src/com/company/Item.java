@@ -22,4 +22,23 @@ public class Item {
     public String getItemName(){
         return name;
     }
+    public int getHp() {
+        return hp;
+    }
+
+    public int getAd() {
+        return ad;
+    }
+
+    public int getArmor() {
+        return armor;
+    }
+
+    public int getCrit() {
+        return crit;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
 }

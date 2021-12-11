@@ -41,6 +41,16 @@ public class Player extends Entities{
             takeExit(destinationRoom);
             actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom(),destinationRoom.getMobsInRoom());
             System.out.println("You are now in Room:" + destinationRoom.getRoomName());
+            System.out.println("These are the Mobs in this Room");
+            if (actualRoom.mobsInRoom.size() != 0) {
+                for (int i = 0; i < actualRoom.mobsInRoom.size(); i++) {
+                    System.out.println(actualRoom.mobsInRoom.get(i).getName());
+                }
+            }else{
+                System.out.println("No Mobs in this Room");
+            }
+
+
         }else{
             System.out.println("You cant move there");
         }
@@ -184,6 +194,11 @@ public class Player extends Entities{
 
     public void pickupItem(Item item){
         inventory.add(item);
+        addHp(item.getHp());
+        addAd(item.getAd());
+        addArmor(item.getArmor());
+        addCrit(item.getCrit());
+        addSpeed(item.getSpeed());
         System.out.println("You picked up " + item.getItemName());
     }
 
@@ -224,8 +239,10 @@ public class Player extends Entities{
                 if (getSpeed() >= m.getSpeed()) {
                     System.out.println("You attack");
                     m.addHp(-getAd());
-                    System.out.println("The "+mob+" attacks");
-                    addHp(-m.getAd());
+                    if (m.getHp() > 0) {
+                        System.out.println("The " + mob + " attacks");
+                        addHp(-m.getAd());
+                    }
                     System.out.println("Your stats:");
                     showStats();
                     System.out.println("\n Enemies stats");
@@ -233,8 +250,10 @@ public class Player extends Entities{
                 }else{
                     System.out.println("The "+mob+" attacks");
                     addHp(-m.getAd());
-                    System.out.println("You attack");
-                    m.addHp(-getAd());
+                    if (getHp() <0) {
+                        System.out.println("You attack");
+                        m.addHp(-getAd());
+                    }
                     System.out.println("Your stats:");
                     showStats();
                     System.out.println("\n Enemies stats");

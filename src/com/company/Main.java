@@ -20,7 +20,7 @@ public class Main {
         while (x == 0) {
             int eingabe;
             System.out.println("\t\t\t Bug Break");
-            System.out.println("Tutorial = 1\nMain Story 2\nCommands and Shortcuts = 3\nClose the Game = 4");
+            System.out.println("Tutorial = 1\nMain Story 2\nCommands and Shortcuts you can also open it in game by typing commands = 3\nClose the Game = 4");
             eingabe = s.nextInt();
             if (eingabe == 1) {
                 tutorial(s);
@@ -50,6 +50,11 @@ public class Main {
     }
 
     public static void commands() {
+        System.out.println("You can move your Character by typing *move* then you will get a List of options");
+        System.out.println("You can also look around the area your standing in with *look*");
+        System.out.println("You can move your Character by typing *move* then you will get a List of options");
+        System.out.println("You can also look around the area your standing in with *look*\nOr fight a Mob with combat\nOr look at your stats");
+        System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the tutorial");
     }
 
     public static void bugBreak(Scanner s) {
@@ -103,12 +108,13 @@ public class Main {
         System.out.println("Welcome to the Player Interface.");
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*");
+        System.out.println("You can move your Character by typing *move* then you will get a List of options");
+        System.out.println("You can also look around the area your standing in with *look*\nOr fight a Mob with combat\nOr look at your stats");
+        System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the tutorial");
         int xy = 0;
-        while (xy == 0) {
+        int alive = 1;
+        while (xy == 0 && alive == 1) {
             String command;
-            System.out.println("You can move your Character by typing *move* then you will get a List of options");
-            System.out.println("You can also look around the area your standing in with *look*\n Or fight a Mob with combat");
-            System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the tutorial");
             command = s.next();
 
             if (Objects.equals(command, "look")) {
@@ -133,7 +139,7 @@ public class Main {
                     e = s.next();
                     for (int i = 0; i < p1.actualRoom.mobsInRoom.size(); i++) {
                         if (Objects.equals(e, p1.actualRoom.mobsInRoom.get(i).getName())) {
-                            p1.combat(e);
+                            alive = p1.combat(e);
                         }
                     }
                 }
@@ -142,6 +148,10 @@ public class Main {
                 xy++;
             }else if (Objects.equals(command, "inv")){
                 p1.showInventory();
+            }else if (Objects.equals(command, "command")){
+                commands();
+            }else if (Objects.equals(command, "stats")){
+                p1.showStats();
             }
             else if (Objects.equals(p1.actualRoom.getRoomName(), "roof") && Objects.equals(p1.actualMap.roomsS1.get(0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")){
                 xy++;
@@ -172,7 +182,7 @@ public class Main {
         tutorial.addRoom(field,2,1);
         tutorial.addRoom(river,3,1);
 
-        Mob m1 = new Mob("zombie", 1, 1,1, 1,1,1,house,tutorial);
+        Mob m1 = new Mob("zombie", 20, 1000,1, 1,1,1,house,tutorial);
         m1.setRoom(house);
         house.mobsInRoom.add(m1);
 
