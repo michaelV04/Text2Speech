@@ -103,7 +103,7 @@ public class Map {
                                 }
                             }
                     }
-                } else if (roomsS1.get(i) != null) {
+                } if (roomsS1.get(i) != null) {
                     if (i == 0 && Objects.equals(roomsS1.get(i).getRoomName(), x.getRoomName())) {
                             if (roomsS1.get(i + 1) != null) {
                                 if (Objects.equals(roomsS1.get(i + 1).getRoomName(), y.getRoomName())) {
@@ -127,7 +127,7 @@ public class Map {
                             }
 
                     }
-                } else if (roomsS2.get(i) != null) {
+                } if (roomsS2.get(i) != null) {
                     if (i == 0 && Objects.equals(roomsS2.get(i).getRoomName(), x.getRoomName())) {
                             if (roomsS2.get(i + 1) != null) {
                                 if (Objects.equals(roomsS2.get(i + 1).getRoomName(), y.getRoomName())) {

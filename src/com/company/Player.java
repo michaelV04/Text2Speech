@@ -49,6 +49,7 @@ public class Player extends Entities{
         if (check == 1) {
             takeExit(destinationRoom);
             actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom());
+            System.out.println("You are now in Room:" + destinationRoom.getRoomName());
         }else{
             System.out.println("You cant move there");
         }
@@ -115,8 +116,12 @@ public class Player extends Entities{
     }
 
     public void takeExit(Room y){
-        location.remove(0);
+        if (location.size() != 0) {
+            location.remove(0);
+        }
+        actualRoom.setRoom(y.getRoomName(),y.getDescription(),y.getNorthExitType(),y.getSouthExitType(),y.getWestExitType(),y.getEastExitType(),y.getUpExitType(),y.getDownExitType(),y.getItemsInRoom(),y.getContainerInRoom());
         location.add(y);
+
     }
 
     public void pickupFromContainer(Container container) {
