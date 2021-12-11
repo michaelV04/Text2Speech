@@ -51,8 +51,6 @@ public class Main {
 
     public static void commands() {
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
-        System.out.println("You can also look around the area your standing in with *look*");
-        System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*\nOr fight a Mob with combat\nOr look at your stats");
         System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the tutorial");
     }
