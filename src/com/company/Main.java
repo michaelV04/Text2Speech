@@ -51,7 +51,9 @@ public class Main {
         int xy = 0;
         while (xy == 0) {
             String command;
-            System.out.println("What do you want to do? You can Exit the game with exit and with inv you can open your Inventory");
+            System.out.println("You can move your Character by typing *move* then you will get a List of options");
+            System.out.println("You can also look around the area your standing in with *look*");
+            System.out.println("You can Exit the game with exit and with inv you can open your Inventory\n With finish you can check if you have finished the tutorial");
             command = s.next();
 
             if (Objects.equals(command, "look")) {
@@ -63,10 +65,13 @@ public class Main {
                 String e;
                 e = s.next();
                 p1.move(e);
-            }else if(Objects.equals(command, "exit")|| p1.actualRoom == p1.actualMap.getRoom(2,1) && Objects.equals(p1.actualMap.getRoom(1, 0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")){
+            }else if(Objects.equals(command, "exit")){
                 xy++;
             }else if (Objects.equals(command, "inv")){
                 p1.showInventory();
+            }
+            else if (Objects.equals(p1.actualRoom.getRoomName(), "roof") && Objects.equals(p1.actualMap.roomsS1.get(0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")){
+                xy++;
             }
         }
 
