@@ -62,7 +62,7 @@ public class Main {
                 String e;
                 e = s.next();
                 p1.move(e);
-            }else if(Objects.equals(command, "exit")){
+            }else if(Objects.equals(command, "exit")|| p1.actualRoom == p1.actualMap.getRoom(2,1) && Objects.equals(p1.actualMap.getRoom(1, 0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")){
                 xy++;
             }else if (Objects.equals(command, "inv")){
                 p1.showInventory();
@@ -101,6 +101,7 @@ public class Main {
 
         System.out.println("Wake up!");
         System.out.println("*You are standing between a river*");
+        System.out.println("Your Goal is to find the SWORD then to put it into the CABINET and then to go to the ROOF");
 
         p1.setRoom(river);
         createCharacter(p1,s);
