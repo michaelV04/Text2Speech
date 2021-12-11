@@ -153,7 +153,7 @@ public class Main {
             }else if (Objects.equals(command, "stats")){
                 p1.showStats();
             }
-            else if (Objects.equals(p1.actualRoom.getRoomName(), "roof") && Objects.equals(p1.actualMap.roomsS1.get(0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")){
+            else if (Objects.equals(p1.actualMap.getName(), "tutorial") && Objects.equals(p1.actualRoom.getRoomName(), "roof") && Objects.equals(p1.actualMap.roomsS1.get(0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")){
                 xy++;
             }
         }
