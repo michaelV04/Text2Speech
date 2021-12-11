@@ -18,17 +18,17 @@ public class Player extends Entities{
         for (int i = 0; i < z.roomsS0.size(); i++) {
             if (z.roomsS0.get(i) != null) {
                 if (Objects.equals(z.roomsS0.get(i).getRoomName(), destination)) {
-                    destinationRoom.setRoom(z.roomsS0.get(i).getRoomName(), z.roomsS0.get(i).getDescription(), z.roomsS0.get(i).getNorthExitType(), z.roomsS0.get(i).getSouthExitType(), z.roomsS0.get(i).getEastExitType(), z.roomsS0.get(i).getWestExitType(), z.roomsS0.get(i).getUpExitType(), z.roomsS0.get(i).getDownExitType(),z.roomsS0.get(i).getItemsInRoom(),z.roomsS0.get(i).getContainerInRoom());
+                    destinationRoom.setRoom(z.roomsS0.get(i).getRoomName(), z.roomsS0.get(i).getDescription(), z.roomsS0.get(i).getNorthExitType(), z.roomsS0.get(i).getSouthExitType(), z.roomsS0.get(i).getEastExitType(), z.roomsS0.get(i).getWestExitType(), z.roomsS0.get(i).getUpExitType(), z.roomsS0.get(i).getDownExitType(),z.roomsS0.get(i).getItemsInRoom(),z.roomsS0.get(i).getContainerInRoom(),z.roomsS0.get(i).getMobsInRoom());
                 }
             }
             if (z.roomsS1.get(i) != null) {
                 if (Objects.equals(z.roomsS1.get(i).getRoomName(), destination)) {
-                    destinationRoom.setRoom(z.roomsS1.get(i).getRoomName(), z.roomsS1.get(i).getDescription(), z.roomsS1.get(i).getNorthExitType(), z.roomsS1.get(i).getSouthExitType(), z.roomsS1.get(i).getEastExitType(), z.roomsS1.get(i).getWestExitType(), z.roomsS1.get(i).getUpExitType(), z.roomsS1.get(i).getDownExitType(),z.roomsS1.get(i).getItemsInRoom(),z.roomsS1.get(i).getContainerInRoom());
+                    destinationRoom.setRoom(z.roomsS1.get(i).getRoomName(), z.roomsS1.get(i).getDescription(), z.roomsS1.get(i).getNorthExitType(), z.roomsS1.get(i).getSouthExitType(), z.roomsS1.get(i).getEastExitType(), z.roomsS1.get(i).getWestExitType(), z.roomsS1.get(i).getUpExitType(), z.roomsS1.get(i).getDownExitType(),z.roomsS1.get(i).getItemsInRoom(),z.roomsS1.get(i).getContainerInRoom(),z.roomsS1.get(i).getMobsInRoom());
                 }
             }
             if (z.roomsS2.get(i) != null) {
                 if (Objects.equals(z.roomsS2.get(i).getRoomName(), destination)) {
-                    destinationRoom.setRoom(z.roomsS2.get(i).getRoomName(), z.roomsS2.get(i).getDescription(), z.roomsS2.get(i).getNorthExitType(), z.roomsS2.get(i).getSouthExitType(), z.roomsS2.get(i).getEastExitType(), z.roomsS2.get(i).getWestExitType(), z.roomsS2.get(i).getUpExitType(), z.roomsS2.get(i).getDownExitType(),z.roomsS2.get(i).getItemsInRoom(),z.roomsS2.get(i).getContainerInRoom());
+                    destinationRoom.setRoom(z.roomsS2.get(i).getRoomName(), z.roomsS2.get(i).getDescription(), z.roomsS2.get(i).getNorthExitType(), z.roomsS2.get(i).getSouthExitType(), z.roomsS2.get(i).getEastExitType(), z.roomsS2.get(i).getWestExitType(), z.roomsS2.get(i).getUpExitType(), z.roomsS2.get(i).getDownExitType(),z.roomsS2.get(i).getItemsInRoom(),z.roomsS2.get(i).getContainerInRoom(),z.roomsS2.get(i).getMobsInRoom());
                 }
             }
         }
@@ -39,7 +39,7 @@ public class Player extends Entities{
 
         if (check == 1) {
             takeExit(destinationRoom);
-            actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom());
+            actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom(),destinationRoom.getMobsInRoom());
             System.out.println("You are now in Room:" + destinationRoom.getRoomName());
         }else{
             System.out.println("You cant move there");
@@ -120,20 +120,13 @@ public class Player extends Entities{
 
     }
 
-    public void showStats(){
-        System.out.println("HP: "+ getHp());
-        System.out.println("AD: "+getAd());
-        System.out.println("Armor: "+getArmor());
-        System.out.println("Crit: "+getCrit());
-        System.out.println("Level: "+getLvl());
-        System.out.println("Speed: "+getSpeed());
-    }
+
 
     public void takeExit(Room y){
         if (location.size() != 0) {
             location.remove(0);
         }
-        actualRoom.setRoom(y.getRoomName(),y.getDescription(),y.getNorthExitType(),y.getSouthExitType(),y.getWestExitType(),y.getEastExitType(),y.getUpExitType(),y.getDownExitType(),y.getItemsInRoom(),y.getContainerInRoom());
+        actualRoom.setRoom(y.getRoomName(),y.getDescription(),y.getNorthExitType(),y.getSouthExitType(),y.getWestExitType(),y.getEastExitType(),y.getUpExitType(),y.getDownExitType(),y.getItemsInRoom(),y.getContainerInRoom(),y.getMobsInRoom());
         location.add(y);
 
     }
@@ -177,23 +170,6 @@ public class Player extends Entities{
             System.out.println("This is not a valid item, to put it into " + container.getContainerName());
         }
     }
-    
-    public void showOptions(){
-        System.out.println("You can go:");
-        if (actualRoom.getDownExitType() == 1){
-            System.out.println("-Up");
-        }if (actualRoom.getEastExitType() == 1){
-            System.out.println("-East");
-        }if (actualRoom.getWestExitType() == 1){
-            System.out.println("-West");
-        }if (actualRoom.getNorthExitType() == 1){
-            System.out.println("-North");
-        }if (actualRoom.getSouthExitType() == 1){
-            System.out.println("-South");
-        }if (actualRoom.getDownExitType() == 1){
-            System.out.println("-Down");
-        }
-    }
 
     public void showInventory() {
         System.out.println("You have following items in your inventory:");
@@ -218,7 +194,7 @@ public class Player extends Entities{
 
     }
 
-    public void combat(String mob) {
+    public int combat(String mob) {
         Scanner s = new Scanner(System.in);
         String eingabe;
         Mob m = new Mob("null",0,0,0,0,0,0,getActualRoom(),getActualMap());
@@ -244,14 +220,32 @@ public class Player extends Entities{
                 System.out.println("This Mob does not exist or is not in this Room");
             }
 
-            while (getHp() > 0 || m.getHp() > 0) {
+            while (getHp() > 0 && m.getHp() > 0) {
                 if (getSpeed() >= m.getSpeed()) {
                     System.out.println("You attack");
                     m.addHp(-getAd());
+                    System.out.println("The "+mob+" attacks");
+                    addHp(-m.getAd());
+                    System.out.println("Your stats:");
+                    showStats();
+                    System.out.println("\n Enemies stats");
+                    m.showStats();
                 }else{
                     System.out.println("The "+mob+" attacks");
                     addHp(-m.getAd());
+                    System.out.println("You attack");
+                    m.addHp(-getAd());
+                    System.out.println("Your stats:");
+                    showStats();
+                    System.out.println("\n Enemies stats");
+                    m.showStats();
                 }
+            } if (getHp() <= 0){
+                System.out.println("You have died");
+                return 0;
+            }else{
+                System.out.println("You killed "+ m.getName());
+                return 1;
             }
         }else if (Objects.equals(eingabe, "2")){
             //flee
@@ -259,5 +253,7 @@ public class Player extends Entities{
         }else {
             System.out.println("Invalid Input");
         }
+
+        return 1;
     }
 }

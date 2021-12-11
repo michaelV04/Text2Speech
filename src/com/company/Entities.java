@@ -34,7 +34,7 @@ public abstract class Entities {
         actualMap.setS0(currentMap.getS0());
         actualMap.setS2(currentMap.getS2());
 
-        actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom());
+        actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom(), destinationRoom.getMobsInRoom());
 
     }
 
@@ -117,5 +117,14 @@ public abstract class Entities {
         }
         public Room getActualRoom(){
         return actualRoom;
+    }
+
+    public void showStats(){
+        System.out.println("HP: "+ getHp());
+        System.out.println("AD: "+getAd());
+        System.out.println("Armor: "+getArmor());
+        System.out.println("Crit: "+getCrit());
+        System.out.println("Level: "+getLvl());
+        System.out.println("Speed: "+getSpeed());
     }
     }

@@ -82,7 +82,7 @@ public class Room {
         containerInRoom.add(container);
     }
 
-    public void setRoom(String roomname, String description, int northExit, int southExit, int westExit, int eastExit, int upExit, int downExit,ArrayList<Item> items,ArrayList<Container> container){
+    public void setRoom(String roomname, String description, int northExit, int southExit, int westExit, int eastExit, int upExit, int downExit,ArrayList<Item> items,ArrayList<Container> container,ArrayList<Mob> mobs){
         this.roomName = roomname;
         this.description = description;
         this.northExitType = northExit;
@@ -93,6 +93,7 @@ public class Room {
         this.downExitType = downExit;
         this.itemsInRoom = items;
         this.containerInRoom = container;
+        this.mobsInRoom = mobs;
     }
     public ArrayList<Item> getItemsInRoom(){
         return itemsInRoom;
