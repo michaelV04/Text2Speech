@@ -69,7 +69,7 @@ public class Room {
         }
         return pos;
     }
-
+//
     public void addItem(Item item) {
         itemsInRoom.add(item);
     }

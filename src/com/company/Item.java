@@ -2,7 +2,7 @@ package com.company;
 
 public class Item {
     private String name;
-
+//
     private int hp;
     private int ad;
     private int armor;

@@ -122,7 +122,7 @@ public class Main {
         while (xy == 0 && alive == 1) {
             String command;
             command = s.next();
-
+            //
             if (Objects.equals(command, "look")) {
                 p1.searchRoom(p1.actualRoom);
             } else if (Objects.equals(command, "move")) {

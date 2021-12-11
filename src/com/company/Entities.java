@@ -33,7 +33,7 @@ public abstract class Entities {
         actualMap.setS1(currentMap.getS1());
         actualMap.setS0(currentMap.getS0());
         actualMap.setS2(currentMap.getS2());
-
+//
         actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom(), destinationRoom.getMobsInRoom());
 
     }
