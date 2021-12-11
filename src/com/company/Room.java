@@ -103,6 +103,9 @@ public class Room {
     public ArrayList<Mob> getMobsInRoom(){
         return mobsInRoom;
     }
+    public void addMob(Mob x){
+        mobsInRoom.add(x);
+    }
 
 
 

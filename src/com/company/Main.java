@@ -40,9 +40,10 @@ public class Main {
         Map testM1 = new Map("testM1",9);
         Room testR1 = new Room("testR1","x",0,0,0,0,0,0);
         Mob zombie = new Mob("Zombie1",50,5,0,0,1,50,testR1,testM1);
+        testM1.addRoom(testR1,0,0);
+        testR1.addMob(zombie);
         Player p1 = new Player("Hans",100,100,100,100,100,100,testR1,testM1);
-        testR1.mobsInRoom.add(zombie);
-        p1.combat(p1,"zombie");
+        p1.combat("zombie");
     }
 
     public static void commands() {

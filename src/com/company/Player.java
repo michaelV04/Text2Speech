@@ -211,11 +211,53 @@ public class Player extends Entities{
         System.out.println("You picked up " + item.getItemName());
     }
 
-    public Room getActualRoom(){
-        return actualRoom;
-    }
+
+
 
     public void fight(){
 
+    }
+
+    public void combat(String mob) {
+        Scanner s = new Scanner(System.in);
+        String eingabe;
+        Mob m = new Mob("null",0,0,0,0,0,0,getActualRoom(),getActualMap());
+
+        System.out.println("A "+ mob +" Appeared!");
+        System.out.println("Fight == 1");
+        System.out.println("Run away == 2");
+        eingabe = s.next();
+        if (Objects.equals(eingabe, "1")){
+            for (int i = 0; i < actualRoom.mobsInRoom.size(); i++) {
+                if (Objects.equals(mob, actualRoom.mobsInRoom.get(i).getName())) {
+                    m.addAd(actualRoom.mobsInRoom.get(i).getAd());
+                    m.setName(actualRoom.mobsInRoom.get(i).getName());
+                    m.addHp(actualRoom.mobsInRoom.get(i).getHp());
+                    m.addArmor(actualRoom.mobsInRoom.get(i).getArmor());
+                    m.addCrit(actualRoom.mobsInRoom.get(i).getCrit());
+                    m.addLvl(actualRoom.mobsInRoom.get(i).getLvl());
+                    m.addSpeed(actualRoom.mobsInRoom.get(i).getSpeed());
+                    m.actualRoom = actualRoom.mobsInRoom.get(i).actualRoom;
+                    m.actualMap = actualRoom.mobsInRoom.get(i).actualMap;
+                }
+            } if (Objects.equals(m.getName(), "null")){
+                System.out.println("This Mob does not exist or is not in this Room");
+            }
+
+            while (getHp() > 0 || m.getHp() > 0) {
+                if (getSpeed() >= m.getSpeed()) {
+                    System.out.println("You attack");
+                    m.addHp(-getAd());
+                }else{
+                    System.out.println("The "+mob+" attacks");
+                    addHp(-m.getAd());
+                }
+            }
+        }else if (Objects.equals(eingabe, "2")){
+            //flee
+            System.out.println("You ran away");
+        }else {
+            System.out.println("Invalid Input");
+        }
     }
 }

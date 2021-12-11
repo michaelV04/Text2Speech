@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 public abstract class Entities {
     Room actualRoom = new Room("x","x",0,0,0,0,0,0);
@@ -94,22 +95,6 @@ public abstract class Entities {
 
     }
 
-    public void combat(Player p1, String mob) {
-        for (int i = 0; i < p1.actualRoom.mobsInRoom.size(); i++) {
-            if (Objects.equals(mob, p1.actualRoom.mobsInRoom.get(i).getName())) {
-                Mob m1 = p1.actualRoom.mobsInRoom.get(i);
-
-                while(p1.getHp() > 0 && m1.getHp() > 0){
-                 if (p1.getSpeed() > m1.getSpeed()){
-
-                 }else{
-
-                 }
-                 }
-            }
-        }
-    }
-
         public void setRoom (Room x){
             location.add(x);
         }
@@ -119,7 +104,18 @@ public abstract class Entities {
             System.out.println("You are in Room " + x.getRoomName());
         }
 
-        public String getName() {
-            return name;
+        public String getName(){
+        return name;
         }
+
+        public void setName(String name){
+            this.name = name;
+        }
+
+        public Map getActualMap(){
+            return actualMap;
+        }
+        public Room getActualRoom(){
+        return actualRoom;
+    }
     }
