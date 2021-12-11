@@ -15,7 +15,7 @@ public class Player extends Entities{
     public void move(String destination) {
         Room destinationRoom = new Room("x","x",0,0,0,0,0,0);
         Map z = actualMap;
-        for (int i = 0; i < z.roomsS0.size(); i++) {
+        for (int i = 0; i < z.roomsS0.size()-1; i++) {
             if (z.roomsS0.get(i) != null) {
                 if (Objects.equals(z.roomsS0.get(i).getRoomName(), destination)) {
                     destinationRoom.setRoom(z.roomsS0.get(i).getRoomName(), z.roomsS0.get(i).getDescription(), z.roomsS0.get(i).getNorthExitType(), z.roomsS0.get(i).getSouthExitType(), z.roomsS0.get(i).getEastExitType(), z.roomsS0.get(i).getWestExitType(), z.roomsS0.get(i).getUpExitType(), z.roomsS0.get(i).getDownExitType(),z.roomsS0.get(i).getItemsInRoom(),z.roomsS0.get(i).getContainerInRoom(),z.roomsS0.get(i).getMobsInRoom());

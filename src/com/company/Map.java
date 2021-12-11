@@ -66,7 +66,7 @@ public class Map {
 
         System.out.println("Stage 0:");
         for (int i = 0; i < mapSize; i++) {
-            if (roomsS0.get(i) != null) {
+            if (roomsS0.get(i) != null){
                 System.out.print(i+roomsS0.get(i).getRoomName() + "\t");
             }
             if (i == divide) {
