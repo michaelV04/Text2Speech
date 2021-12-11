@@ -197,6 +197,7 @@ public class Main {
         p1.move("Village_Entrance1");
         p1.move("Village_Road3");
         p1.move("Village_Road2");
+        p1.move("house1");
 
         woods3.addContainer(chest1);
     }
