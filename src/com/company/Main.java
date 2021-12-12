@@ -38,7 +38,7 @@ public class Main {
         int alive = 1;
         Map testM1 = new Map("testM1",9);
         Room testR1 = new Room("testR1","x",0,0,0,0,0,0);
-        Mob zombie = new Mob("zombie1",1000,10,0,0,1,50,testR1,testM1);
+        Mob zombie = new Mob("zombie1",1000,10,0,0,1,50,testR1,testM1,1);
         testM1.addRoom(testR1,0,0);
         testR1.addMob(zombie);
         Player p1 = new Player("Hans",100,100,0,30,100,100,testR1,testM1);
@@ -50,7 +50,7 @@ public class Main {
     public static void commands() {
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*\nOr fight a Mob with combat\nOr look at your stats");
-        System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the tutorial");
+        System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the game");
     }
 
     public static void bugBreak(Scanner s) {
@@ -117,26 +117,26 @@ public class Main {
         Room plateu_low = new Room("plateu_low","You can climb it",0,1,0,1,1,0); // ok
         Room plateu_high = new Room("plateu_high","Wow that is high",0,0,0,0,0,1); // ok
 
-        Mob guard1 = new Mob("Guard1",400,50,10,0,50,300,village_Entrance1,woodsStartVillage);
-        Mob guard2 = new Mob("Guard2",400,50,10,0,50,300,village_Entrance1,woodsStartVillage);
-        Mob guard3 = new Mob("Guard3",200,50,10,0,50,600,village_Entrance1,woodsStartVillage);
-        Mob guard4 = new Mob("Guard4",400,50,10,0,50,300,village_Road7,woodsStartVillage);
-        Mob guard5 = new Mob("Guard5",400,50,10,0,50,300,village_Road7,woodsStartVillage);
-        Mob guard6 = new Mob("Guard6",500,50,10,0,50,300,village_Road6,woodsStartVillage);
-        Mob guard7 = new Mob("Guard7",500,50,10,0,50,300,village_Road6,woodsStartVillage);
-        Mob guard8 = new Mob("Guard8",100,50,10,0,50,300,village_Road8,woodsStartVillage);
-        Mob guard9 = new Mob("Guard9",100,50,10,0,50,300,village_Road8,woodsStartVillage);
-        Mob guard10 = new Mob("Guard10",1000,70,20,0,50,500,village_Road14,woodsStartVillage);
-        Mob guard11 = new Mob("Guard11",1000,70,20,0,50,500,village_Road14,woodsStartVillage);
-        Mob guard12 = new Mob("Guard12",1000,70,20,0,50,500,village_Road14,woodsStartVillage);
-        Mob guard13 = new Mob("Guard13",1000,30,100,0,50,300,village_Road22,woodsStartVillage);
-        Mob guard14 = new Mob("Guard14",1000,30,100,0,50,300,village_Road22,woodsStartVillage);
-        Mob guard15 = new Mob("Guard15",100,500,10,0,50,1000,plateu_high,woodsStartVillage);
-        Mob guard16 = new Mob("Guard16",100,500,10,0,50,1000,plateu_high,woodsStartVillage);
-        Mob guard17 = new Mob("Guard17",100,50,10,0,50,300,village_Road27,woodsStartVillage);
-        Mob guard18 = new Mob("Guard18",100,50,10,0,50,300,village_Road27,woodsStartVillage);
-        Mob guard19 = new Mob("Guard19",100,50,10,0,50,300,village_Road27,woodsStartVillage);
-        Mob whiteSpike = new Mob("WhiteSpike",1000,500,50,90,100,400,house6_underground,woodsStartVillage);
+        Mob guard1 = new Mob("Guard1",400,50,10,0,50,300,village_Entrance1,woodsStartVillage,1);
+        Mob guard2 = new Mob("Guard2",400,50,10,0,50,300,village_Entrance1,woodsStartVillage,1);
+        Mob guard3 = new Mob("Guard3",200,50,10,0,50,600,village_Entrance1,woodsStartVillage,1);
+        Mob guard4 = new Mob("Guard4",400,50,10,0,50,300,village_Road7,woodsStartVillage,1);
+        Mob guard5 = new Mob("Guard5",400,50,10,0,50,300,village_Road7,woodsStartVillage,1);
+        Mob guard6 = new Mob("Guard6",500,50,10,0,50,300,village_Road6,woodsStartVillage,1);
+        Mob guard7 = new Mob("Guard7",500,50,10,0,50,300,village_Road6,woodsStartVillage,1);
+        Mob guard8 = new Mob("Guard8",100,50,10,0,50,300,village_Road8,woodsStartVillage,1);
+        Mob guard9 = new Mob("Guard9",100,50,10,0,50,300,village_Road8,woodsStartVillage,1);
+        Mob guard10 = new Mob("Guard10",1000,70,20,0,50,500,village_Road14,woodsStartVillage,1);
+        Mob guard11 = new Mob("Guard11",1000,70,20,0,50,500,village_Road14,woodsStartVillage,1);
+        Mob guard12 = new Mob("Guard12",1000,70,20,0,50,500,village_Road14,woodsStartVillage,1);
+        Mob guard13 = new Mob("Guard13",1000,30,100,0,50,300,village_Road22,woodsStartVillage,1);
+        Mob guard14 = new Mob("Guard14",1000,30,100,0,50,300,village_Road22,woodsStartVillage,1);
+        Mob guard15 = new Mob("Guard15",100,500,10,0,50,1000,plateu_high,woodsStartVillage,1);
+        Mob guard16 = new Mob("Guard16",100,500,10,0,50,1000,plateu_high,woodsStartVillage,1);
+        Mob guard17 = new Mob("Guard17",100,50,10,0,50,300,village_Road27,woodsStartVillage,1);
+        Mob guard18 = new Mob("Guard18",100,50,10,0,50,300,village_Road27,woodsStartVillage,1);
+        Mob guard19 = new Mob("Guard19",100,50,10,0,50,300,village_Road27,woodsStartVillage,1);
+        Mob whiteSpike = new Mob("WhiteSpike",1000,500,50,90,100,400,house6_underground,woodsStartVillage,1);
 
         Container chest1 = new Container("Chest1");
 
@@ -166,7 +166,7 @@ public class Main {
         woodsStartVillage.addRoom(village_Road2,39,1);
 
         woodsStartVillage.addRoom(house1,40,1);
-        Mob villager1 = new Mob("villager1",100,1,0,0,1,10,house1,woodsStartVillage);
+        Mob villager1 = new Mob("villager1",100,1,0,0,1,10,house1,woodsStartVillage,0);
         house1.addMob(villager1);
 
         woodsStartVillage.addRoom(house1_underground,41,0);
@@ -309,7 +309,7 @@ public class Main {
         System.out.println("You can also look around the area your standing in with *look*");
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*\nOr fight a Mob with combat\nOr look at your stats");
-        System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the tutorial");
+        System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the game");
         int xy = 0;
         int alive = 1;
         while (xy == 0 && alive == 1) {
@@ -379,7 +379,7 @@ public class Main {
         tutorial.addRoom(field,2,1);
         tutorial.addRoom(river,3,1);
 
-        Mob m1 = new Mob("zombie", 20, 1000,1, 1,1,1,house,tutorial);
+        Mob m1 = new Mob("zombie", 20, 1000,0, 1,1,1,house,tutorial,1);
         m1.setRoom(house);
         house.mobsInRoom.add(m1);
 

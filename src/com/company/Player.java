@@ -46,6 +46,9 @@ public class Player extends Entities{
             if (actualRoom.mobsInRoom.size() != 0) {
                 for (int i = 0; i < actualRoom.mobsInRoom.size(); i++) {
                     System.out.println(actualRoom.mobsInRoom.get(i).getName());
+                    if (actualRoom.mobsInRoom.get(i).aggressive == 1){
+                        combat(actualRoom.mobsInRoom.get(i).getName());
+                    }
                 }
             }else{
                 System.out.println("No Mobs in this Room");
@@ -228,7 +231,7 @@ public class Player extends Entities{
         Random mobRandom = new Random();
         Scanner s = new Scanner(System.in);
         String eingabe;
-        Mob m = new Mob("null",0,0,0,0,0,0,getActualRoom(),getActualMap());
+        Mob m = new Mob("null",0,0,0,0,0,0,getActualRoom(),getActualMap(),0);
 
         System.out.println("A "+ mob +" Appeared!");
         System.out.println("Fight == 1");
