@@ -51,6 +51,22 @@ public class Player extends Entities{
                 System.out.println("No Mobs in this Room");
             }
 
+            if(actualRoom.containerInRoom.size() != 0){
+                for (int i = 0; i < actualRoom.containerInRoom.size(); i++) {
+                    System.out.println(actualRoom.containerInRoom.get(i).getContainerName());
+                }
+            }else{
+                System.out.println("No Container in this Room");
+            }
+
+            if(actualRoom.itemsInRoom.size() != 0){
+                for (int i = 0; i < actualRoom.itemsInRoom.size(); i++) {
+                    System.out.println(actualRoom.itemsInRoom.get(i).getItemName());
+                }
+            }else{
+                System.out.println("No Items in this Room");
+            }
+
 
         }else{
             System.out.println("You cant move there");
