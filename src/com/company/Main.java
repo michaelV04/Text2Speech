@@ -106,7 +106,7 @@ public class Main {
         Room house6 = new Room("house6","Looks destroyed",1,0,0,0,0,1); // ok
 
         Room church1 = new Room("church1","Climb it now!!",0,0,0,1,1,0); // ok
-        Room church_top = new Room("church_Top","Its windy up here",0,0,0,0,0,1); // ok
+        Room church_top1 = new Room("church_Top1","Its windy up here",0,0,0,0,0,1); // ok
 
         Room house1_underground = new Room("house1_underground","Hard to see in here",0,0,0,0,1,0); // ok
         Room house6_underground = new Room("house6_underground","This Creature looks dangerous",0,0,0,0,1,0); // ok
@@ -117,22 +117,22 @@ public class Main {
         Room plateu_low = new Room("plateu_low","You can climb it",0,1,0,1,1,0); // ok
         Room plateu_high = new Room("plateu_high","Wow that is high",0,0,0,0,0,1); // ok
 
-        Mob guard1 = new Mob("Guard1",100,50,10,0,50,300,village_Entrance1,woodsStartVillage);
-        Mob guard2 = new Mob("Guard2",100,50,10,0,50,300,village_Entrance1,woodsStartVillage);
-        Mob guard3 = new Mob("Guard3",100,50,10,0,50,300,village_Entrance1,woodsStartVillage);
-        Mob guard4 = new Mob("Guard4",100,50,10,0,50,300,village_Road7,woodsStartVillage);
-        Mob guard5 = new Mob("Guard5",100,50,10,0,50,300,village_Road7,woodsStartVillage);
-        Mob guard6 = new Mob("Guard6",100,50,10,0,50,300,village_Road6,woodsStartVillage);
-        Mob guard7 = new Mob("Guard7",100,50,10,0,50,300,village_Road6,woodsStartVillage);
+        Mob guard1 = new Mob("Guard1",400,50,10,0,50,300,village_Entrance1,woodsStartVillage);
+        Mob guard2 = new Mob("Guard2",400,50,10,0,50,300,village_Entrance1,woodsStartVillage);
+        Mob guard3 = new Mob("Guard3",200,50,10,0,50,600,village_Entrance1,woodsStartVillage);
+        Mob guard4 = new Mob("Guard4",400,50,10,0,50,300,village_Road7,woodsStartVillage);
+        Mob guard5 = new Mob("Guard5",400,50,10,0,50,300,village_Road7,woodsStartVillage);
+        Mob guard6 = new Mob("Guard6",500,50,10,0,50,300,village_Road6,woodsStartVillage);
+        Mob guard7 = new Mob("Guard7",500,50,10,0,50,300,village_Road6,woodsStartVillage);
         Mob guard8 = new Mob("Guard8",100,50,10,0,50,300,village_Road8,woodsStartVillage);
         Mob guard9 = new Mob("Guard9",100,50,10,0,50,300,village_Road8,woodsStartVillage);
-        Mob guard10 = new Mob("Guard10",100,50,10,0,50,300,village_Road14,woodsStartVillage);
-        Mob guard11 = new Mob("Guard11",100,50,10,0,50,300,village_Road14,woodsStartVillage);
-        Mob guard12 = new Mob("Guard12",100,50,10,0,50,300,village_Road14,woodsStartVillage);
-        Mob guard13 = new Mob("Guard13",100,50,10,0,50,300,village_Road22,woodsStartVillage);
-        Mob guard14 = new Mob("Guard14",100,50,10,0,50,300,village_Road22,woodsStartVillage);
-        Mob guard15 = new Mob("Guard15",100,50,10,0,50,300,plateu_high,woodsStartVillage);
-        Mob guard16 = new Mob("Guard16",100,50,10,0,50,300,plateu_high,woodsStartVillage);
+        Mob guard10 = new Mob("Guard10",1000,70,20,0,50,500,village_Road14,woodsStartVillage);
+        Mob guard11 = new Mob("Guard11",1000,70,20,0,50,500,village_Road14,woodsStartVillage);
+        Mob guard12 = new Mob("Guard12",1000,70,20,0,50,500,village_Road14,woodsStartVillage);
+        Mob guard13 = new Mob("Guard13",1000,30,100,0,50,300,village_Road22,woodsStartVillage);
+        Mob guard14 = new Mob("Guard14",1000,30,100,0,50,300,village_Road22,woodsStartVillage);
+        Mob guard15 = new Mob("Guard15",100,500,10,0,50,1000,plateu_high,woodsStartVillage);
+        Mob guard16 = new Mob("Guard16",100,500,10,0,50,1000,plateu_high,woodsStartVillage);
         Mob guard17 = new Mob("Guard17",100,50,10,0,50,300,village_Road27,woodsStartVillage);
         Mob guard18 = new Mob("Guard18",100,50,10,0,50,300,village_Road27,woodsStartVillage);
         Mob guard19 = new Mob("Guard19",100,50,10,0,50,300,village_Road27,woodsStartVillage);
@@ -140,18 +140,51 @@ public class Main {
 
         Container chest1 = new Container("Chest1");
 
-        Player p1 = new Player("Hans",100,10,5,0,1,100,woods1,woodsStartVillage);
+        Player p1 = new Player("Hans",100,10,0,0,1,100,woods1,woodsStartVillage);
+        //create Map
+        //Row 1
+        woodsStartVillage.addRoom(village_Road1,23,1);
 
+        woodsStartVillage.addRoom(village_Road6,24,1);
+        village_Road6.addMob(guard6);
+        village_Road6.addMob(guard7);
+
+        woodsStartVillage.addRoom(village_Road9,25,1);
+        woodsStartVillage.addRoom(village_Road13,26,1);
+        woodsStartVillage.addRoom(village_Road16,27,1);
+        woodsStartVillage.addRoom(village_Road20,28,1);
+        woodsStartVillage.addRoom(plateu_low,29,1);
+        woodsStartVillage.addRoom(plateu_high,29,2);
+        plateu_high.addMob(guard15);
+        plateu_high.addMob(guard16);
+        Container chest2 = new Container("Chest2");
+        Item Black_Bow1 = new Item("Black_Bow1",0,700,8,-8,50);
+        chest2.addThing(Black_Bow1);
+        plateu_high.addContainer(chest2);
+
+        //Row 2
         woodsStartVillage.addRoom(village_Road2,39,1);
+
         woodsStartVillage.addRoom(house1,40,1);
+        Mob villager1 = new Mob("villager1",100,1,0,0,1,10,house1,woodsStartVillage);
+        house1.addMob(villager1);
+
         woodsStartVillage.addRoom(house1_underground,41,0);
+        Item Potato1 = new Item("Potato1",30,0,0,0,0);
+        house1_underground.addItem(Potato1);
+
         woodsStartVillage.addRoom(village_Road10,42,1);
         woodsStartVillage.addRoom(house5,43,1);
         woodsStartVillage.addRoom(church1,44,1);
+        woodsStartVillage.addRoom(church_top1,44,2);
+        Item teleport_Stone = new Item("teleport_Stone",0,0,0,0,0);
+        church_top1.addItem(teleport_Stone);
+
         woodsStartVillage.addRoom(village_Road21,45,1);
         woodsStartVillage.addRoom(village_Road25,46,1);
 
-
+        //Row 3
+        //woods
         woodsStartVillage.addRoom(woods1,48,1);
         woodsStartVillage.addRoom(woods2,49,1);
         woodsStartVillage.addRoom(woods3,50,1);
@@ -159,6 +192,15 @@ public class Main {
         woodsStartVillage.addRoom(cliff1,52,1);
         woodsStartVillage.addRoom(sea1,53,1);
 
+        woods3.addContainer(chest1);
+        Item Black_Katana1 = new Item("Black_Katana1",0,300,0,40,200);
+        Item Dark_Armor1 = new Item("Dark_Armor",40,0,99,1,-10);
+        Item Speed_Obelisk1 = new Item("Speed_Obelisk",0,0,0,0,400);
+        chest1.addThing(Black_Katana1);
+        chest1.addThing(Dark_Armor1);
+        chest1.addThing(Speed_Obelisk1);
+
+        //village
         woodsStartVillage.addRoom(village_Entrance1,54,1);
         village_Entrance1.addMob(guard1);
         village_Entrance1.addMob(guard2);
@@ -185,20 +227,48 @@ public class Main {
 
         woodsStartVillage.addRoom(village_Road26,61,1);
 
+        //Row 4
+        woodsStartVillage.addRoom(village_Road4,71,1);
+        woodsStartVillage.addRoom(house2,72,1);
+        woodsStartVillage.addRoom(house2_2ndFloor,72,2);
+        Container chest3 = new Container("chest3");
+        Item black_potion1 = new Item("black_Potion1",100,100,10,50,100);
+        chest3.addThing(black_potion1);
+        house2_2ndFloor.addContainer(chest3);
+
+        woodsStartVillage.addRoom(house3,73,1);
+        woodsStartVillage.addRoom(house3_2ndFloor,73,2);
+        Item green_potion1 = new Item("green_Potion1",-100,-100,-10,-50,-100);
+        Container chest4 = new Container("chest4");
+        chest4.addThing(green_potion1);
+        house2_2ndFloor.addContainer(chest4);
+
+        woodsStartVillage.addRoom(house4,74,1);
+        woodsStartVillage.addRoom(village_Road18,75,1);
+        woodsStartVillage.addRoom(village_Road23,76,1);
+        woodsStartVillage.addRoom(village_Road27,77,1);
+        village_Road27.addMob(guard17);
+        village_Road27.addMob(guard18);
+        village_Road27.addMob(guard19);
+
+        //Row 5
+        woodsStartVillage.addRoom(village_Road5,87,1);
+        woodsStartVillage.addRoom(village_Road8,88,1);
+        village_Road8.addMob(guard8);
+        village_Road8.addMob(guard9);
+
+        woodsStartVillage.addRoom(village_Road12,89,1);
+        woodsStartVillage.addRoom(village_Road15,90,1);
+        woodsStartVillage.addRoom(village_Road19,91,1);
+        woodsStartVillage.addRoom(village_Road24,92,1);
+        woodsStartVillage.addRoom(house6,92,1);
+        woodsStartVillage.addRoom(house6_underground,92,0);
+        house6_underground.addMob(whiteSpike);
 
 
         woodsStartVillage.showMap();
-        p1.move("woods2");
-        p1.move("woods3");
-        p1.move("woods4");
-        p1.move("cliff1");
-        p1.move("sea1");
-        p1.move("Village_Entrance1");
-        p1.move("Village_Road3");
-        p1.move("Village_Road2");
-        p1.move("house1");
+        playerInterface(p1,s);
 
-        woods3.addContainer(chest1);
     }
 
 
@@ -232,7 +302,7 @@ public class Main {
         p1.showStats();
     }
 
-    public static void playerInterface(Player p1,Scanner s,Room x){
+    public static void playerInterface(Player p1,Scanner s){
         Map y = p1.actualMap;
         System.out.println("Welcome to the Player Interface.");
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
@@ -325,7 +395,7 @@ public class Main {
 
 
         TimeUnit.SECONDS.sleep(1);
-        playerInterface(p1,s,p1.getActualRoom());
+        playerInterface(p1,s);
 
         System.out.println("You have finished the tutorial");
 

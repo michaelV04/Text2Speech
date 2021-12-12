@@ -43,24 +43,29 @@ public class Map {
     public void showMap() {
         System.out.println("Stage 2:");
         double divide = mapSize;
-        divide = Math.sqrt(divide)-1;
+        divide = Math.sqrt(divide);
         for (int i = 0; i < mapSize; i++) {
             if (roomsS2.get(i) != null) {
                 System.out.print(i+roomsS2.get(i).getRoomName() + "\t");
             }
-            if (i == divide) {
-                System.out.println("\n");
+            for (int j = 1; j < mapSize; j++) {
+                if (i == divide*j) {
+                    System.out.println("\n");
+                }
             }
         }
+        System.out.println("\n");
         System.out.println("Stage 1:");
         for (int i = 0; i < mapSize; i++) {
             if (roomsS1.get(i) != null) {
                 System.out.print(i+roomsS1.get(i).getRoomName() + "\t");
             }
-
-            if (i == divide) {
-                System.out.println("\n");
+            for (int j = 1; j < mapSize; j++) {
+                if (i == divide*j) {
+                    System.out.println("\n");
+                }
             }
+
         }
         System.out.println("\n");
 
@@ -69,8 +74,10 @@ public class Map {
             if (roomsS0.get(i) != null){
                 System.out.print(i+roomsS0.get(i).getRoomName() + "\t");
             }
-            if (i == divide) {
-                System.out.println("\n");
+            for (int j = 1; j < mapSize; j++) {
+                if (i == divide*j) {
+                    System.out.println("\n");
+                }
             }
         }
     }

@@ -160,6 +160,7 @@ public class Player extends Entities{
         if(Objects.equals(eingabe, "all")){
             for (int i = 0; i < container.dingeInside.size(); i++) {
                 pickupItem(container.dingeInside.get(i));
+                z++;
             }
         } else {
             for (int i = 0; i < container.dingeInside.size(); i++) {
@@ -171,7 +172,7 @@ public class Player extends Entities{
             }
         }
         if (z == 0){
-            System.out.println("This Item doesnt exist in this Container");
+            System.out.println("This Item does not exist in this Container");
         }
     }
 
