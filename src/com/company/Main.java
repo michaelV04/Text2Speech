@@ -38,10 +38,10 @@ public class Main {
         int alive = 1;
         Map testM1 = new Map("testM1",9);
         Room testR1 = new Room("testR1","x",0,0,0,0,0,0);
-        Mob zombie = new Mob("zombie1",1,1,0,0,1,50,testR1,testM1);
+        Mob zombie = new Mob("zombie1",1000,10,0,0,1,50,testR1,testM1);
         testM1.addRoom(testR1,0,0);
         testR1.addMob(zombie);
-        Player p1 = new Player("Hans",100,100,100,100,100,100,testR1,testM1);
+        Player p1 = new Player("Hans",100,100,0,30,100,100,testR1,testM1);
         while (alive == 1) {
             alive = p1.combat("zombie1");
         }
