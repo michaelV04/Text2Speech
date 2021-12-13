@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Room {
-    // ArrayList<Exit> exits = new ArrayList<>();
     ArrayList<Item> itemsInRoom = new ArrayList<>();
     ArrayList<Container> containerInRoom = new ArrayList<>();
     ArrayList <Mob> mobsInRoom = new ArrayList<>();

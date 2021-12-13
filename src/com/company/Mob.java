@@ -1,8 +1,6 @@
 package com.company;
 
 public class Mob extends Entities {
-
-
     int aggressive = 1;
 //TODO mobs can carry items that give them buffs and that they can drop
 
