@@ -5,8 +5,8 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public abstract class Entities {
-    Room actualRoom = new Room("x","x",0,0,0,0,0,0);
-    Map actualMap = new Map("x",4);
+    Room actualRoom = new Room("x", "x", 0, 0, 0, 0, 0, 0);
+    Map actualMap = new Map("x", 4);
 
 
     private String name;
@@ -19,7 +19,7 @@ public abstract class Entities {
     private int speed;
     private boolean mutationX = false;
 
-    public Entities(String name, int hp, int ad, int armor, int crit, int lvl, int speed,Map currentMap,Room destinationRoom) {
+    public Entities(String name, int hp, int ad, int armor, int crit, int lvl, int speed, Map currentMap, Room destinationRoom) {
         this.name = name;
         this.hp = hp;
         this.ad = ad;
@@ -34,7 +34,7 @@ public abstract class Entities {
         actualMap.setS0(currentMap.getS0());
         actualMap.setS2(currentMap.getS2());
 //
-        actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(),destinationRoom.getItemsInRoom(),destinationRoom.getContainerInRoom(), destinationRoom.getMobsInRoom());
+        actualRoom.setRoom(destinationRoom.getRoomName(), destinationRoom.getDescription(), destinationRoom.getNorthExitType(), destinationRoom.getSouthExitType(), destinationRoom.getWestExitType(), destinationRoom.getEastExitType(), destinationRoom.getUpExitType(), destinationRoom.getDownExitType(), destinationRoom.getItemsInRoom(), destinationRoom.getContainerInRoom(), destinationRoom.getMobsInRoom());
 
     }
 
@@ -95,36 +95,38 @@ public abstract class Entities {
 
     }
 
-        public void setRoom (Room x){
-            location.add(x);
-        }
+    public void setRoom(Room x) {
+        location.add(x);
+    }
 
-        public void getLocation () {
-            Room x = location.get(0);
-            System.out.println("You are in Room " + x.getRoomName());
-        }
+    public void getLocation() {
+        Room x = location.get(0);
+        System.out.println("You are in Room " + x.getRoomName());
+    }
 
-        public String getName(){
+    public String getName() {
         return name;
-        }
+    }
 
-        public void setName(String name){
-            this.name = name;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public Map getActualMap(){
-            return actualMap;
-        }
-        public Room getActualRoom(){
+    public Map getActualMap() {
+        return actualMap;
+    }
+
+    public Room getActualRoom() {
         return actualRoom;
     }
 
-    public void showStats(){
-        System.out.println("HP: "+ getHp());
-        System.out.println("AD: "+getAd());
-        System.out.println("Armor: "+getArmor());
-        System.out.println("Crit: "+getCrit());
-        System.out.println("Level: "+getLvl());
-        System.out.println("Speed: "+getSpeed());
+    public void showStats() {
+        System.out.println("HP: " + getHp());
+        System.out.println("AD: " + getAd());
+        System.out.println("Armor: " + getArmor());
+        System.out.println("Crit: " + getCrit());
+        System.out.println("Level: " + getLvl());
+        System.out.println("Speed: " + getSpeed());
     }
-    }
+}
+

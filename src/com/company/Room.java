@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Room {
     // ArrayList<Exit> exits = new ArrayList<>();
@@ -107,7 +108,14 @@ public class Room {
     public void addMob(Mob x){
         mobsInRoom.add(x);
     }
+    public void delMob(Mob x){
+        for (int i = 0; i < mobsInRoom.size(); i++) {
+            if (Objects.equals(mobsInRoom.get(i).getName(), x.getName())){
+                mobsInRoom.remove(i);
+            }
+        }
 
+    }
 
 
 }

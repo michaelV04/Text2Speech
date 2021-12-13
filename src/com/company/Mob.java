@@ -1,8 +1,8 @@
 package com.company;
 
 public class Mob extends Entities {
-    Room actualRoom = new Room("x","x",0,0,0,0,0,0);
-    Map actualMap = new Map("x",4);
+
+
     int aggressive = 1;
 //TODO mobs can carry items that give them buffs and that they can drop
 
@@ -10,8 +10,6 @@ public class Mob extends Entities {
         super(name,hp, ad, armor, crit, lvl, speed,currentMap,destinationRoom);
         this.aggressive = aggressive;
           }
-
-
 
 
 

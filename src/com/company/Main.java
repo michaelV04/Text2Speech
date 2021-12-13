@@ -37,7 +37,7 @@ public class Main {
     public static void combatTest(Scanner s) {
         int alive = 1;
         Map testM1 = new Map("testM1",9);
-        Room testR1 = new Room("testR1","x",0,0,0,0,0,0);
+        Room testR1 = new Room("testR1","ulala",0,0,0,1,0,0);
         Mob zombie = new Mob("zombie1",1000,10,0,0,1,50,testR1,testM1,1);
         testM1.addRoom(testR1,0,0);
         testR1.addMob(zombie);

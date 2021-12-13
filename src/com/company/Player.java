@@ -86,6 +86,7 @@ public class Player extends Entities{
         String eingabe;
         int y = x.containerInRoom.size();
             if (x.itemsInRoom != null) {
+
                 //list items
                 System.out.println("The Items in the Room are:");
                 int i = x.itemsInRoom.size();
@@ -291,6 +292,7 @@ public class Player extends Entities{
                         m.showStats();
                     } else {
                         System.out.println("The "+mob+" died from your attack");
+                        actualRoom.delMob(m);
                     }
                 }else{
                     System.out.println("The " + mob + " attacks");
@@ -346,4 +348,5 @@ public class Player extends Entities{
 
         return 1;
     }
+
 }
