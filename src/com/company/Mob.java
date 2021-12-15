@@ -8,7 +8,4 @@ public class Mob extends Entities {
         super(name,hp, ad, armor, crit, lvl, speed,currentMap,destinationRoom);
         this.aggressive = aggressive;
           }
-
-
-
 }

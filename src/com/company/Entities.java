@@ -1,8 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Scanner;
+
 
 public abstract class Entities {
     Room actualRoom = new Room("x", "x", 0, 0, 0, 0, 0, 0);
