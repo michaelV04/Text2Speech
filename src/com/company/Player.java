@@ -44,10 +44,15 @@ public class Player extends Entities{
             System.out.println("You are now in Room:" + destinationRoom.getRoomName());
             System.out.println("These are the Mobs in this Room");
             if (actualRoom.mobsInRoom.size() != 0) {
-                for (int i = 0; i < actualRoom.mobsInRoom.size(); i++) {
+                for (int i = 0; i < actualRoom.mobsInRoom.size(); ) {
                     System.out.println(actualRoom.mobsInRoom.get(i).getName());
                     if (actualRoom.mobsInRoom.get(i).aggressive == 1){
-                        combat(actualRoom.mobsInRoom.get(i).getName());
+                        int alive = combat(actualRoom.mobsInRoom.get(i).getName());
+                        if (alive == 0){
+                            break;
+                        }
+                    }else {
+                        i++;
                     }
                 }
             }else{
