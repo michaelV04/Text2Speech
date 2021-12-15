@@ -110,6 +110,9 @@ public class Room {
     public void delMob(Mob x){
         for (int i = 0; i < mobsInRoom.size(); i++) {
             if (Objects.equals(mobsInRoom.get(i).getName(), x.getName())){
+                /*if(mobsInRoom.get(i).inventoryFull()) {
+
+                }*/
                 mobsInRoom.remove(i);
             }
         }
