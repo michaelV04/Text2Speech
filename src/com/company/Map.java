@@ -86,19 +86,20 @@ public class Map {
 //
 
 
-    public int checkIfExitTrue(Room playerRoom,Room destinationRoom,Map z){
-        double add = Math.sqrt(mapSize);
-        int intAdd = (int) add;
-        for (int i = 0; i <= mapSize; i++) {
-            if (roomsS1.get(i) != null || roomsS0.get(i) != null || roomsS2.get(i) != null) {
-                if (roomsS0.get(i) != null) {
-                    if (i == 0 && Objects.equals(roomsS0.get(i).getRoomName(), playerRoom.getRoomName())) {
-                            if (roomsS0.get(i+1) != null) {
+    public int checkIfExitTrue(Room playerRoom,Room destinationRoom) {
+
+            double add = Math.sqrt(mapSize);
+            int intAdd = (int) add;
+            for (int i = 0; i <= mapSize; i++) {
+                if (roomsS1.get(i) != null || roomsS0.get(i) != null || roomsS2.get(i) != null) {
+                    if (roomsS0.get(i) != null) {
+                        if (i == 0 && Objects.equals(roomsS0.get(i).getRoomName(), playerRoom.getRoomName())) {
+                            if (roomsS0.get(i + 1) != null) {
                                 if (Objects.equals(roomsS0.get(i + 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getEastExitType() == 1) {
                                     return 1;
                                 }
                             }
-                            if (roomsS0.get(i+intAdd) != null) {
+                            if (roomsS0.get(i + intAdd) != null) {
                                 if (Objects.equals(roomsS0.get(i + intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getSouthExitType() == 1) {
                                     return 1;
                                 }
@@ -108,9 +109,10 @@ public class Map {
                                     return 1;
                                 }
                             }
+                        }
                     }
-                } if (roomsS1.get(i) != null) {
-                    if (i == 0 && Objects.equals(roomsS1.get(i).getRoomName(), playerRoom.getRoomName())) {
+                    if (roomsS1.get(i) != null) {
+                        if (i == 0 && Objects.equals(roomsS1.get(i).getRoomName(), playerRoom.getRoomName())) {
                             if (roomsS1.get(i + 1) != null) {
                                 if (Objects.equals(roomsS1.get(i + 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getEastExitType() == 1) {
                                     return 1;
@@ -132,9 +134,10 @@ public class Map {
                                 }
                             }
 
+                        }
                     }
-                } if (roomsS2.get(i) != null) {
-                    if (i == 0 && Objects.equals(roomsS2.get(i).getRoomName(), playerRoom.getRoomName())) {
+                    if (roomsS2.get(i) != null) {
+                        if (i == 0 && Objects.equals(roomsS2.get(i).getRoomName(), playerRoom.getRoomName())) {
                             if (roomsS2.get(i + 1) != null) {
                                 if (Objects.equals(roomsS2.get(i + 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getEastExitType() == 1) {
                                     return 1;
@@ -151,107 +154,108 @@ public class Map {
                                 }
                             }
 
+                        }
                     }
-                }
 
-                if (roomsS0.get(i) != null) {
-                    if (Objects.equals(playerRoom.getRoomName(), roomsS0.get(i).getRoomName())) {
-                        if (roomsS0.get(i+1) != null) {
-                            if (Objects.equals(roomsS0.get(i + 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getEastExitType() == 1) {
-                                return 1;
+                    if (roomsS0.get(i) != null) {
+                        if (Objects.equals(playerRoom.getRoomName(), roomsS0.get(i).getRoomName())) {
+                            if (roomsS0.get(i + 1) != null) {
+                                if (Objects.equals(roomsS0.get(i + 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getEastExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if (roomsS0.get(i-1) != null) {
-                            if (Objects.equals(roomsS0.get(i - 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getWestExitType() == 1) {
-                                return 1;
+                            if (roomsS0.get(i - 1) != null) {
+                                if (Objects.equals(roomsS0.get(i - 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getWestExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if (roomsS0.get(i-intAdd) != null) {
-                            if (Objects.equals(roomsS0.get(i - intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getNorthExitType() == 1) {
-                                return 1;
+                            if (roomsS0.get(i - intAdd) != null) {
+                                if (Objects.equals(roomsS0.get(i - intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getNorthExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if (roomsS0.get(i+intAdd) != null) {
-                            if (Objects.equals(roomsS0.get(i + intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getSouthExitType() == 1) {
-                                return 1;
+                            if (roomsS0.get(i + intAdd) != null) {
+                                if (Objects.equals(roomsS0.get(i + intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getSouthExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if (roomsS1.get(i) != null) {
-                            if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS1.get(i).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getUpExitType() == 1) {
-                                return 1;
+                            if (roomsS1.get(i) != null) {
+                                if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS1.get(i).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getUpExitType() == 1) {
+                                    return 1;
+                                }
                             }
                         }
                     }
-                }
 
-                if (roomsS1.get(i) != null){
-                    if (Objects.equals(playerRoom.getRoomName(), roomsS1.get(i).getRoomName())) {
-                        if (roomsS1.get(i+1) != null){
-                        if (Objects.equals(roomsS1.get(i + 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getEastExitType() == 1) {
-                            return 1;
-                        }
-                        }
-                        if (roomsS1.get(i-1) != null) {
-                            if (Objects.equals(roomsS1.get(i - 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getWestExitType() == 1) {
-                                return 1;
+                    if (roomsS1.get(i) != null) {
+                        if (Objects.equals(playerRoom.getRoomName(), roomsS1.get(i).getRoomName())) {
+                            if (roomsS1.get(i + 1) != null) {
+                                if (Objects.equals(roomsS1.get(i + 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getEastExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if (roomsS1.get(i-intAdd) != null) {
-                            if (Objects.equals(roomsS1.get(i - intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getNorthExitType() == 1) {
-                                return 1;
+                            if (roomsS1.get(i - 1) != null) {
+                                if (Objects.equals(roomsS1.get(i - 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getWestExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if (roomsS1.get(i+intAdd) != null) {
-                            if (Objects.equals(roomsS1.get(i + intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getSouthExitType() == 1) {
-                                return 1;
+                            if (roomsS1.get(i - intAdd) != null) {
+                                if (Objects.equals(roomsS1.get(i - intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getNorthExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if(roomsS0.get(i) != null){
-                            if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS0.get(i).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getDownExitType() == 1) {
-                                return 1;
+                            if (roomsS1.get(i + intAdd) != null) {
+                                if (Objects.equals(roomsS1.get(i + intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getSouthExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }if (roomsS2.get(i) != null){
-                            if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getUpExitType() == 1) {
-                                return 1;
+                            if (roomsS0.get(i) != null) {
+                                if (roomsS0.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS0.get(i).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getDownExitType() == 1) {
+                                    return 1;
+                                }
+                            }
+                            if (roomsS2.get(i) != null) {
+                                if (roomsS2.get(i).getPos() == roomsS1.get(i).getPos() && Objects.equals(roomsS2.get(0).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getUpExitType() == 1) {
+                                    return 1;
+                                }
                             }
                         }
                     }
-                }
 
-                if (roomsS2.get(i) != null){
-                    if (Objects.equals(playerRoom.getRoomName(), roomsS2.get(i).getRoomName())) {
-                        if (roomsS2.get(i+1) != null) {
-                            if (Objects.equals(roomsS2.get(i + 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getEastExitType() == 1) {
-                                return 1;
+                    if (roomsS2.get(i) != null) {
+                        if (Objects.equals(playerRoom.getRoomName(), roomsS2.get(i).getRoomName())) {
+                            if (roomsS2.get(i + 1) != null) {
+                                if (Objects.equals(roomsS2.get(i + 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getEastExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if (roomsS2.get(i-1) != null) {
-                            if (Objects.equals(roomsS2.get(i - 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getWestExitType() == 1) {
-                                return 1;
+                            if (roomsS2.get(i - 1) != null) {
+                                if (Objects.equals(roomsS2.get(i - 1).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getWestExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if (roomsS2.get(i-intAdd) != null) {
-                            if (Objects.equals(roomsS2.get(i - intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getNorthExitType() == 1) {
-                                return 1;
+                            if (roomsS2.get(i - intAdd) != null) {
+                                if (Objects.equals(roomsS2.get(i - intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getNorthExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if (roomsS2.get(i+intAdd) != null) {
-                            if (Objects.equals(roomsS2.get(i + intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getSouthExitType() == 1) {
-                                return 1;
+                            if (roomsS2.get(i + intAdd) != null) {
+                                if (Objects.equals(roomsS2.get(i + intAdd).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getSouthExitType() == 1) {
+                                    return 1;
+                                }
                             }
-                        }
-                        if(roomsS1.get(i) != null){
-                            if (roomsS1.get(i).getPos() == roomsS2.get(i).getPos() && Objects.equals(roomsS1.get(i).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getDownExitType() == 1) {
-                                return 1;
+                            if (roomsS1.get(i) != null) {
+                                if (roomsS1.get(i).getPos() == roomsS2.get(i).getPos() && Objects.equals(roomsS1.get(i).getRoomName(), destinationRoom.getRoomName()) && playerRoom.getDownExitType() == 1) {
+                                    return 1;
+                                }
                             }
                         }
                     }
                 }
-            }
             }
             return 0;
-    }
 
+    }
     public int getPos(){
         return pos;
     }

@@ -36,7 +36,7 @@ public class Player extends Entities{
         Room x = actualRoom;
         Scanner s = new Scanner(System.in);
         int check = 0;
-        check = z.checkIfExitTrue(x, destinationRoom,z);
+        check = z.checkIfExitTrue(x, destinationRoom);
 
         if (check == 1) {
             takeExit(destinationRoom);

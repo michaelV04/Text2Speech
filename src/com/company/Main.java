@@ -171,7 +171,7 @@ public class Main {
         Mob villager1 = new Mob("villager1",100,1,0,0,1,10,house1,woodsStartVillage,0);
         house1.addMob(villager1);
 
-        woodsStartVillage.addRoom(house1_underground,41,0);
+        woodsStartVillage.addRoom(house1_underground,40,0);
         Item Potato1 = new Item("Potato1",30,0,0,0,0);
         house1_underground.addItem(Potato1);
 
