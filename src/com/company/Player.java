@@ -5,8 +5,6 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Player extends Entities{
-    ArrayList<Item> inventory = new ArrayList<>();
-
 
     public Player(String name,int hp, int ad, int armor, int crit, int lvl, int speed,Room destinationRoom,Map currentMap) {
         super(name,hp, ad, armor, crit, lvl, speed,currentMap,destinationRoom);
@@ -199,6 +197,11 @@ public class Player extends Entities{
 
     public void putIntoContainer(Container container, Item item) {
         if (inventory.remove(item)) {
+            addHp(-item.getHp());
+            addAd(-item.getAd());
+            addArmor(-item.getArmor());
+            addCrit(-item.getCrit());
+            addSpeed(-item.getSpeed());
             inventory.remove(item);
             container.addThing(item);
             System.out.println("You put the item " + item.getItemName() + " into " + container.getContainerName());

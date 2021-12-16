@@ -108,12 +108,20 @@ public class Room {
         mobsInRoom.add(x);
     }
     public void delMob(Mob x){
-        for (int i = 0; i < mobsInRoom.size(); i++) {
-            if (Objects.equals(mobsInRoom.get(i).getName(), x.getName())){
-                /*if(mobsInRoom.get(i).inventoryFull()) {
-
-                }*/
-                mobsInRoom.remove(i);
+        if(mobsInRoom.get(0).inventoryFull()) {
+            for (int i = 0; i < mobsInRoom.size(); i++) {
+                if (Objects.equals(mobsInRoom.get(i).getName(), x.getName())){
+                    Item item = mobsInRoom.get(i).getItem();
+                    itemsInRoom.add(item);
+                    System.out.println("The " + mobsInRoom + " has dropped " + item);
+                    mobsInRoom.remove(i);
+                }
+            }
+        } else {
+            for (int i = 0; i < mobsInRoom.size(); i++) {
+                if (Objects.equals(mobsInRoom.get(i).getName(), x.getName())){
+                    mobsInRoom.remove(i);
+                }
             }
         }
 

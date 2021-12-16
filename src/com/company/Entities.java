@@ -10,6 +10,8 @@ public abstract class Entities {
 
     private String name;
     ArrayList<Room> location = new ArrayList<>();
+    ArrayList<Item> inventory = new ArrayList<>();
+
     private int hp;
     private int ad;
     private int armor;
@@ -130,5 +132,16 @@ public abstract class Entities {
         System.out.println("Level: " + getLvl());
         System.out.println("Speed: " + getSpeed());
     }
+
+    public void pickupItem(Item item){
+        inventory.add(item);
+        addHp(item.getHp());
+        addAd(item.getAd());
+        addArmor(item.getArmor());
+        addCrit(item.getCrit());
+        addSpeed(item.getSpeed());
+    }
+
+
 }
 

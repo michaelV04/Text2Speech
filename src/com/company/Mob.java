@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Mob extends Entities {
     int aggressive = 1;
-    ArrayList<Item> inventory = new ArrayList<>();
 
 //TODO mobs can carry items that give them buffs and that they can drop
 
@@ -32,5 +31,7 @@ public class Mob extends Entities {
         }
         return null;
     }
+
+
 }
 
