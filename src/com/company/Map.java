@@ -90,7 +90,7 @@ public class Map {
 
             double add = Math.sqrt(mapSize);
             int intAdd = (int) add;
-            for (int i = 44; i <= mapSize; i++) {
+            for (int i = 0; i <= mapSize; i++) {
                 if (roomsS1.get(i) != null || roomsS0.get(i) != null || roomsS2.get(i) != null) {
                     if (roomsS0.get(i) != null) {
                         if (i == 0 && Objects.equals(roomsS0.get(i).getRoomName(), playerRoom.getRoomName())) {

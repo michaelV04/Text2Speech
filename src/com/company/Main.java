@@ -13,7 +13,7 @@ public class Main {
     }
 
     public static void mainLobby(Scanner s) throws InterruptedException {
-        //tutorial(s);
+        tutorial(s);
         int x = 0;
         while (x == 0) {
             int eingabe;
@@ -40,13 +40,17 @@ public class Main {
         Room testR1 = new Room("testR1","ulala",0,0,0,1,0,0);
         Mob zombie = new Mob("zombie1",1000,10,0,0,1,50,testR1,testM1,1);
         Mob zombie1 = new Mob("zombie2",1000,10,0,0,1,50,testR1,testM1,1);
+        Item mobitem1 = new Item("x",0,10,0,0,0);
         testM1.addRoom(testR1,0,0);
         testR1.addMob(zombie1);
+        testR1.addItem(mobitem1);
         testR1.addMob(zombie);
         Player p1 = new Player("Hans",100,100,0,30,100,100,testR1,testM1);
         while (alive == 1) {
             alive = p1.combat("zombie1");
+            p1.searchRoom(p1.actualRoom);
         }
+
     }
 
     public static void commands() {
@@ -142,7 +146,7 @@ public class Main {
 
         Container chest1 = new Container("Chest1");
 
-        Player p1 = new Player("Hans",100,10,0,0,1,100,woods1,woodsStartVillage);
+        Player p1 = new Player("Hans",100,10,0,0,1,100,church1,woodsStartVillage);
         //create Map
         //Row 1
         woodsStartVillage.addRoom(village_Road1,23,1);
@@ -354,8 +358,19 @@ public class Main {
             }else if (Objects.equals(command, "stats")){
                 p1.showStats();
             }
-            else if (Objects.equals(p1.actualMap.getName(), "tutorial") && Objects.equals(p1.actualRoom.getRoomName(), "roof") && Objects.equals(p1.actualMap.roomsS1.get(0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")){
-                xy++;
+            else if (Objects.equals(p1.actualMap.getName(), "tutorial")){
+                if (Objects.equals(p1.actualRoom.getRoomName(), "roof") && Objects.equals(p1.actualMap.roomsS1.get(0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")) {
+                    xy++;
+                }
+            }else if(Objects.equals(p1.actualMap.getName(), "Start_Village")){
+                for (int i = 0; i < p1.inventory.size(); i++) {
+                    if (Objects.equals(p1.inventory.get(i).getItemName(), "teleport_Stone")){
+                        System.out.println("Your body starts to dissolve");
+                        System.out.println("Your entering a worm-hole");
+                        System.out.println("Suddenly the worm-hole breaks");
+                        xy++;
+                    }
+                }
             }
         }
 

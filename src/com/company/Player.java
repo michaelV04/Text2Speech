@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.Random;
@@ -82,9 +81,6 @@ public class Player extends Entities{
 
     }
 
-    public Room getRoom(){
-        return actualRoom;
-    }
 
     public void searchRoom(Room x){
         Scanner s = new Scanner(System.in);
@@ -222,13 +218,10 @@ public class Player extends Entities{
         }
     }
 
-    public void pickupItem(Item item){
-        inventory.add(item);
-        addHp(item.getHp());
-        addAd(item.getAd());
-        addArmor(item.getArmor());
-        addCrit(item.getCrit());
-        addSpeed(item.getSpeed());
+
+    @Override
+    public void pickupItem(Item item) {
+        super.pickupItem(item);
         System.out.println("You picked up " + item.getItemName());
     }
 

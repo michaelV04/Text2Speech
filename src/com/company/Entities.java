@@ -93,6 +93,9 @@ public abstract class Entities {
     public void useMutationX() {
 
     }
+    public Room getRoom(){
+        return actualRoom;
+    }
 
     public void setRoom(Room x) {
         location.add(x);
