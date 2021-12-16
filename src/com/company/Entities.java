@@ -9,7 +9,6 @@ public abstract class Entities {
 
 
     private String name;
-    ArrayList<Room> location = new ArrayList<>();
     ArrayList<Item> inventory = new ArrayList<>();
 
     private int hp;
@@ -100,13 +99,9 @@ public abstract class Entities {
     }
 
     public void setRoom(Room x) {
-        location.add(x);
+        actualRoom = x;
     }
 
-    public void getLocation() {
-        Room x = location.get(0);
-        System.out.println("You are in Room " + x.getRoomName());
-    }
 
     public String getName() {
         return name;

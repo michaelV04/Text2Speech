@@ -156,12 +156,7 @@ public class Player extends Entities{
 
 
     public void takeExit(Room y){
-        if (location.size() != 0) {
-            location.remove(0);
-        }
         actualRoom.setRoom(y.getRoomName(),y.getDescription(),y.getNorthExitType(),y.getSouthExitType(),y.getWestExitType(),y.getEastExitType(),y.getUpExitType(),y.getDownExitType(),y.getItemsInRoom(),y.getContainerInRoom(),y.getMobsInRoom());
-        location.add(y);
-
     }
 
     public void pickupFromContainer(Container container) {
