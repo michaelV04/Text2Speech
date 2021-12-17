@@ -4,13 +4,13 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.Random;
 
-public class Player extends Entities{
+public class Player extends Entities implements Mutations{
 
     public Player(String name,int hp, int ad, int armor, int crit, int lvl, int speed,Room destinationRoom,Map currentMap) {
         super(name,hp, ad, armor, crit, lvl, speed,currentMap,destinationRoom);
           }
 
-    public void move(String destination) {
+    public int move(String destination,int alive) {
         Room destinationRoom = new Room("x","x",0,0,0,0,0,0);
         Map z = actualMap;
         for (int i = 0; i < z.roomsS0.size()-1; i++) {
@@ -44,7 +44,7 @@ public class Player extends Entities{
                 for (int i = 0; i < actualRoom.mobsInRoom.size(); ) {
                     System.out.println(actualRoom.mobsInRoom.get(i).getName());
                     if (actualRoom.mobsInRoom.get(i).aggressive == 1){
-                        int alive = combat(actualRoom.mobsInRoom.get(i).getName());
+                        alive = combat(actualRoom.mobsInRoom.get(i).getName());
                         if (alive == 0){
                             break;
                         }
@@ -76,6 +76,7 @@ public class Player extends Entities{
         }else{
             System.out.println("You cant move there");
         }
+        return alive;
 
     }
 
@@ -344,5 +345,4 @@ public class Player extends Entities{
 
         return 1;
     }
-
 }

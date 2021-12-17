@@ -17,7 +17,6 @@ public abstract class Entities {
     private int crit;
     private int lvl;
     private int speed;
-    private boolean mutationX = false;
 
     public Entities(String name, int hp, int ad, int armor, int crit, int lvl, int speed, Map currentMap, Room destinationRoom) {
         this.name = name;
@@ -86,14 +85,6 @@ public abstract class Entities {
         this.ad = this.ad + x;
     }
 
-    public void addMutationX() {
-        mutationX = true;
-    }
-
-
-    public void useMutationX() {
-
-    }
     public Room getRoom(){
         return actualRoom;
     }

@@ -44,6 +44,7 @@ public class Main {
         testM1.addRoom(testR1,0,0);
         testR1.addMob(zombie1);
         testR1.addItem(mobitem1);
+
         testR1.addMob(zombie);
         Player p1 = new Player("Hans",100,100,0,30,100,100,testR1,testM1);
         while (alive == 1) {
@@ -146,7 +147,12 @@ public class Main {
 
         Container chest1 = new Container("Chest1");
 
-        Player p1 = new Player("Hans",100,10,0,0,1,100,church1,woodsStartVillage);
+        Item mutationX = new Item("Blue_Balls",0,0,0,0,0);
+        Item mutationY = new Item("Martini",0,0,0,0,0);
+        Item mutationZ = new Item("Gods_Piss",0,0,0,0,0);
+
+
+        Player p1 = new Player("Hans",100,10,0,0,1,100,woods1,woodsStartVillage);
         //create Map
         //Row 1
         woodsStartVillage.addRoom(village_Road1,23,1);
@@ -161,6 +167,7 @@ public class Main {
         woodsStartVillage.addRoom(village_Road20,28,1);
         woodsStartVillage.addRoom(plateu_low,29,1);
         woodsStartVillage.addRoom(plateu_high,29,2);
+        plateu_high.addItem(mutationY);
         plateu_high.addMob(guard15);
         plateu_high.addMob(guard16);
         Container chest2 = new Container("Chest2");
@@ -174,6 +181,7 @@ public class Main {
         woodsStartVillage.addRoom(house1,40,1);
         Mob villager1 = new Mob("villager1",100,1,0,0,1,10,house1,woodsStartVillage,0);
         house1.addMob(villager1);
+        villager1.pickupItem(mutationX);
 
         woodsStartVillage.addRoom(house1_underground,40,0);
         Item Potato1 = new Item("Potato1",30,0,0,0,0);
@@ -270,6 +278,7 @@ public class Main {
         woodsStartVillage.addRoom(house6,92,1);
         woodsStartVillage.addRoom(house6_underground,92,0);
         house6_underground.addMob(whiteSpike);
+        house6_underground.addItem(mutationZ);
 
 
         woodsStartVillage.showMap();
@@ -330,7 +339,7 @@ public class Main {
                 System.out.println("You are in Room " + p1.actualRoom.getRoomName());
                 String e;
                 e = s.next();
-                p1.move(e);
+                alive = p1.move(e,alive);
             }else if(Objects.equals(command, "combat")){
                 if (p1.actualRoom.mobsInRoom.size() == 0){
                     System.out.println("No mobs in this Room");
@@ -360,6 +369,7 @@ public class Main {
             }
             else if (Objects.equals(p1.actualMap.getName(), "tutorial")){
                 if (Objects.equals(p1.actualRoom.getRoomName(), "roof") && Objects.equals(p1.actualMap.roomsS1.get(0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")) {
+                    System.out.println("You have finished the tutorial!");
                     xy++;
                 }
             }else if(Objects.equals(p1.actualMap.getName(), "Start_Village")){
@@ -373,6 +383,7 @@ public class Main {
                 }
             }
         }
+
 
     }
 
@@ -414,7 +425,7 @@ public class Main {
         TimeUnit.SECONDS.sleep(1);
         playerInterface(p1,s);
 
-        System.out.println("You have finished the tutorial");
+        System.out.println("You died");
 
 
     }
