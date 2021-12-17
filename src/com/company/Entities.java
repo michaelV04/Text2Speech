@@ -1,9 +1,10 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
-public abstract class Entities {
+public abstract class Entities implements Mutations {
     Room actualRoom = new Room("x", "x", 0, 0, 0, 0, 0, 0);
     Map actualMap = new Map("x", 4);
 
@@ -126,6 +127,30 @@ public abstract class Entities {
         addArmor(item.getArmor());
         addCrit(item.getCrit());
         addSpeed(item.getSpeed());
+    }
+
+    @Override
+    public void mutationXuse(Item i) {
+        if (Objects.equals(i.getItemName(), "Blue_Balls")){
+            addHp(getHp());
+            addAd(-getAd()/2);
+        }
+    }
+
+
+    @Override
+    public void mutationYuse(Item i) {
+        if (Objects.equals(i.getItemName(), "Martini")){
+            addHp(-getHp()/2);
+            addSpeed(getSpeed());
+        }
+    }
+
+    @Override
+    public void mutationZuse(Item i) {
+        if (Objects.equals(i.getItemName(), "Gods_Piss")){
+            addCrit(100);
+        }
     }
 
 

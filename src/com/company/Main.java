@@ -41,6 +41,7 @@ public class Main {
         Mob zombie = new Mob("zombie1",1000,10,0,0,1,50,testR1,testM1,1);
         Mob zombie1 = new Mob("zombie2",1000,10,0,0,1,50,testR1,testM1,1);
         Item mobitem1 = new Item("x",0,10,0,0,0);
+        zombie.pickupItem(mobitem1);
         testM1.addRoom(testR1,0,0);
         testR1.addMob(zombie1);
         testR1.addItem(mobitem1);
