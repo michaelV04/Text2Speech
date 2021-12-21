@@ -267,9 +267,9 @@ public class Player extends Entities implements Mutations{
     }
 
     /**
-     *
+     * Der Spieler kaempft gegen den gegeben mob bis entweder mob oder Spieler stirbt.
      * @param mob Mob
-     * @return ob der Spieler
+     * @return ob der Spieler noch am Leben ist
      */
     public int combat(String mob) {
         Random random = new Random();

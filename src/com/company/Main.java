@@ -417,9 +417,8 @@ public class Main {
     }
 
     /**
-     * Erstellt eine Map tutorial und ruft dann die funktion player interface aud.
-     * @param s
-     * @throws InterruptedException
+     * Erstellt eine Map tutorial und ruft dann die Funktion player interface aud.
+     * @param s scanner
      */
     public static void tutorial(Scanner s) throws InterruptedException {
         Map tutorial = new Map("tutorial",4);
