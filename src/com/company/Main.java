@@ -12,6 +12,11 @@ public class Main {
         mainLobby(s);
     }
 
+    /**
+     *
+     * @param s scanner
+     *
+     */
     public static void mainLobby(Scanner s) throws InterruptedException {
         tutorial(s);
         int x = 0;
