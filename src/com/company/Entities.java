@@ -3,11 +3,13 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Objects;
 
-
+/**
+ * Erschaffen einer Figur mit ihren Eigenschaften: Spieler oder Monster.
+ *
+ */
 public abstract class Entities implements Mutations {
     Room actualRoom = new Room("x", "x", 0, 0, 0, 0, 0, 0);
     Map actualMap = new Map("x", 4);
-
 
     private String name;
     ArrayList<Item> inventory = new ArrayList<>();
@@ -19,6 +21,18 @@ public abstract class Entities implements Mutations {
     private int lvl;
     private int speed;
 
+    /**
+     * Eigenschaften werden gesetzt/zugeordnet.
+     * @param name String
+     * @param hp int
+     * @param ad int
+     * @param armor int
+     * @param crit int
+     * @param lvl int
+     * @param speed int
+     * @param currentMap Map
+     * @param destinationRoom Room
+     */
     public Entities(String name, int hp, int ad, int armor, int crit, int lvl, int speed, Map currentMap, Room destinationRoom) {
         this.name = name;
         this.hp = hp;
@@ -111,6 +125,9 @@ public abstract class Entities implements Mutations {
         return actualRoom;
     }
 
+    /**
+     * Zeigt die Eigenschaften des Entities an.
+     */
     public void showStats() {
         System.out.println("HP: " + getHp());
         System.out.println("AD: " + getAd());
@@ -120,6 +137,10 @@ public abstract class Entities implements Mutations {
         System.out.println("Speed: " + getSpeed());
     }
 
+    /**
+     * Nimmt einen Gegenstand in das Inventar auf.
+     * @param item
+     */
     public void pickupItem(Item item){
         inventory.add(item);
         addHp(item.getHp());
@@ -129,6 +150,10 @@ public abstract class Entities implements Mutations {
         addSpeed(item.getSpeed());
     }
 
+    /**
+     * Sobald das Item Blue_Balls aufgenommen wird, werden die HP verdoppelt und AD halbiert.
+     * @param i
+     */
     @Override
     public void mutationXuse(Item i) {
         if (Objects.equals(i.getItemName(), "Blue_Balls")){
@@ -137,7 +162,10 @@ public abstract class Entities implements Mutations {
         }
     }
 
-
+    /**
+     * Sobald das Item Martini aufgenommen wird, wird Speed verdoppelt und HP halbiert.
+     * @param i
+     */
     @Override
     public void mutationYuse(Item i) {
         if (Objects.equals(i.getItemName(), "Martini")){
@@ -146,6 +174,10 @@ public abstract class Entities implements Mutations {
         }
     }
 
+    /**
+     * Sobald das Item Gods_Piss aufgenommen wird, wird die Crit-chance auf 100 erhöht.
+     * @param i
+     */
     @Override
     public void mutationZuse(Item i) {
         if (Objects.equals(i.getItemName(), "Gods_Piss")){
