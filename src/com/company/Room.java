@@ -10,12 +10,12 @@ public class Room {
 
     private int pos;
     public String description;
-    private int northExitType = 0;
-    private int southExitType = 0;
-    private int westExitType = 0;
-    private int eastExitType = 0;
-    private int upExitType = 0;
-    private int downExitType = 0;
+    private int northExitType;
+    private int southExitType;
+    private int westExitType;
+    private int eastExitType;
+    private int upExitType;
+    private int downExitType;
     private String roomName;
 
     /**

@@ -1,5 +1,8 @@
 package com.company;
 
+/**
+ * schaut ob mutation wahr oder falsch ist.
+ */
 public interface Mutations {
 
     boolean mutationX = false;
