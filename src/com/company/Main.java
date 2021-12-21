@@ -5,7 +5,9 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
-
+    /**
+     * Erzeugt einen Scanner und ruft die funktion mainlobby auf und übergibt den scanner
+     */
     public static void main(String[] args) throws InterruptedException {
         Scanner s = new Scanner(System.in);
         //combatTest(s);
@@ -15,7 +17,7 @@ public class Main {
     /**
      *
      * @param s scanner
-     *
+     * Startet das tutorial und wartet darauf dass es fertig wird dann wird der benutzer gefragt ob er tutorial, bug break, commands oder das spiel beenden will.
      */
     public static void mainLobby(Scanner s) throws InterruptedException {
         tutorial(s);
@@ -39,6 +41,10 @@ public class Main {
         }
     }
 
+    /**
+     * @param s scanner
+     * Erstellt eine Map und speichert einen room hinein, im room werden zwei zombies erstellt und ein player. Dannach kämpft der speiler gegen die zombies bis er stirb oder sie.
+     */
     public static void combatTest(Scanner s) {
         int alive = 1;
         Map testM1 = new Map("testM1",9);
@@ -60,18 +66,27 @@ public class Main {
 
     }
 
+    /**
+     * Listet die Befehle auf
+     */
     public static void commands() {
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*\nOr fight a Mob with combat\nOr look at your stats");
         System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the game");
     }
 
+    /**
+     * ruft die funktion bugBreak auf
+     * @param s scanner
+     */
     public static void bugBreak(Scanner s) {
         startVillage(s);
-
-
     }
 
+    /**
+     * erstellt eine Karte woodsstartVillage mit raeumen mobs Spieler contaier und items dannach wird die funktion player interface aufgerufen.
+     * @param s scanner
+     */
     public static void startVillage(Scanner s) {
         Map woodsStartVillage = new Map("Start_Village",256);
         Room woods1 = new Room("woods1","A dark place with trees nothing else to see",0,0,1,0,0,0); // ok
@@ -292,7 +307,11 @@ public class Main {
 
     }
 
-
+    /**
+     * der user kann auswählen zwischen Warrior Assassin und Tank dann werden die stats des player angepasst.
+     * @param p1 Player
+     * @param s scanner
+     */
     public static void createCharacter(Player p1, Scanner s){
         int x = -1;
         while(x < 1 || x > 3) {
@@ -323,8 +342,12 @@ public class Main {
         p1.showStats();
     }
 
+    /**
+     * Listet alle Befehle auf dann kommt man in eine schleife in der man alle befehle ausführen kann und die aktuelle map spielen kann bis man stirbt oder man die map abschließt.
+     * @param p1 Player
+     * @param s scanner
+     */
     public static void playerInterface(Player p1,Scanner s){
-        Map y = p1.actualMap;
         System.out.println("Welcome to the Player Interface.");
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*");
@@ -393,6 +416,11 @@ public class Main {
 
     }
 
+    /**
+     * Erstellt eine Map tutorial und ruft dann die funktion player interface aud.
+     * @param s
+     * @throws InterruptedException
+     */
     public static void tutorial(Scanner s) throws InterruptedException {
         Map tutorial = new Map("tutorial",4);
         Room river = new Room("river","x",0,0,0,1,0,0);

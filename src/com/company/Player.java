@@ -5,11 +5,29 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Player extends Entities implements Mutations{
-
+    /**
+     *
+     * @param name name des Spielers
+     * @param hp leben des Spielers
+     * @param ad angrifsschaden des Spieler
+     * @param armor Ruestung des Spielers
+     * @param crit critchanche des Spielers
+     * @param lvl level des spielers
+     * @param speed geschwindigkeit des Spielers
+     * @param destinationRoom spawn raum
+     * @param currentMap spawn map
+     * Die Parameter werden gesetzt
+     */
     public Player(String name,int hp, int ad, int armor, int crit, int lvl, int speed,Room destinationRoom,Map currentMap) {
         super(name,hp, ad, armor, crit, lvl, speed,currentMap,destinationRoom);
           }
 
+    /**
+     * bewegt spieler von raum nach anderen und schaut ob dass möglich ist dann werden noch die container im raum ausgeben und items. Wenn aggressive mobs im raum sind werden diese bekämpft.
+     * @param destination raumname wo man hin will
+     * @param alive ob spieler am leben ist
+     * @return ob spieler am leben ist
+     */
     public int move(String destination,int alive) {
         Room destinationRoom = new Room("x","x",0,0,0,0,0,0);
         Map z = actualMap;
@@ -80,7 +98,10 @@ public class Player extends Entities implements Mutations{
 
     }
 
-
+    /**
+     * schaut durch den room und listet alle items und container im room auf dann wird der user gefragt ob er was einsammeln moechte wenn ja werden sie eingesammelt
+     * @param x Room
+     */
     public void searchRoom(Room x){
         Scanner s = new Scanner(System.in);
         String eingabe;
@@ -155,11 +176,18 @@ public class Player extends Entities implements Mutations{
     }
 
 
-
+    /**
+     * geht in den uebergebenen Room
+     * @param y Raum
+     */
     public void takeExit(Room y){
         actualRoom.setRoom(y.getRoomName(),y.getDescription(),y.getNorthExitType(),y.getSouthExitType(),y.getWestExitType(),y.getEastExitType(),y.getUpExitType(),y.getDownExitType(),y.getItemsInRoom(),y.getContainerInRoom(),y.getMobsInRoom());
     }
 
+    /**
+     * ein Item wird aus dem Container aufgesammelt
+     * @param container Container
+     */
     public void pickupFromContainer(Container container) {
         Scanner s = new Scanner(System.in);
         int z = 0;
@@ -191,6 +219,11 @@ public class Player extends Entities implements Mutations{
         }
     }
 
+    /**
+     * Ein Item wird in den Container an der erst möglichen Stelle gegeben.
+     * @param container container
+     * @param item item
+     */
     public void putIntoContainer(Container container, Item item) {
         if (inventory.remove(item)) {
             addHp(-item.getHp());
@@ -206,6 +239,9 @@ public class Player extends Entities implements Mutations{
         }
     }
 
+    /**
+     * Zeigt das Inventar des Spielers und kontrolliert falls keine vorhanden sind
+     */
     public void showInventory() {
         System.out.println("You have following items in your inventory:");
         if (inventory.size() != 0) {
@@ -217,13 +253,21 @@ public class Player extends Entities implements Mutations{
         }
     }
 
-
+    /**
+     * Ein item wird aus dem derzeitigen Raum aufgehoben.
+     * @param item Item
+     */
     @Override
     public void pickupItem(Item item) {
         super.pickupItem(item);
         System.out.println("You picked up " + item.getItemName());
     }
 
+    /**
+     *
+     * @param mob Mob
+     * @return ob der Spieler
+     */
     public int combat(String mob) {
         Random random = new Random();
         Random mobRandom = new Random();
