@@ -12,12 +12,12 @@ public class Player extends Entities implements Mutations{
      *
      * @param name name des Spielers
      * @param hp leben des Spielers
-     * @param ad angrifsschaden des Spieler
-     * @param armor Ruestung des Spielers
-     * @param crit critchanche des Spielers
-     * @param lvl level des spielers
-     * @param speed geschwindigkeit des Spielers
-     * @param destinationRoom spawn raum
+     * @param ad Angriffsschaden des Spielers
+     * @param armor Rüstung des Spielers
+     * @param crit Critchanche des Spielers
+     * @param lvl level des Spielers
+     * @param speed Geschwindigkeit des Spielers
+     * @param destinationRoom spawn Raum
      * @param currentMap spawn map
      * Die Parameter werden gesetzt
      */
@@ -26,10 +26,10 @@ public class Player extends Entities implements Mutations{
     }
 
     /**
-     * bewegt spieler von raum nach anderen und schaut ob dass möglich ist dann werden noch die container im raum ausgeben und items. Wenn aggressive mobs im raum sind werden diese bekämpft.
-     * @param destination raumname wo man hin will
-     * @param alive ob spieler am leben ist
-     * @return ob spieler am leben ist
+     * bewegt Spieler von Raum nach anderen und schaut, ob es möglich ist dann werden noch die container im Raum ausgeben und items. Wen aggressive mobs im raum sind werden diese bekämpft.
+     * @param destination Raumname wo man hin will
+     * @param alive ob Spieler am Leben ist
+     * @return ob Spieler am Leben ist
      */
     public int move(String destination,int alive) {
         Room destinationRoom = new Room("x","x",0,0,0,0,0,0);
@@ -102,7 +102,7 @@ public class Player extends Entities implements Mutations{
     }
 
     /**
-     * schaut durch den room und listet alle items und container im room auf dann wird der user gefragt ob er was einsammeln moechte wenn ja werden sie eingesammelt
+     * Schaut durch den Room und listet alle items und container im room auf dann wird der user gefragt ob er was einsammeln moechte wenn ja werden sie eingesammelt
      * @param x Room
      */
     public void searchRoom(Room x){
