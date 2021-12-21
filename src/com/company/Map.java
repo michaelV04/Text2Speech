@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Erschaffen einer Map mit ihren Räumen.
  */
-//paul
+
 public class Map {
     private String name;
     private int mapSize;
