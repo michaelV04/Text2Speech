@@ -208,15 +208,15 @@ public class Main {
         Item Potato1 = new Item("Potato1",30,0,0,0,0);
         house1_underground.addItem(Potato1);
 
-        woodsStartVillage.addRoom(village_Road10,42,1);
-        woodsStartVillage.addRoom(house5,43,1);
-        woodsStartVillage.addRoom(church1,44,1);
-        woodsStartVillage.addRoom(church_top1,44,2);
+        woodsStartVillage.addRoom(village_Road10,41,1);
+        woodsStartVillage.addRoom(house5,42,1);
+        woodsStartVillage.addRoom(church1,43,1);
+        woodsStartVillage.addRoom(church_top1,43,2);
         Item teleport_Stone = new Item("teleport_Stone",0,0,0,0,0);
         church_top1.addItem(teleport_Stone);
 
-        woodsStartVillage.addRoom(village_Road21,45,1);
-        woodsStartVillage.addRoom(village_Road25,46,1);
+        woodsStartVillage.addRoom(village_Road21,44,1);
+        woodsStartVillage.addRoom(village_Road25,45,1);
 
         //Row 3
         //woods

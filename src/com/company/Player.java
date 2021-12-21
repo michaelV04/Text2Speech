@@ -273,7 +273,6 @@ public class Player extends Entities implements Mutations{
      */
     public int combat(String mob) {
         Random random = new Random();
-        Random mobRandom = new Random();
         Scanner s = new Scanner(System.in);
         String eingabe;
         Mob m = new Mob("null",0,0,0,0,0,0,getActualRoom(),getActualMap(),0);
@@ -357,7 +356,7 @@ public class Player extends Entities implements Mutations{
                         System.out.println("You attack");
                         int crit = getCrit();
                         int mobDmg = m.getArmor() - getAd();
-                        rand = random.nextInt(crit);
+                        //int rand2 = random.nextInt(crit);
                         if (rand == crit) {
                             mobDmg *= 2;
                             System.out.println("You have landed a critical hit");
