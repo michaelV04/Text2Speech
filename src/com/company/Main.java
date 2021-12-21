@@ -13,7 +13,7 @@ public class Main {
     }
 
     public static void mainLobby(Scanner s) throws InterruptedException {
-        //tutorial(s);
+        tutorial(s);
         int x = 0;
         while (x == 0) {
             int eingabe;
