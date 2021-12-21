@@ -6,13 +6,27 @@ public class Container {
     ArrayList<Item> dingeInside = new ArrayList<>();
     private String containerName;
 
+    /**
+     * setzt Paramter
+     * @param name name
+     */
     public Container(String name){
         this.containerName = name;
     }
 
+    /**
+     * @param item Item
+     * Ein Item wird in den Container gegeben
+     */
     public void addThing(Item item) {
         dingeInside.add(item);
     }
+
+    /**
+     * Item wird aus Container entfernt
+     * @param item Item
+     * @return Item
+     */
     public boolean removeThing(Item item) {
         if(dingeInside.remove(item)) {
             return true;
@@ -20,11 +34,17 @@ public class Container {
             return false;
         }
     }
-//
+
+    /**
+     * @return Container Name
+     */
     public String getContainerName(){
         return containerName;
     }
 
+    /**
+     Item im Container werden ausgegeben
+     */
     public void getContainerItems(){
         for (int i = 0; i < dingeInside.size(); i++) {
             System.out.println(dingeInside.get(i).getItemName());
