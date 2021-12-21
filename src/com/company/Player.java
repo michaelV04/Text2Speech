@@ -267,7 +267,7 @@ public class Player extends Entities implements Mutations{
     }
 
     /**
-     * Der Spieler kaempft gegen den gegeben mob bis entweder mob oder Spieler stirbt.
+     * Der Spieler kaempft gegen den gegeben mob bis entweder mob oder Spieler stirbt. User kann eingeben ob er kämpfen oder fliehen will.
      * @param mob Mob
      * @return ob der Spieler noch am Leben ist
      */
