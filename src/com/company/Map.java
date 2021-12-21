@@ -3,6 +3,9 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Erschaffen einer Map mit ihren Räumen.
+ */
 
 public class Map {
     private String name;
@@ -12,7 +15,11 @@ public class Map {
     ArrayList<Room> roomsS0 = new ArrayList<>();
     ArrayList<Room> roomsS2 = new ArrayList<>();
 
-
+    /**
+     * Erstellt eine leere Map
+     * @param mapname String
+     * @param mapSize int
+     */
     public Map(String mapname, int mapSize) {
         this.name = mapname;
         this.mapSize = mapSize;
@@ -23,10 +30,20 @@ public class Map {
         }
     }
 
+    /**
+     *
+     * @return name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Fügt einen Raum/Room zur Karte/Map hinzu.
+     * @param x Room
+     * @param position int
+     * @param stage int
+     */
     public void addRoom(Room x, int position, int stage) {
         if (stage == 1) {
             roomsS1.add(position, x);
@@ -40,6 +57,9 @@ public class Map {
         }
     }
 
+    /**
+     * Zeigt die Karte/Map an
+     */
     public void showMap() {
         System.out.println("Stage 2:");
         double divide = mapSize;
@@ -85,7 +105,12 @@ public class Map {
 
 //
 
-
+    /**
+     * Überprüft(Zugänglichkeit) ob man von einem Raum/Room in den nächsten gehen kann.
+     * @param playerRoom Room
+     * @param destinationRoom Room
+     * @return ob der Raum von der aktuellen Position betretbar ist.
+     */
     public int checkIfExitTrue(Room playerRoom,Room destinationRoom) {
 
             double add = Math.sqrt(mapSize);
@@ -272,30 +297,74 @@ public class Map {
         }
     }
 
+    /**
+     *
+     * @return mapsize
+     */
     public int getMapSize(){
         return mapSize;
     }
+
+    /**
+     * setzt
+     * @param mapSize int
+     */
     public void setMapSize(int mapSize){
         this.mapSize = mapSize;
     }
+
+    /**
+     * setzt
+     * @param name String
+     */
     public void setName(String name){
         this.name = name;
     }
+
+    /**
+     * setzt S2
+     * @param x ArrayList<Room>
+     */
     public void setS2(ArrayList<Room> x){
         this.roomsS2 = x;
     }
+
+    /**
+     *
+     * @return Room S2
+     */
     public ArrayList<Room> getS2(){
         return roomsS2;
     }
+
+    /**
+     * setzt S0
+     * @param x ArrayList<Room>
+     */
     public void setS0(ArrayList<Room> x){
         this.roomsS0 = x;
     }
+
+    /**
+     *
+     * @return Room S0
+     */
     public ArrayList<Room> getS0(){
         return roomsS0;
     }
+
+    /**
+     * setzt S1
+     * @param x ArrayList<Room>
+     */
     public void setS1(ArrayList<Room> x){
         this.roomsS1 = x;
     }
+
+    /**
+     *
+     * @return Room S1
+     */
     public ArrayList<Room> getS1(){
         return roomsS1;
     }
