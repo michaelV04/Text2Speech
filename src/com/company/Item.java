@@ -1,19 +1,19 @@
 package com.company;
 
 public class Item {
-    private String name;
-    private int hp;
-    private int ad;
-    private int armor;
-    private int crit;
-    private int speed;
+    private final String name;
+    private final int hp;
+    private final int ad;
+    private final int armor;
+    private final int crit;
+    private final int speed;
 
     /**
-     * Setzt die Paramter
+     * Setzt die Parameter
      * @param itemName Name
      * @param hp Leben
-     * @param ad Angrifsschaden
-     * @param armor Ruestung
+     * @param ad Angriffsschaden
+     * @param armor Rüstung
      * @param crit Critchanche
      * @param speed Geschwindigkeit
      */

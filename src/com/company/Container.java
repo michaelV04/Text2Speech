@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Container {
     ArrayList<Item> dingeInside = new ArrayList<>();
-    private String containerName;
+    private final String containerName;
 
     /**
-     * setzt Paramter
+     * setzt Parameter
      * @param name name
      */
     public Container(String name){
@@ -16,7 +16,7 @@ public class Container {
 
     /**
      * @param item Item
-     * Ein Item wird in den Container gegeben
+     * ein Item wird in den Container gegeben
      */
     public void addThing(Item item) {
         dingeInside.add(item);
@@ -46,8 +46,8 @@ public class Container {
      Item im Container werden ausgegeben
      */
     public void getContainerItems(){
-        for (int i = 0; i < dingeInside.size(); i++) {
-            System.out.println(dingeInside.get(i).getItemName());
+        for (Item item : dingeInside) {
+            System.out.println(item.getItemName());
         }
     }
 }

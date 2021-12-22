@@ -20,11 +20,11 @@ public class Room {
     private String roomName;
 
     /**
-     * setzt die Paramter
+     * setzt die Parameter
      * @param roomname Raumname
-     * @param description Raum beschreibung
+     * @param description Raum Beschreibung
      * @param nExitType Nordausgang
-     * @param sExitType Suedausgang
+     * @param sExitType Südausgang
      * @param eExitType Ostausgang
      * @param wExitType Westausgang
      * @param upExitType Ausgang nach oben
@@ -43,14 +43,10 @@ public class Room {
     }
 
     /**
-     * @return gibt Raum name zurueck wenn existiert
+     * @return gibt Raum name zurück, wenn existiert
      */
     public String getRoomName(){
-        if (roomName != null) {
-            return roomName;
-        }else{
-            return "No room";
-        }
+        return Objects.requireNonNullElse(roomName, "No room");
     }
 
     /**
@@ -111,7 +107,7 @@ public class Room {
     }
 
     /**
-     * @return Postion des Spielers wenn keine vorhanden wird 1000 returned
+     * @return Postion des Spielers, wenn keine vorhanden wird 1000 returned
      */
     public int getPos(){
         if (pos == 0){
@@ -121,7 +117,7 @@ public class Room {
     }
 
     /**
-     * fuegt ein Item zum Room hinzu
+     * fügt ein Item zum Room hinzu
      * @param item Item
      */
     public void addItem(Item item) {
@@ -129,7 +125,7 @@ public class Room {
     }
 
     /**
-     * Entefernt ein Item aus dem Room
+     * Entfernt ein Item aus dem Room
      * @param item Item
      */
     public void removeItem(Item item) {
@@ -137,7 +133,7 @@ public class Room {
     }
 
     /**
-     * Fuegt einen Container zum Raum hinzu
+     * Fügt einen Container zum Raum hinzu
      * @param container Container
      */
     public void addContainer(Container container) {
@@ -147,9 +143,9 @@ public class Room {
     /**
      * Setzt den Raum
      * @param roomname Raumname
-     * @param description Raum beschreibung
+     * @param description Raum Beschreibung
      * @param northExit Nordausgang
-     * @param southExit Suedausgang
+     * @param southExit Südausgang
      * @param eastExit Ostausgang
      * @param westExit Westausgang
      * @param upExit Ausgang nach oben
@@ -195,14 +191,14 @@ public class Room {
 
     /**
      * @param x Mob
-     * Mob x wird zum Raum hinzugefuegt
+     * Mob x wird zum Raum hinzugefügt
      */
     public void addMob(Mob x){
         mobsInRoom.add(x);
     }
 
     /**
-     * Monb wird aus dem Raum geloescht
+     * Mob wird aus dem Raum gelöscht
      * @param x Mob
      */
     public void delMob(Mob x){

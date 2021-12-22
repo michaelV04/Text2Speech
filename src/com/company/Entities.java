@@ -139,7 +139,7 @@ public abstract class Entities implements Mutations {
 
     /**
      * Nimmt einen Gegenstand in das Inventar auf.
-     * @param item
+     * @param item Item
      */
     public void pickupItem(Item item){
         inventory.add(item);
@@ -152,7 +152,7 @@ public abstract class Entities implements Mutations {
 
     /**
      * Sobald das Item Blue_Balls aufgenommen wird, werden die HP verdoppelt und AD halbiert.
-     * @param i
+     * @param i Item
      */
     @Override
     public void mutationXuse(Item i) {
@@ -164,7 +164,7 @@ public abstract class Entities implements Mutations {
 
     /**
      * Sobald das Item Martini aufgenommen wird, wird Speed verdoppelt und HP halbiert.
-     * @param i
+     * @param i Item
      */
     @Override
     public void mutationYuse(Item i) {
@@ -176,7 +176,7 @@ public abstract class Entities implements Mutations {
 
     /**
      * Sobald das Item Gods_Piss aufgenommen wird, wird die Crit-chance auf 100 erhöht.
-     * @param i
+     * @param i Item
      */
     @Override
     public void mutationZuse(Item i) {

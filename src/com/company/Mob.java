@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Objects;
-
 /**
  * Erschaffen eines Monsters, mit seinen Eigenschaften.
  */
@@ -28,8 +26,8 @@ public class Mob extends Entities implements Mutations{
     }
 
     /**
-     * Schaut ob das Inventar leer ist.
-     * @return
+     * Schaut, ob das Inventar leer ist.
+     * @return true or false
      */
     public boolean inventoryFull() {
         if (inventory.size() > 0) {
@@ -41,7 +39,7 @@ public class Mob extends Entities implements Mutations{
 
     /**
      * Gibt das Inventar des Monsters als Gegenstände zurück.
-     * @return
+     * @return Item
      */
     public Item getItem() {
         if (inventory.size() > 0) {

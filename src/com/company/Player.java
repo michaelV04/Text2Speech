@@ -26,7 +26,7 @@ public class Player extends Entities implements Mutations{
     }
 
     /**
-     * bewegt Spieler von Raum nach anderen und schaut, ob es möglich ist dann werden noch die container im Raum ausgeben und items. Wen aggressive mobs im raum sind werden diese bekämpft.
+     * bewegt Spieler von Raum nach anderen und schaut, ob es möglich ist dann werden noch die container im Raum ausgeben und items. Wen aggressive mobs im Raum sind dann werden diese bekämpft.
      * @param destination Raumname wo man hin will
      * @param alive ob Spieler am Leben ist
      * @return ob Spieler am Leben ist
@@ -52,8 +52,7 @@ public class Player extends Entities implements Mutations{
             }
         }
         Room x = actualRoom;
-        Scanner s = new Scanner(System.in);
-        int check = 0;
+        int check;
         check = z.checkIfExitTrue(x, destinationRoom);
 
         if (check == 1) {
@@ -102,7 +101,7 @@ public class Player extends Entities implements Mutations{
     }
 
     /**
-     * Schaut durch den Room und listet alle items und container im room auf dann wird der user gefragt ob er was einsammeln moechte wenn ja werden sie eingesammelt
+     * Schaut durch den Room und listet alle Items und Container im Room auf, danach wird der user gefragt, ob er was einsammeln möchte, wenn; ja werden sie eingesammelt.
      * @param x Room
      */
     public void searchRoom(Room x){
@@ -150,8 +149,6 @@ public class Player extends Entities implements Mutations{
                             pickupFromContainer(x.containerInRoom.get(z));
                             z++;
                         }
-                    } else if (Objects.equals(abcdefg, "leave")) {
-
                     }
 
                 }else {
@@ -180,7 +177,7 @@ public class Player extends Entities implements Mutations{
 
 
     /**
-     * geht in den uebergebenen Room
+     * geht in den Übergebenen Room
      * @param y Raum
      */
     public void takeExit(Room y){
@@ -243,13 +240,13 @@ public class Player extends Entities implements Mutations{
     }
 
     /**
-     * Zeigt das Inventar des Spielers und kontrolliert falls keine vorhanden sind
+     * Zeigt das Inventar des Spielers und kontrolliert, falls keine vorhanden sind
      */
     public void showInventory() {
         System.out.println("You have following items in your inventory:");
         if (inventory.size() != 0) {
-            for (int i = 0; i < inventory.size(); i++) {
-                System.out.println(inventory.get(i).getItemName());
+            for (Item item : inventory) {
+                System.out.println(item.getItemName());
             }
         }else{
             System.out.println("You have no Items in your Inventory");
@@ -267,7 +264,7 @@ public class Player extends Entities implements Mutations{
     }
 
     /**
-     * Der Spieler kaempft gegen den gegeben mob bis entweder mob oder Spieler stirbt. User kann eingeben ob er kämpfen oder fliehen will.
+     * Der Spieler kämpft gegen den gegeben mob bis entweder mob oder Spieler stirbt. User kann eingeben, ob er kämpfen oder fliehen will.
      * @param mob Mob
      * @return ob der Spieler noch am Leben ist
      */

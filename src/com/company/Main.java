@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     /**
-     * Erzeugt einen Scanner und ruft die funktion mainlobby auf und übergibt den scanner
+     * Erzeugt einen Scanner und ruft die Funktion mainlobby auf und übergibt den scanner
      */
     public static void main(String[] args) throws InterruptedException {
         Scanner s = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class Main {
     /**
      *
      * @param s scanner
-     * Startet das tutorial und wartet darauf dass es fertig wird dann wird der benutzer gefragt ob er tutorial, bug break, commands oder das spiel beenden will.
+     * Startet das tutorial und wartet darauf dass es fertig wird dann wird der Benutzer gefragt ob er tutorial, bug break, commands oder das spiel beenden will.
      */
     public static void mainLobby(Scanner s) throws InterruptedException {
         tutorial(s);
@@ -43,12 +43,12 @@ public class Main {
 
     /**
      * @param s scanner
-     * Erstellt eine Map und speichert einen room hinein, im room werden zwei zombies erstellt und ein player. Dannach kämpft der speiler gegen die zombies bis er stirb oder sie.
+     * erstellt eine Map und speichert einen room hinein, im room werden zwei zombies erstellt und ein player. Danach kämpft der Spieler gegen die zombies bis er stirb oder sie.
      */
     public static void combatTest(Scanner s) {
         int alive = 1;
         Map testM1 = new Map("testM1",9);
-        Room testR1 = new Room("testR1","ulala",0,0,0,1,0,0);
+        Room testR1 = new Room("testR1","a Room",0,0,0,1,0,0);
         Mob zombie = new Mob("zombie1",1000,10,0,0,1,50,testR1,testM1,1);
         Mob zombie1 = new Mob("zombie2",1000,10,0,0,1,50,testR1,testM1,1);
         Item mobitem1 = new Item("x",0,10,0,0,0);
@@ -76,7 +76,7 @@ public class Main {
     }
 
     /**
-     * ruft die funktion bugBreak auf
+     * ruft die Funktion bugBreak auf
      * @param s scanner
      */
     public static void bugBreak(Scanner s) {
@@ -84,7 +84,7 @@ public class Main {
     }
 
     /**
-     * erstellt eine Karte woodsstartVillage mit raeumen mobs Spieler contaier und items dannach wird die funktion player interface aufgerufen.
+     * erstellt eine Karte woodsstartVillage mit Räumen mobs Spieler Container und items danach wird die Funktion player interface aufgerufen.
      * @param s scanner
      */
     public static void startVillage(Scanner s) {
@@ -139,11 +139,11 @@ public class Main {
         Room house1_underground = new Room("house1_underground","Hard to see in here",0,0,0,0,1,0); // ok
         Room house6_underground = new Room("house6_underground","This Creature looks dangerous",0,0,0,0,1,0); // ok
 
-        Room house2_2ndFloor = new Room("house2_2ndFloor","Looks shaby",0,0,1,0,0,1); // ok
-        Room house3_2ndFloor = new Room("house3_2ndFloor","Looks shaby",0,0,0,1,0,1); // ok
+        Room house2_2ndFloor = new Room("house2_2ndFloor","Looks shabby",0,0,1,0,0,1); // ok
+        Room house3_2ndFloor = new Room("house3_2ndFloor","Looks shabby",0,0,0,1,0,1); // ok
 
-        Room plateu_low = new Room("plateu_low","You can climb it",0,1,0,1,1,0); // ok
-        Room plateu_high = new Room("plateu_high","Wow that is high",0,0,0,0,0,1); // ok
+        Room plateau_low = new Room("plateau_low","You can climb it",0,1,0,1,1,0); // ok
+        Room plateau_high = new Room("plateau_high","Wow that is high",0,0,0,0,0,1); // ok
 
         Mob guard1 = new Mob("Guard1",400,50,10,0,50,300,village_Entrance1,woodsStartVillage,1);
         Mob guard2 = new Mob("Guard2",400,50,10,0,50,300,village_Entrance1,woodsStartVillage,1);
@@ -159,8 +159,8 @@ public class Main {
         Mob guard12 = new Mob("Guard12",1000,70,20,0,50,500,village_Road14,woodsStartVillage,1);
         Mob guard13 = new Mob("Guard13",1000,30,100,0,50,300,village_Road22,woodsStartVillage,1);
         Mob guard14 = new Mob("Guard14",1000,30,100,0,50,300,village_Road22,woodsStartVillage,1);
-        Mob guard15 = new Mob("Guard15",100,500,10,0,50,1000,plateu_high,woodsStartVillage,1);
-        Mob guard16 = new Mob("Guard16",100,500,10,0,50,1000,plateu_high,woodsStartVillage,1);
+        Mob guard15 = new Mob("Guard15",100,500,10,0,50,1000,plateau_high,woodsStartVillage,1);
+        Mob guard16 = new Mob("Guard16",100,500,10,0,50,1000,plateau_high,woodsStartVillage,1);
         Mob guard17 = new Mob("Guard17",100,50,10,0,50,300,village_Road27,woodsStartVillage,1);
         Mob guard18 = new Mob("Guard18",100,50,10,0,50,300,village_Road27,woodsStartVillage,1);
         Mob guard19 = new Mob("Guard19",100,50,10,0,50,300,village_Road27,woodsStartVillage,1);
@@ -186,15 +186,15 @@ public class Main {
         woodsStartVillage.addRoom(village_Road13,26,1);
         woodsStartVillage.addRoom(village_Road16,27,1);
         woodsStartVillage.addRoom(village_Road20,28,1);
-        woodsStartVillage.addRoom(plateu_low,29,1);
-        woodsStartVillage.addRoom(plateu_high,29,2);
-        plateu_high.addItem(mutationY);
-        plateu_high.addMob(guard15);
-        plateu_high.addMob(guard16);
+        woodsStartVillage.addRoom(plateau_low,29,1);
+        woodsStartVillage.addRoom(plateau_high,29,2);
+        plateau_high.addItem(mutationY);
+        plateau_high.addMob(guard15);
+        plateau_high.addMob(guard16);
         Container chest2 = new Container("Chest2");
         Item Black_Bow1 = new Item("Black_Bow1",0,700,8,-8,50);
         chest2.addThing(Black_Bow1);
-        plateu_high.addContainer(chest2);
+        plateau_high.addContainer(chest2);
 
         //Row 2
         woodsStartVillage.addRoom(village_Road2,39,1);
@@ -343,7 +343,7 @@ public class Main {
     }
 
     /**
-     * Listet alle Befehle auf dann kommt man in eine schleife in der man alle befehle ausführen kann und die aktuelle map spielen kann bis man stirbt oder man die map abschließt.
+     * Listet alle Befehle auf. Danach kommt man in eine schleife in der man alle Befehle ausführen kann und die aktuelle map spielen kann bis man stirbt oder man die map abschließt.
      * @param p1 Player
      * @param s scanner
      */
@@ -417,7 +417,7 @@ public class Main {
     }
 
     /**
-     * Erstellt eine Map tutorial und ruft dann die Funktion player interface aud.
+     * Erstellt eine Map tutorial und ruft dann die Funktion player interface auf.
      * @param s scanner
      */
     public static void tutorial(Scanner s) throws InterruptedException {
