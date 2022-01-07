@@ -1,5 +1,7 @@
 package com.company;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.Random;
@@ -387,6 +389,73 @@ public class Player extends Entities implements Mutations{
         }
 
         return 1;
+    }
+
+    public void showmap() {
+        String location = getActualRoom().getRoomName();
+        javax.swing.JFrame frame = new javax.swing.JFrame("Map");
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+
+
+        switch (location) {
+            case "x" -> panel.add(new JLabel(new ImageIcon("Figures/1.jpg")));
+            case "woods1" -> panel.add(new JLabel(new ImageIcon("Figures/2.jpg")));
+            case "woods2" -> panel.add(new JLabel(new ImageIcon("Figures/3.jpg")));
+            case "woods3" -> panel.add(new JLabel(new ImageIcon("Figures/4.jpg")));
+            case "woods4" -> panel.add(new JLabel(new ImageIcon("Figures/5.jpg")));
+            case "cliff1" -> panel.add(new JLabel(new ImageIcon("Figures/6.jpg")));
+            case "sea1" -> panel.add(new JLabel(new ImageIcon("Figures/7.jpg")));
+            case "Village_Entrance1" -> panel.add(new JLabel(new ImageIcon("Figures/8.jpg")));
+            case "Village_Road1" -> panel.add(new JLabel(new ImageIcon("Figures/9.jpg")));
+            case "Village_Road2" -> panel.add(new JLabel(new ImageIcon("Figures/10.jpg")));
+            case "Village_Road3" -> panel.add(new JLabel(new ImageIcon("Figures/11.jpg")));
+            case "Village_Road4" -> panel.add(new JLabel(new ImageIcon("Figures/12.jpg")));
+            case "Village_Road5" -> panel.add(new JLabel(new ImageIcon("Figures/13.jpg")));
+            case "Village_Road6" -> panel.add(new JLabel(new ImageIcon("Figures/14.jpg")));
+            case "house1" -> panel.add(new JLabel(new ImageIcon("Figures/15.jpg")));
+            case "house1_underground" -> panel.add(new JLabel(new ImageIcon("Figures/15.jpg")));
+            case "Village_Road7" -> panel.add(new JLabel(new ImageIcon("Figures/16.jpg")));
+            case "house2" -> panel.add(new JLabel(new ImageIcon("Figures/17.jpg")));
+            case "house2_2ndFloor" -> panel.add(new JLabel(new ImageIcon("Figures/17.jpg")));
+            case "Village_Road8" -> panel.add(new JLabel(new ImageIcon("Figures/18.jpg")));
+            case "Village_Road9" -> panel.add(new JLabel(new ImageIcon("Figures/19.jpg")));
+            case "Village_Road10" -> panel.add(new JLabel(new ImageIcon("Figures/20.jpg")));
+            case "Village_Road11" -> panel.add(new JLabel(new ImageIcon("Figures/21.jpg")));
+            case "house3" -> panel.add(new JLabel(new ImageIcon("Figures/22.jpg")));
+            case "house3_2ndFloor" -> panel.add(new JLabel(new ImageIcon("Figures/22.jpg")));
+            case "Village_Road12" -> panel.add(new JLabel(new ImageIcon("Figures/23.jpg")));
+            case "Village_Road13" -> panel.add(new JLabel(new ImageIcon("Figures/24.jpg")));
+            case "house4" -> panel.add(new JLabel(new ImageIcon("Figures/25.jpg")));
+            case "Village_Road14" -> panel.add(new JLabel(new ImageIcon("Figures/26.jpg")));
+            case "house5" -> panel.add(new JLabel(new ImageIcon("Figures/27.jpg")));
+            case "Village_Road15" -> panel.add(new JLabel(new ImageIcon("Figures/28.jpg")));
+            case "Village_Road16" -> panel.add(new JLabel(new ImageIcon("Figures/29.jpg")));
+            case "church1" -> panel.add(new JLabel(new ImageIcon("Figures/30.jpg")));
+            case "church1_top1" -> panel.add(new JLabel(new ImageIcon("Figures/30.jpg")));
+            case "Village_Road17" -> panel.add(new JLabel(new ImageIcon("Figures/31.jpg")));
+            case "Village_Road18" -> panel.add(new JLabel(new ImageIcon("Figures/32.jpg")));
+            case "Village_Road19" -> panel.add(new JLabel(new ImageIcon("Figures/33.jpg")));
+            case "Village_Road20" -> panel.add(new JLabel(new ImageIcon("Figures/34.jpg")));
+            case "Village_Road21" -> panel.add(new JLabel(new ImageIcon("Figures/35.jpg")));
+            case "Village_Road22" -> panel.add(new JLabel(new ImageIcon("Figures/36.jpg")));
+            case "Village_Road23" -> panel.add(new JLabel(new ImageIcon("Figures/37.jpg")));
+            case "Village_Road24" -> panel.add(new JLabel(new ImageIcon("Figures/38.jpg")));
+            case "plateau_low" -> panel.add(new JLabel(new ImageIcon("Figures/39.jpg")));
+            case "plateau_high" -> panel.add(new JLabel(new ImageIcon("Figures/39.jpg")));
+            case "Village_Road25" -> panel.add(new JLabel(new ImageIcon("Figures/40.jpg")));
+            case "Village_Road26" -> panel.add(new JLabel(new ImageIcon("Figures/41.jpg")));
+            case "Village_Road27" -> panel.add(new JLabel(new ImageIcon("Figures/42.jpg")));
+            case "house6" -> panel.add(new JLabel(new ImageIcon("Figures/43.jpg")));
+            case "house6_underground" -> panel.add(new JLabel(new ImageIcon("Figures/43.jpg")));
+            default -> {
+            }
+        }
+        frame.add(panel);
+        frame.setSize(600, 570);
+        frame.setLocationRelativeTo(null);
+        //frame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
 

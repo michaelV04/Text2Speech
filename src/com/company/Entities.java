@@ -125,6 +125,8 @@ public abstract class Entities implements Mutations {
         return actualRoom;
     }
 
+    public String getRoomName() { return actualRoom.getRoomName(); }
+
     /**
      * Zeigt die Eigenschaften des Entities an.
      */
