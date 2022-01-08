@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 
 // TODO: Combat modus funkt no net flee
-// TODO: Wenn man tutorial überspring, steat you died
+
 
 public class Main {
     /**
@@ -360,7 +360,7 @@ public class Main {
         System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the game");
         int xy = 0;
         int alive = 1;
-        while (xy == 0 && alive == 1) {
+        while (xy == 0 && alive >= 1) {
             String command;
             command = s.next();
             //
@@ -433,7 +433,7 @@ public class Main {
         Room roof = new Room("roof","x",0,0,0,0,0,1);
         Container stone = new Container("stone");
         Container cabinet = new Container("cabinet");
-        Item sword = new Item("sword",0,10,0,0,2);
+        Item sword = new Item("sword",0,100,0,0,2);
         Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100, river,tutorial);
 
         stone.addThing(sword);

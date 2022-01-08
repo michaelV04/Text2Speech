@@ -70,6 +70,9 @@ public class Player extends Entities implements Mutations{
                         if (alive == 0){
                             break;
                         }
+                        if (alive == 2){
+                            break;
+                        }
                     }else {
                         i++;
                     }
@@ -382,8 +385,8 @@ public class Player extends Entities implements Mutations{
             }
         }else if (Objects.equals(eingabe, "2")){
             System.out.println("You ran away");
-            return 1;
-            // TODO: Look if mob is alive or if he's disappeared
+            return 2;
+
         }else {
             System.out.println("Invalid Input");
         }
