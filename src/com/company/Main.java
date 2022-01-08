@@ -5,8 +5,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
-// TODO: Combat modus funkt no net
-// TODO: Tutorial endet net automatisch
+// TODO: Combat modus funkt no net flee
 // TODO: Wenn man tutorial überspring, steat you died
 
 public class Main {
@@ -402,7 +401,7 @@ public class Main {
                 commands();
             }else if (Objects.equals(command, "stats")){
                 p1.showStats();
-            } else if (Objects.equals(p1.actualMap.getName(), "tutorial")){
+            } if (Objects.equals(p1.actualMap.getName(), "tutorial")){
                 if (Objects.equals(p1.actualRoom.getRoomName(), "roof") && Objects.equals(p1.actualMap.roomsS1.get(0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")) {
                     System.out.println("You have finished the tutorial!");
                     xy++;
