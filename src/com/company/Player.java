@@ -403,6 +403,10 @@ public class Player extends Entities implements Mutations{
 
         switch (location) {
             case "x" -> panel.add(new JLabel(new ImageIcon("Figures/1.jpg")));
+            case "river" -> panel.add(new JLabel(new ImageIcon("Figures/Tutorial2.jpg")));
+            case "field" -> panel.add(new JLabel(new ImageIcon("Figures/Tutorial3.jpg")));
+            case "house" -> panel.add(new JLabel(new ImageIcon("Figures/Tutorial4.jpg")));
+            case "roof" -> panel.add(new JLabel(new ImageIcon("Figures/Tutorial5.jpg")));
             case "woods1" -> panel.add(new JLabel(new ImageIcon("Figures/2.jpg")));
             case "woods2" -> panel.add(new JLabel(new ImageIcon("Figures/3.jpg")));
             case "woods3" -> panel.add(new JLabel(new ImageIcon("Figures/4.jpg")));

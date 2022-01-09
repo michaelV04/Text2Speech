@@ -68,11 +68,6 @@ public class Map {
             if (roomsS2.get(i) != null) {
                 System.out.print(i+roomsS2.get(i).getRoomName() + "\t");
             }
-            for (int j = 1; j < mapSize; j++) {
-                if (i == divide*j) {
-                    System.out.println("\n");
-                }
-            }
         }
         System.out.println("\n");
         System.out.println("Stage 1:");
@@ -80,12 +75,6 @@ public class Map {
             if (roomsS1.get(i) != null) {
                 System.out.print(i+roomsS1.get(i).getRoomName() + "\t");
             }
-            for (int j = 1; j < mapSize; j++) {
-                if (i == divide*j) {
-                    System.out.println("\n");
-                }
-            }
-
         }
         System.out.println("\n");
 
@@ -94,12 +83,8 @@ public class Map {
             if (roomsS0.get(i) != null){
                 System.out.print(i+roomsS0.get(i).getRoomName() + "\t");
             }
-            for (int j = 1; j < mapSize; j++) {
-                if (i == divide*j) {
-                    System.out.println("\n");
-                }
-            }
         }
+        System.out.println("\n");
     }
 
 

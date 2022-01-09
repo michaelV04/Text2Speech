@@ -307,7 +307,7 @@ public class Main {
 
 
         woodsStartVillage.showMap();
-        playerInterface(p1,s);
+        playerInterface(p1, s);
 
     }
 
@@ -355,8 +355,9 @@ public class Main {
         System.out.println("Welcome to the Player Interface.");
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
         System.out.println("You can also look around the area your standing in with *look*");
+        System.out.println("You can look at the map with *map*");
         System.out.println("You can move your Character by typing *move* then you will get a List of options");
-        System.out.println("You can also look around the area your standing in with *look*\nOr fight a Mob with combat\nOr look at your stats");
+        System.out.println("You can also look around the area your standing in with *look*\nOr fight a Mob with *combat*\nOr look at your stats with *stats*");
         System.out.println("You can Exit the game with exit and with inv you can open your Inventory\nWith finish you can check if you have finished the game");
         int xy = 0;
         int alive = 1;
