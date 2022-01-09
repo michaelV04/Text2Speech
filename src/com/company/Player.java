@@ -394,12 +394,17 @@ public class Player extends Entities implements Mutations{
         return 1;
     }
 
+    /**
+     * showmap erstellt ein neues Fenster, bei der man die Map und den aktuellen Standort zeigt
+     * location speichert die aktuelle location
+     * frame erstellt ein neues Fenster
+     * panel erstellt ein panel, welches zum Fenster hinzugefuegt wird (enthaelt die Map)
+     */
     public void showmap() {
         String location = getActualRoom().getRoomName();
         javax.swing.JFrame frame = new javax.swing.JFrame("Map");
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
-
 
         switch (location) {
             case "x" -> panel.add(new JLabel(new ImageIcon("Figures/1.jpg")));
