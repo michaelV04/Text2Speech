@@ -366,7 +366,6 @@ public class Main {
             if (Objects.equals(command, "look")) {
                 p1.searchRoom(p1.actualRoom);
             } else if (Objects.equals(command, "move")) {
-                p1.actualMap.showMap();
                 System.out.println("In which Room would you like to move?");
                 System.out.println("You are in Room " + p1.actualRoom.getRoomName());
                 String e;
