@@ -176,6 +176,9 @@ public class Main {
         Item mutationY = new Item("Martini",0,0,0,0,0);
         Item mutationZ = new Item("Gods_Piss",0,0,0,0,0);
 
+        guard5.pickupItem(mutationX);
+        guard9.pickupItem(mutationY);
+        whiteSpike.pickupItem(mutationZ);
 
         Player p1 = new Player("Hans",100,10,0,0,1,100,woods1,woodsStartVillage);
         //create Map

@@ -67,6 +67,7 @@ public class Map {
         for (int i = 0; i < mapSize; i++) {
             if (roomsS2.get(i) != null) {
                 System.out.print(i+roomsS2.get(i).getRoomName() + "\t");
+                System.out.println("\n");
             }
         }
         System.out.println("\n");
@@ -74,6 +75,7 @@ public class Map {
         for (int i = 0; i < mapSize; i++) {
             if (roomsS1.get(i) != null) {
                 System.out.print(i+roomsS1.get(i).getRoomName() + "\t");
+                System.out.println("\n");
             }
         }
         System.out.println("\n");
@@ -82,6 +84,7 @@ public class Map {
         for (int i = 0; i < mapSize; i++) {
             if (roomsS0.get(i) != null){
                 System.out.print(i+roomsS0.get(i).getRoomName() + "\t");
+                System.out.println("\n");
             }
         }
         System.out.println("\n");

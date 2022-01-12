@@ -381,6 +381,7 @@ public class Player extends Entities implements Mutations{
                 return 0;
             }else{
                 System.out.println("You have killed "+ m.getName());
+                actualRoom.delMob(m);
                 return 1;
             }
         }else if (Objects.equals(eingabe, "2")){
