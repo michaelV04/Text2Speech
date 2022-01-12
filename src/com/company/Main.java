@@ -452,7 +452,6 @@ public class Main {
         m1.setRoom(house);
         house.mobsInRoom.add(m1);
 
-        tutorial.showMap();
 
         System.out.println("Wake up!");
         System.out.println("*You are standing between a river*");
