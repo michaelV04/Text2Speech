@@ -10,8 +10,10 @@ public class Main {
      */
     public static void main(String[] args) throws InterruptedException {
         Scanner s = new Scanner(System.in);
+        DataManager d = new DataManager();
+        int x = d.checkTutorial();
         //combatTest(s);
-        mainLobby(s);
+        mainLobby(s,x);
     }
 
     /**
@@ -19,8 +21,10 @@ public class Main {
      * @param s scanner
      * Startet das tutorial und wartet darauf dass es fertig wird dann wird der Benutzer gefragt ob er tutorial, bug break, commands oder das spiel beenden will.
      */
-    public static void mainLobby(Scanner s) throws InterruptedException {
-        tutorial(s);
+    public static void mainLobby(Scanner s,int check) throws InterruptedException {
+        if (check == 0) {
+            tutorial(s);
+        }
         int x = 0;
         while (x == 0) {
             int eingabe;
@@ -399,6 +403,8 @@ public class Main {
             } if (Objects.equals(p1.actualMap.getName(), "tutorial")){
                 if (Objects.equals(p1.actualRoom.getRoomName(), "roof") && Objects.equals(p1.actualMap.roomsS1.get(0).containerInRoom.get(0).dingeInside.get(0).getItemName(), "sword")) {
                     System.out.println("You have finished the tutorial!");
+                    DataManager d = new DataManager();
+                    d.set_tutorial();
                     xy++;
                 }
             }else if(Objects.equals(p1.actualMap.getName(), "Start_Village")){
@@ -428,7 +434,7 @@ public class Main {
         Room roof = new Room("roof","x",0,0,0,0,0,1);
         Container stone = new Container("stone");
         Container cabinet = new Container("cabinet");
-        Item sword = new Item("sword",0,100,0,0,2);
+        Item sword = new Item("sword",0,1000,0,0,2);
         Player p1 = new Player("Goat", 100, 10, 10, 0, 1, 100, river,tutorial);
 
         stone.addThing(sword);

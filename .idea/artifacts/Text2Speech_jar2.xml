@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Text2Speech:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/Text2Speech_jar2</output-path>
+    <root id="archive" name="Text2Speech.jar">
+      <element id="module-output" name="Text2Speech" />
+    </root>
+  </artifact>
+</component>
