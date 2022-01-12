@@ -100,54 +100,54 @@ public class Main {
         Room cliff1 = new Room("cliff1","Theres a waterfall falling of the cliff ending in a sea",0,0,1,1,0,0); // ok
         Room sea1 = new Room("sea1","You have to swim to the other side",0,0,1,1,0,0); // ok
 
-        Room village_Entrance1 = new Room("Village_Entrance1","A gate protected by guards",0,0,1,1,0,0); // ok
+        Room village_Entrance1 = new Room("entrance1","A gate protected by guards",0,0,1,1,0,0); // ok
 
-        Room village_Road1 = new Room("Village_Road1","No one to see you can hear soldiers talking",0,1,1,0,0,0); // ok
-        Room village_Road2 = new Room("Village_Road2","No one to see you can hear soldiers talking",1,1,0,0,0,0); // ok
-        Room village_Road3 = new Room("Village_Road3","No one to see you can hear soldiers talking",1,1,1,1,0,0); // ok
-        Room village_Road4 = new Room("Village_Road4","No one to see you can hear soldiers talking",1,1,0,0,0,0); // ok
-        Room village_Road5 = new Room("Village_Road5","No one to see you can hear soldiers talking",1,0,1,0,0,0); // ok
-        Room village_Road6 = new Room("Village_Road6","Soldiers are here",0,0,1,1,0,0); // ok
-        Room village_Road7 = new Room("Village_Road7","Soldiers are here",1,0,1,1,0,0); // ok
-        Room village_Road8 = new Room("Village_Road8","Soldiers are here",0,0,1,1,0,0); // ok
-        Room village_Road9 = new Room("Village_Road9","No one to see you can hear soldiers talking",0,1,1,1,0,0); // ok
-        Room village_Road10 = new Room("Village_Road10","No one to see you can hear soldiers talking",1,1,0,0,0,0); // ok
-        Room village_Road11 = new Room("Village_Road11","No one to see you can hear soldiers talking",1,1,1,1,0,0); // ok
-        Room village_Road12 = new Room("Village_Road12","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
-        Room village_Road13 = new Room("Village_Road13","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
-        Room village_Road14= new Room("Village_Road14","Soldiers are here",1,0,1,1,0,0); // ok
-        Room village_Road15 = new Room("Village_Road15","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
-        Room village_Road16 = new Room("Village_Road16","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
-        Room village_Road17 = new Room("Village_Road17","No one to see you can hear soldiers talking",0,1,1,1,0,0); // ok
-        Room village_Road18 = new Room("Village_Road18","No one to see you can hear soldiers talking",1,1,1,0,0,0); // ok
-        Room village_Road19 = new Room("Village_Road19","No one to see you can hear soldiers talking",1,0,1,1,0,0); // ok
-        Room village_Road20 = new Room("Village_Road20","No one to see you can hear soldiers talking",0,1,1,1,0,0); // ok
-        Room village_Road21 = new Room("Village_Road21","No one to see you can hear soldiers talking",1,1,0,1,0,0); // ok
-        Room village_Road22 = new Room("Village_Road22","Soldiers are here",1,1,1,1,0,0); // ok
-        Room village_Road23 = new Room("Village_Road23","No one to see you can hear soldiers talking",1,1,1,1,0,0); // ok
-        Room village_Road24 = new Room("Village_Road24","No one to see you can hear soldiers talking",1,0,0,1,0,0); // ok
-        Room village_Road25 = new Room("Village_Road25","No one to see you can hear soldiers talking",1,1,0,1,0,0); // ok
-        Room village_Road26 = new Room("Village_Road26","No one to see you can hear soldiers talking",1,1,0,1,0,0); // ok
-        Room village_Road27 = new Room("Village_Road27","Soldiers are here",1,1,0,1,0,0); // ok
+        Room village_Road1 = new Room("road1","No one to see you can hear soldiers talking",0,1,1,0,0,0); // ok
+        Room village_Road2 = new Room("road2","No one to see you can hear soldiers talking",1,1,0,0,0,0); // ok
+        Room village_Road3 = new Room("road3","No one to see you can hear soldiers talking",1,1,1,1,0,0); // ok
+        Room village_Road4 = new Room("road4","No one to see you can hear soldiers talking",1,1,0,0,0,0); // ok
+        Room village_Road5 = new Room("road5","No one to see you can hear soldiers talking",1,0,1,0,0,0); // ok
+        Room village_Road6 = new Room("road6","Soldiers are here",0,0,1,1,0,0); // ok
+        Room village_Road7 = new Room("road7","Soldiers are here",1,0,1,1,0,0); // ok
+        Room village_Road8 = new Room("road8","Soldiers are here",0,0,1,1,0,0); // ok
+        Room village_Road9 = new Room("road9","No one to see you can hear soldiers talking",0,1,1,1,0,0); // ok
+        Room village_Road10 = new Room("road10","No one to see you can hear soldiers talking",1,1,0,0,0,0); // ok
+        Room village_Road11 = new Room("road11","No one to see you can hear soldiers talking",1,1,1,1,0,0); // ok
+        Room village_Road12 = new Room("road12","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
+        Room village_Road13 = new Room("road13","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
+        Room village_Road14= new Room("road14","Soldiers are here",1,0,1,1,0,0); // ok
+        Room village_Road15 = new Room("road15","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
+        Room village_Road16 = new Room("road16","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
+        Room village_Road17 = new Room("road17","No one to see you can hear soldiers talking",0,1,1,1,0,0); // ok
+        Room village_Road18 = new Room("road18","No one to see you can hear soldiers talking",1,1,1,0,0,0); // ok
+        Room village_Road19 = new Room("road19","No one to see you can hear soldiers talking",1,0,1,1,0,0); // ok
+        Room village_Road20 = new Room("road20","No one to see you can hear soldiers talking",0,1,1,1,0,0); // ok
+        Room village_Road21 = new Room("road21","No one to see you can hear soldiers talking",1,1,0,1,0,0); // ok
+        Room village_Road22 = new Room("road22","Soldiers are here",1,1,1,1,0,0); // ok
+        Room village_Road23 = new Room("road23","No one to see you can hear soldiers talking",1,1,1,1,0,0); // ok
+        Room village_Road24 = new Room("road24","No one to see you can hear soldiers talking",1,0,0,1,0,0); // ok
+        Room village_Road25 = new Room("road25","No one to see you can hear soldiers talking",1,1,0,1,0,0); // ok
+        Room village_Road26 = new Room("road26","No one to see you can hear soldiers talking",1,1,0,1,0,0); // ok
+        Room village_Road27 = new Room("road27","Soldiers are here",1,1,0,1,0,0); // ok
 
         Room house1 = new Room("house1","Looks destroyed",0,1,0,0,0,1); // ok
         Room house2 = new Room("house2","Looks destroyed",0,0,1,0,1,0); // ok
         Room house3 = new Room("house3","Looks destroyed",1,0,0,0,1,0); // ok
-        Room house4 = new Room("house4","Looks destroyed",0,0,0,1,0,0); // ok
+        Room house4 = new Room("temple1","Looks destroyed",0,0,0,1,0,0); // ok
         Room house5 = new Room("house5","Looks destroyed",0,1,1,0,1,0); // ok
-        Room house6 = new Room("house6","Looks destroyed",1,0,0,0,0,1); // ok
+        Room house6 = new Room("outpost1","Looks destroyed",1,0,0,0,0,1); // ok
 
-        Room church1 = new Room("church1","Climb it now!!",0,0,0,1,1,0); // ok
-        Room church_top1 = new Room("church_Top1","Its windy up here",0,0,0,0,0,1); // ok
+        Room church1 = new Room("temple2","Climb it now!!",0,0,0,1,1,0); // ok
+        Room church_top1 = new Room("up_temple2","Its windy up here",0,0,0,0,0,1); // ok
 
-        Room house1_underground = new Room("house1_underground","Hard to see in here",0,0,0,0,1,0); // ok
-        Room house6_underground = new Room("house6_underground","This Creature looks dangerous",0,0,0,0,1,0); // ok
+        Room house1_underground = new Room("down_house1","Hard to see in here",0,0,0,0,1,0); // ok
+        Room house6_underground = new Room("down_outpost1","This Creature looks dangerous",0,0,0,0,1,0); // ok
 
-        Room house2_2ndFloor = new Room("house2_2ndFloor","Looks shabby",0,0,1,0,0,1); // ok
-        Room house3_2ndFloor = new Room("house3_2ndFloor","Looks shabby",0,0,0,1,0,1); // ok
+        Room house2_2ndFloor = new Room("up_house2","Looks shabby",0,0,1,0,0,1); // ok
+        Room house3_2ndFloor = new Room("up_house3","Looks shabby",0,0,0,1,0,1); // ok
 
-        Room plateau_low = new Room("plateau_low","You can climb it",0,1,0,1,1,0); // ok
-        Room plateau_high = new Room("plateau_high","Wow that is high",0,0,0,0,0,1); // ok
+        Room plateau_low = new Room("plateau1","You can climb it",0,1,0,1,1,0); // ok
+        Room plateau_high = new Room("up_plateau","Wow that is high",0,0,0,0,0,1); // ok
 
         Mob guard1 = new Mob("Guard1",400,50,10,0,50,300,village_Entrance1,woodsStartVillage,1);
         Mob guard2 = new Mob("Guard2",400,50,10,0,50,300,village_Entrance1,woodsStartVillage,1);
