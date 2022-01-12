@@ -202,21 +202,26 @@ public class Room {
      * @param x Mob
      */
     public void delMob(Mob x){
-        if(mobsInRoom.get(0).inventoryFull()) {
-            for (int i = 0; i < mobsInRoom.size(); i++) {
-                if (Objects.equals(mobsInRoom.get(i).getName(), x.getName())){
-                    Item item = mobsInRoom.get(i).getItem();
-                    itemsInRoom.add(item);
-                    System.out.println("The " + mobsInRoom + " has dropped " + item);
-                    mobsInRoom.remove(i);
+        try{
+            if(mobsInRoom.get(0).inventoryFull()) {
+                for (int i = 0; i < mobsInRoom.size(); i++) {
+                    if (Objects.equals(mobsInRoom.get(i).getName(), x.getName())){
+                        Item item = mobsInRoom.get(i).getItem();
+                        itemsInRoom.add(item);
+                        System.out.println("The " + mobsInRoom + " has dropped " + item);
+                        mobsInRoom.remove(i);
+                    }
+                }
+            } else {
+                for (int i = 0; i < mobsInRoom.size(); i++) {
+                    if (Objects.equals(mobsInRoom.get(i).getName(), x.getName())){
+                        mobsInRoom.remove(i);
+                    }
                 }
             }
-        } else {
-            for (int i = 0; i < mobsInRoom.size(); i++) {
-                if (Objects.equals(mobsInRoom.get(i).getName(), x.getName())){
-                    mobsInRoom.remove(i);
-                }
-            }
+
+        }catch(Exception e){
+
         }
 
     }

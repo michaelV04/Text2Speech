@@ -53,8 +53,8 @@ public class Main {
         int alive = 1;
         Map testM1 = new Map("testM1",9);
         Room testR1 = new Room("testR1","a Room",0,0,0,1,0,0);
-        Mob zombie = new Mob("zombie1",1000,10,0,0,1,50,testR1,testM1,1);
-        Mob zombie1 = new Mob("zombie2",1000,10,0,0,1,50,testR1,testM1,1);
+        Mob zombie = new Mob("zombie1",10,10,0,0,1,50,testR1,testM1,1);
+        Mob zombie1 = new Mob("zombie2",10,10,0,0,1,50,testR1,testM1,1);
         Item mobitem1 = new Item("x",0,10,0,0,0);
         zombie.pickupItem(mobitem1);
         testM1.addRoom(testR1,0,0);
@@ -373,6 +373,7 @@ public class Main {
                 System.out.println("You are in Room " + p1.actualRoom.getRoomName());
                 String e;
                 e = s.next();
+                p1.actualMap.showMap();
                 alive = p1.move(e,alive);
             }else if(Objects.equals(command, "combat")){
                 if (p1.actualRoom.mobsInRoom.size() == 0){
