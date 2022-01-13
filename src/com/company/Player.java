@@ -121,6 +121,11 @@ public class Player extends Entities implements Mutations{
             int z = 0;
             while (z < i) {
                 System.out.println(x.itemsInRoom.get(z).getItemName());
+                System.out.println("speed: "+x.itemsInRoom.get(z).getSpeed());
+                System.out.println("crit: "+x.itemsInRoom.get(z).getCrit());
+                System.out.println("armor: "+x.itemsInRoom.get(z).getArmor());
+                System.out.println("ad: "+x.itemsInRoom.get(z).getAd());
+                System.out.println("hp: "+x.itemsInRoom.get(z).getHp());
                 z++;
             }
             if (x.containerInRoom != null) {
@@ -199,6 +204,11 @@ public class Player extends Entities implements Mutations{
         System.out.println("These are the Items in the " + container.getContainerName());
         for (int i = 0; i < container.dingeInside.size(); i++) {
             System.out.println(container.dingeInside.get(i).getItemName());
+            System.out.println("speed: "+container.dingeInside.get(i).getSpeed());
+            System.out.println("crit: "+container.dingeInside.get(i).getCrit());
+            System.out.println("armor: "+container.dingeInside.get(i).getArmor());
+            System.out.println("ad: "+container.dingeInside.get(i).getAd());
+            System.out.println("hp: "+container.dingeInside.get(i).getHp());
         }
 
         System.out.println("What would you like to pick up? \n -all\n-itemName");

@@ -132,7 +132,7 @@ public class Main {
 
         Room house1 = new Room("house1","Looks destroyed",0,1,0,0,0,1); // ok
         Room house2 = new Room("house2","Looks destroyed",0,0,1,0,1,0); // ok
-        Room house3 = new Room("house3","Looks destroyed",1,0,0,0,1,0); // ok
+        Room house3 = new Room("house3","Looks destroyed",1,0,1,1,1,0); // ok
         Room house4 = new Room("house4","Looks destroyed",0,0,0,1,0,0); // ok
         Room house5 = new Room("temple1","Looks destroyed",0,1,1,0,1,0); // ok
         Room house6 = new Room("outpost1","Looks destroyed",1,0,0,0,0,1); // ok
@@ -180,7 +180,7 @@ public class Main {
         guard9.pickupItem(mutationY);
         whiteSpike.pickupItem(mutationZ);
 
-        Player p1 = new Player("Hans",100,10,0,0,1,100,woods1,woodsStartVillage);
+        Player p1 = new Player("Hans",100,10,0,0,1,100,village_Road18,woodsStartVillage);
         //create Map
         //Row 1
         woodsStartVillage.addRoom(village_Road1,23,1);
@@ -303,9 +303,9 @@ public class Main {
         woodsStartVillage.addRoom(village_Road15,90,1);
         woodsStartVillage.addRoom(village_Road19,91,1);
         woodsStartVillage.addRoom(village_Road24,92,1);
-        woodsStartVillage.addRoom(house6,92,1);
-        woodsStartVillage.addRoom(house6_underground,92,0);
-        village_Road27.addItem(teleport_Stone);
+        woodsStartVillage.addRoom(house6,93,1);
+        woodsStartVillage.addRoom(house6_underground,93,0);
+        house6_underground.addItem(teleport_Stone);
         house6_underground.addMob(whiteSpike);
         house6_underground.addItem(mutationZ);
 
