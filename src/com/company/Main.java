@@ -114,7 +114,7 @@ public class Main {
         Room village_Road10 = new Room("road10","No one to see you can hear soldiers talking",1,1,0,0,0,0); // ok
         Room village_Road11 = new Room("road11","No one to see you can hear soldiers talking",1,1,1,1,0,0); // ok
         Room village_Road12 = new Room("road12","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
-        Room village_Road13 = new Room("road13","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
+        Room village_Road13 = new Room("road13","No one to see you can hear soldiers talking",1,0,1,1,0,0); // ok
         Room village_Road14= new Room("road14","Soldiers are here",1,0,1,1,0,0); // ok
         Room village_Road15 = new Room("road15","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
         Room village_Road16 = new Room("road16","No one to see you can hear soldiers talking",0,0,1,1,0,0); // ok
@@ -133,8 +133,8 @@ public class Main {
         Room house1 = new Room("house1","Looks destroyed",0,1,0,0,0,1); // ok
         Room house2 = new Room("house2","Looks destroyed",0,0,1,0,1,0); // ok
         Room house3 = new Room("house3","Looks destroyed",1,0,0,0,1,0); // ok
-        Room house4 = new Room("temple1","Looks destroyed",0,0,0,1,0,0); // ok
-        Room house5 = new Room("house5","Looks destroyed",0,1,1,0,1,0); // ok
+        Room house4 = new Room("house4","Looks destroyed",0,0,0,1,0,0); // ok
+        Room house5 = new Room("temple1","Looks destroyed",0,1,1,0,1,0); // ok
         Room house6 = new Room("outpost1","Looks destroyed",1,0,0,0,0,1); // ok
 
         Room church1 = new Room("temple2","Climb it now!!",0,0,0,1,1,0); // ok
@@ -180,7 +180,7 @@ public class Main {
         guard9.pickupItem(mutationY);
         whiteSpike.pickupItem(mutationZ);
 
-        Player p1 = new Player("Hans",100,10,0,0,1,100,woods1,woodsStartVillage);
+        Player p1 = new Player("Hans",100,10,0,0,1,100,house5,woodsStartVillage);
         //create Map
         //Row 1
         woodsStartVillage.addRoom(village_Road1,23,1);
