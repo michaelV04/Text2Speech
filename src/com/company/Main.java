@@ -180,7 +180,7 @@ public class Main {
         guard9.pickupItem(mutationY);
         whiteSpike.pickupItem(mutationZ);
 
-        Player p1 = new Player("Hans",100,10,0,0,1,100,village_Road18,woodsStartVillage);
+        Player p1 = new Player("Hans",100,10,0,0,1,100,woods1,woodsStartVillage);
         //create Map
         //Row 1
         woodsStartVillage.addRoom(village_Road1,23,1);
