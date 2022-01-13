@@ -220,7 +220,7 @@ public class Main {
         woodsStartVillage.addRoom(church1,43,1);
         woodsStartVillage.addRoom(church_top1,43,2);
         Item teleport_Stone = new Item("teleport_Stone",0,0,0,0,0);
-        church_top1.addItem(teleport_Stone);
+
 
         woodsStartVillage.addRoom(village_Road21,44,1);
         woodsStartVillage.addRoom(village_Road25,45,1);
@@ -305,6 +305,7 @@ public class Main {
         woodsStartVillage.addRoom(village_Road24,92,1);
         woodsStartVillage.addRoom(house6,92,1);
         woodsStartVillage.addRoom(house6_underground,92,0);
+        house6.addItem(teleport_Stone);
         house6_underground.addMob(whiteSpike);
         house6_underground.addItem(mutationZ);
 
@@ -373,7 +374,6 @@ public class Main {
                 System.out.println("You are in Room " + p1.actualRoom.getRoomName());
                 String e;
                 e = s.next();
-                p1.actualMap.showMap();
                 alive = p1.move(e,alive);
             }else if(Objects.equals(command, "combat")){
                 if (p1.actualRoom.mobsInRoom.size() == 0){
