@@ -305,7 +305,7 @@ public class Main {
         woodsStartVillage.addRoom(village_Road24,92,1);
         woodsStartVillage.addRoom(house6,92,1);
         woodsStartVillage.addRoom(house6_underground,92,0);
-        house6.addItem(teleport_Stone);
+        village_Road27.addItem(teleport_Stone);
         house6_underground.addMob(whiteSpike);
         house6_underground.addItem(mutationZ);
 
